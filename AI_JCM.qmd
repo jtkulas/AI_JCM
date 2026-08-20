@@ -1,0 +1,109 @@
+---
+title: "The Job Characteristics Model Revisited"
+shorttitle: "Revisiting JCM"
+author:
+  - name: Jane Doe
+    corresponding: true
+    orcid: 0000-0000-0000-0001
+    email: janedoe@generic.edu
+    affiliations:
+      - name: Generic University
+        department: Department of Scholarly Studies
+        address: 1234 Capital St.
+        city: New York
+        region: NY
+        country: USA
+        postal-code: 12084-1234
+abstract: "This document is a template."
+keywords: [Keyword 1, Keyword 2, Keyword 3]
+bibliography: bibliography.bib
+format:
+  apaquarto-html: default
+---
+
+<!-- The introduction should not have a level-1 heading such as Introduction. -->
+
+![Working Draft Model: Revisiting JCM in the age of AI](/img/model.JPG){#fig-aijcm}
+
+```{mermaid}
+%%| eval: false
+%%| label: fig-aijcm
+%%| fig-cap: "Working Draft Model: Revisiting JCM in the age of AI"
+flowchart LR
+  %% Define nodes with multi-line text
+  CJD["Core Job Dimensions<br/>• Skill Variety<br/>• Task Identity<br/>• Task significance<br/>• Autonomy<br/>• Feedback"]
+  CPS["Critical Psychological States<br/>• Meaningfulness<br/>• Experienced responsibility of work outcomes<br/>• Knowledge of results?"]
+  Out["Internal Motivation<br/>Work Performance<br/>Job Satisfaction<br/>Low Turnover<br/>Satisfaction"]
+  JC["Job Crafting"]
+  GNS["Growth Needs Strength<br/>Type of AI Adopter<br/>• Efficiency-seeking<br/>• Pragmatic Integrator<br/>• Collaborative Optimizer"]
+
+  CJD --> CPS --> Out
+  GNS -.-> CPS
+  GNS -.-> Out
+  JC --> Out
+
+  %% etc. – adjust links and direction as needed
+```
+
+see @fig-aijcm
+
+# Method
+
+## Participants
+
+## Measures
+
+## Procedure
+
+# Results
+
+# Discussion
+
+## Limitations and Future Directions
+
+## Conclusion
+
+# References
+
+<!-- References will auto-populate in the refs div below -->
+
+::: {#refs}
+:::
+
+# Notes from Alicia (7/23/26) {#apx-a}
+
+Growth Need Strength (GNS)  
+
+“As noted earlier, there is now substantial evidence that differences among people moderate how they react to their work, and individual need strength appears to be a useful way to conceptualize and measure such differences. The basic prediction is that people who have high need for personal growth and development will respond more positively to a job high in motivating potential than people with low growth need strength.” [@hackman1976motivation, p. 258]
+
+Options for measurement:
+
+Job Diagnostic Survey (JDS) Growth Need Strength Scales, @hackman1975development  
+
+1. “Job Choice” GNS Scale  
+  + Respondents choose between pairs of hypothetical jobs.  
+  + Measures preference for challenging, growth-oriented work versus comfort, security, or other job features.  
+  + I have the original article, but not the items themselves for the job choice measure– these two scales seem to first be described here: <https://werkwelzijnenmotivatie.wordpress.
+com/wp-content/uploads/2020/05/hackman-oldham-1975.pdf>  
+
+2. “Would-Like” GNS Scale  
+  + Respondents indicate how much challenge, responsibility, learning, autonomy, and growth they would like in a job, rated from 1 (not at all) to 5 (very much). I think these are the items themselves, although these (1975?) differ from the original in the 1974 tech report. I will attach the tech report– see the scoring key for which items in the appendix are to be summed for the GNS measure there.
+  
+“Considering all the things that are personally important to you in your work, how important is it to you to have…”  
+
+1. ‘stimulating and challenging work’,  
+2. ‘creative and imaginative work’,  
+3. ‘a chance to exercise independent thought and action’,  
+4. ‘opportunities to learn new things’,  
+5. ‘opportunities for achievement’, and  
+6. ‘opportunities for personal growth and development’.  
+
+Higher-Order Need Strength (HONS) Measures, @hackman1971employee
+This appears to be prior to GNS: higher-order need strength, reflecting desires for:  
+
++ Achievement  
++ Challenge  
++ Responsibility  
++ Personal accomplishment 
+
+# Another Appendix {#apx-b}
