@@ -23,6 +23,22 @@ format:
 
 <!-- The introduction should not have a level-1 heading such as Introduction. -->
 
+Current plan: 
+
++ Develop AI adopter scale for SIOP (ChatGPT vs AI Genie vs hoomans)  
++ include "best" scale in larger model testing submission for Academy of Management (December--ish deadline)
+
+
++ Problem Statement/Attention Grabbing Paragraph + Purpose  
++ History of JCM
++ How AI May Reshape Employee Experience  
+  + Present overview of current research on this topic as it applies  
+  + Job Crafting as an Outcome  
+      + H1:  
+  + New Moderator in JCM Model: Type of AI Adopter  
+      + H2: 
+
+
 ![Working Draft Model: Revisiting JCM in the age of AI](/img/model.JPG){#fig-aijcm}
 
 ```{mermaid}
@@ -51,7 +67,18 @@ see @fig-aijcm
 
 ## Participants
 
+UW-Stout students who are employed
+
 ## Measures
+
+JCM original measure: Hackman, J. R., & Oldham, G. R. (1975). Development of the Job Diagnostic Survey. Journal of Applied Psychology, 60, 159-170.
+Job Crafting: Slemp & Vella-Brodrick (2013) Job Crafting Questionnaire (JCQ) 15 items
+Internal Motivation: Tremblay, M. A., Blanchard, C. M., Taylor, S., Pelletier, L. G., & Villeneuve, M. (2009). Work Extrinsic and Intrinsic Motivation Scale: Its value for organizational psychology research. Canadian Journal of Behavioural Science, 41(4), 213-226. (3 items)
+Task Performance: Koopmans, L., Bernaards, C. M., Hildebrandt, V. H., van Buuren, S., van der Beek, A. J., & de Vet, H. C. W. (2013). Development of an Individual Work Performance Questionnaire. International Journal of Productivity and Performance Management, 62(1), 6-28. DOI: 10.1108/17410401311285273. (13 items)
+Job Satisfaction – ideas?
+Turnover Intent: Here are a list of options – all short measures: Bothma, C. F., & Roodt, G. (2013). The validation of the turnover intention scale.SA journal of human resource management,11(1), 1-12.
+Type of AI adopter: we don’t have a measure of this, but could give them the descriptions from this paper and ask them to self-assign: Callari, T. C., & Puppione, L. (2025). 
+
 
 ## Procedure
 
