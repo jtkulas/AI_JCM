@@ -1,0 +1,115 @@
+---
+title: "Placeholder"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+names <- read.csv("data/AI+Adoption_partialdata.csv")[1,]
+data <- read.csv("data/AI+Adoption_partialdata.csv")[-c(1:4),]  ## subset rows when get responses
+
+recode_map <- c(
+  "Strongly disagree"          = 1,
+  "Somewhat disagree"          = 2,
+  "Neither agree nor disagree" = 3,
+  "Somewhat agree"             = 4,
+  "Strongly agree"             = 5
+)
+
+data[20:85] <- lapply(data[20:85], function(x) unname(recode_map[x]))
+
+################### ALPHAs
+## Chat GPT
+
+es_gpt_alpha <- psych::alpha(data[20:27])    ## ES
+pi_gpt_alpha <- psych::alpha(data[28:35])    ## PI
+co_gpt_alpha <- psych::alpha(data[36:43])    ## CO
+
+## Humans
+
+es_hum_alpha <- psych::alpha(data[44:50])    ## ES
+pi_hum_alpha <- psych::alpha(data[51:57])    ## PI
+co_hum_alpha <- psych::alpha(data[58:64])    ## CO
+
+## AI Genie
+
+es_genie_alpha <- psych::alpha(data[65:71])    ## ES
+pi_genie_alpha <- psych::alpha(data[72:78])    ## PI
+co_genie_alpha <- psych::alpha(data[79:85])    ## CO
+
+##################### Demographics
+
+referent <- table(data$Q51)  ## work or school?
+
+data$Q55 <- as.numeric(as.character(data$Q55))  ## age
+```
+
+```{r alphas}
+#| label: tbl-alphas
+#| tbl-cap: Alpha estimates all 9 subscales
+
+library(flextable)
+library(tidyverse)
+
+tibble(
+  Scale = c("Chat GPT", "", "", "Human", "", "", "AI Genie", "", ""),
+  Subscale = c("Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser", "Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser", "Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser"),
+  Alpha = c(es_gpt_alpha$total$raw_alpha, 
+            pi_gpt_alpha$total$raw_alpha, 
+            co_gpt_alpha$total$raw_alpha, 
+            es_hum_alpha$total$raw_alpha, 
+            pi_hum_alpha$total$raw_alpha,
+            co_hum_alpha$total$raw_alpha,
+            es_genie_alpha$total$raw_alpha,
+            pi_genie_alpha$total$raw_alpha,
+            co_genie_alpha$total$raw_alpha)          
+) |>
+  flextable() |>
+  theme_apa() |>
+  width(width = c(2.5, 2, 2)) |>
+  align(align="left", part="all")
+
+```
+
+```{r majors}
+#| label: tbl-majors
+#| tbl-cap: Indicated major (current study respondents)
+
+library(expss)
+
+majors <- data %>%
+  tab_cells(mrset_f(X5_)) %>%
+  tab_stat_cases(label = "n") %>%
+  tab_stat_cpct(label = "%") %>%
+  tab_pivot(stat_position = "inside_columns") %>%
+  where(!grepl("#", row_labels))
+
+major <- as_tibble(majors[-1])
+names(major)[1] <- "Major"
+names(major)[2] <- "Total (n)"
+names(major)[3] <- "Percent"
+
+major$`Total (n)` <- as.integer(major$`Total (n)`)
+
+major|>
+  flextable() |>
+  theme_apa() |>
+  width(width = c(4, 2, 2)) |>
+  align(align="left", part="all")
+
+largest <- major %>%
+  arrange(`Total (n)`)
+
+#most <- largest[nrow(largest),1]
+#freq <- largest[nrow(largest),3]
+  
+```
+
+`r nrow(data)` undergraduate students responded (mean age = `r round(mean(data$Q55, na.rm=TRUE),2)`, sd = `r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the choice of 50 different majors to choose from, with the greatest representation being `r largest[nrow(largest),1]` at `r largest[nrow(largest),3]`% (see @tbl-majors). When asked, "Which context did you have in mind as you responded to the statements in this survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school", `r round((referent[4]/nrow(data))*100,2)`% indicated "work", and `r round((referent[2]/nrow(data))*100,2)`% stated "other". 
+
+Individual scale alphas are presented in @tbl-alphas
+
+
