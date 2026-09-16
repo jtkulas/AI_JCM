@@ -21,6 +21,10 @@ recode_map <- c(
 
 data[20:85] <- lapply(data[20:85], function(x) unname(recode_map[x]))
 
+#Remove incomplete data rows
+data$missing <- rowSums(is.na(data))
+data <- data[data$missing < 25,]
+
 ################### ALPHAs
 ## Chat GPT
 
@@ -29,6 +33,13 @@ pi_gpt_alpha <- psych::alpha(data[28:35])    ## PI
 co_gpt_alpha <- psych::alpha(data[36:43])    ## CO
 
 ## Humans
+
+#reflecting human-generated items 3-7
+data$SME_ES_3 <- 6-data$SME_ES_3
+data$SME_ES_4 <- 6-data$SME_ES_4
+data$SME_ES_5 <- 6-data$SME_ES_5
+data$SME_ES_6 <- 6-data$SME_ES_6 #empirical decision
+data$SME_ES_7 <- 6-data$SME_ES_7
 
 es_hum_alpha <- psych::alpha(data[44:50])    ## ES
 pi_hum_alpha <- psych::alpha(data[51:57])    ## PI
@@ -108,7 +119,7 @@ largest <- major %>%
   
 ```
 
-`r nrow(data)` undergraduate students responded (mean age = `r round(mean(data$Q55, na.rm=TRUE),2)`, sd = `r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the choice of 50 different majors to choose from, with the greatest representation being `r largest[nrow(largest),1]` at `r largest[nrow(largest),3]`% (see @tbl-majors). When asked, "Which context did you have in mind as you responded to the statements in this survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school", `r round((referent[4]/nrow(data))*100,2)`% indicated "work", and `r round((referent[2]/nrow(data))*100,2)`% stated "other". 
+`r nrow(data)` undergraduate students responded (mean age = `r round(mean(data$Q55, na.rm=TRUE),2)`, sd = `r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the choice of 50 different majors to choose from, with the greatest representation being `r largest[nrow(largest),1]` at `r round(largest[nrow(largest),3],2)`% (see @tbl-majors). When asked, "Which context did you have in mind as you responded to the statements in this survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school", `r round((referent[4]/nrow(data))*100,2)`% indicated "work", and `r round((referent[2]/nrow(data))*100,2)`% stated "other". 
 
 Individual scale alphas are presented in @tbl-alphas
 
