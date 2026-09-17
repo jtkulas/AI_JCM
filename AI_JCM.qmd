@@ -19,27 +19,34 @@ keywords: [Keyword 1, Keyword 2, Keyword 3]
 bibliography: bibliography.bib
 format:
   apaquarto-html: default
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 <!-- The introduction should not have a level-1 heading such as Introduction. -->
 
-Current plan: 
+Current plan:
 
-+ Develop AI adopter scale for SIOP (ChatGPT vs AI Genie vs hoomans)  
-+ include "best" scale in larger model testing submission for Academy of Management (December--ish deadline)
+- Develop AI adopter scale for SIOP (ChatGPT vs AI Genie vs hoomans)\
 
+- include "best" scale in larger model testing submission for Academy of
+  Management (December--ish deadline)
 
-+ Problem Statement/Attention Grabbing Paragraph + Purpose  
-+ History of JCM
-+ How AI May Reshape Employee Experience  
-  + Present overview of current research on this topic as it applies  
-  + Job Crafting as an Outcome  
-      + H1:  
-  + New Moderator in JCM Model: Type of AI Adopter  
-      + H2: 
+- Problem Statement/Attention Grabbing Paragraph + Purpose\
 
+- History of JCM
 
-![Working Draft Model: Revisiting JCM in the age of AI](/img/model.JPG){#fig-aijcm}
+- How AI May Reshape Employee Experience
+
+  - Present overview of current research on this topic as it applies\
+  - Job Crafting as an Outcome
+    - H1:\
+  - New Moderator in JCM Model: Type of AI Adopter
+    - H2:
+
+![Working Draft Model: Revisiting JCM in the age of
+AI](/img/model.JPG){#fig-aijcm}
 
 ```{mermaid}
 %%| eval: false
@@ -71,22 +78,36 @@ UW-Stout students who are employed
 
 ## Measures
 
-JCM original measure: Hackman, J. R., & Oldham, G. R. (1975). Development of the Job Diagnostic Survey. Journal of Applied Psychology, 60, 159-170.
-Job Crafting: Slemp & Vella-Brodrick (2013) Job Crafting Questionnaire (JCQ) 15 items
-Internal Motivation: Tremblay, M. A., Blanchard, C. M., Taylor, S., Pelletier, L. G., & Villeneuve, M. (2009). Work Extrinsic and Intrinsic Motivation Scale: Its value for organizational psychology research. Canadian Journal of Behavioural Science, 41(4), 213-226. (3 items)
-Task Performance: Koopmans, L., Bernaards, C. M., Hildebrandt, V. H., van Buuren, S., van der Beek, A. J., & de Vet, H. C. W. (2013). Development of an Individual Work Performance Questionnaire. International Journal of Productivity and Performance Management, 62(1), 6-28. DOI: 10.1108/17410401311285273. (13 items)
-Job Satisfaction – ideas?
-Turnover Intent: Here are a list of options – all short measures: Bothma, C. F., & Roodt, G. (2013). The validation of the turnover intention scale.SA journal of human resource management,11(1), 1-12.
-Type of AI adopter: we don’t have a measure of this, but could give them the descriptions from this paper and ask them to self-assign: Callari, T. C., & Puppione, L. (2025). 
-
+JCM original measure: Hackman, J. R., & Oldham, G. R. (1975).
+Development of the Job Diagnostic Survey. Journal of Applied Psychology,
+60, 159-170. Job Crafting: Slemp & Vella-Brodrick (2013) Job Crafting
+Questionnaire (JCQ) 15 items Internal Motivation: Tremblay, M. A.,
+Blanchard, C. M., Taylor, S., Pelletier, L. G., & Villeneuve, M. (2009).
+Work Extrinsic and Intrinsic Motivation Scale: Its value for
+organizational psychology research. Canadian Journal of Behavioural
+Science, 41(4), 213-226. (3 items) Task Performance: Koopmans, L.,
+Bernaards, C. M., Hildebrandt, V. H., van Buuren, S., van der Beek, A.
+J., & de Vet, H. C. W. (2013). Development of an Individual Work
+Performance Questionnaire. International Journal of Productivity and
+Performance Management, 62(1), 6-28. DOI: 10.1108/17410401311285273. (13
+items) Job Satisfaction – ideas? Turnover Intent: Here are a list of
+options – all short measures: Bothma, C. F., & Roodt, G. (2013). The
+validation of the turnover intention scale.SA journal of human resource
+management,11(1), 1-12. Type of AI adopter: we don’t have a measure of
+this, but could give them the descriptions from this paper and ask them
+to self-assign: Callari, T. C., & Puppione, L. (2025).
 
 ## Procedure
+
+WLuse's ChatGPT Prompt: "I need your help with generating a tentative list of survey items. I am reading the attached paper for the third time [the Callari and Puppione 2025 paper]. I am interested in the three AI user ideal types and the survey items that could be generated to measure an employee's propensity toward one type or another." 
 
 # Results
 
 # Discussion
 
 ## Limitations and Future Directions
+
+[@abeza2015]
 
 ## Conclusion
 
@@ -99,38 +120,57 @@ Type of AI adopter: we don’t have a measure of this, but could give them the d
 
 # Notes from Alicia (7/23/26) {#apx-a}
 
-Growth Need Strength (GNS)  
+Growth Need Strength (GNS)
 
-“As noted earlier, there is now substantial evidence that differences among people moderate how they react to their work, and individual need strength appears to be a useful way to conceptualize and measure such differences. The basic prediction is that people who have high need for personal growth and development will respond more positively to a job high in motivating potential than people with low growth need strength.” [@hackman1976motivation, p. 258]
+“As noted earlier, there is now substantial evidence that differences
+among people moderate how they react to their work, and individual need
+strength appears to be a useful way to conceptualize and measure such
+differences. The basic prediction is that people who have high need for
+personal growth and development will respond more positively to a job
+high in motivating potential than people with low growth need strength.”
+[@hackman1976motivation, p. 258]
 
 Options for measurement:
 
-Job Diagnostic Survey (JDS) Growth Need Strength Scales, @hackman1975development  
+Job Diagnostic Survey (JDS) Growth Need Strength Scales,
+@hackman1975development
 
-1. “Job Choice” GNS Scale  
-  + Respondents choose between pairs of hypothetical jobs.  
-  + Measures preference for challenging, growth-oriented work versus comfort, security, or other job features.  
-  + I have the original article, but not the items themselves for the job choice measure– these two scales seem to first be described here: <https://werkwelzijnenmotivatie.wordpress.
-com/wp-content/uploads/2020/05/hackman-oldham-1975.pdf>  
+1.  “Job Choice” GNS Scale\
 
-2. “Would-Like” GNS Scale  
-  + Respondents indicate how much challenge, responsibility, learning, autonomy, and growth they would like in a job, rated from 1 (not at all) to 5 (very much). I think these are the items themselves, although these (1975?) differ from the original in the 1974 tech report. I will attach the tech report– see the scoring key for which items in the appendix are to be summed for the GNS measure there.
-  
-“Considering all the things that are personally important to you in your work, how important is it to you to have…”  
+- Respondents choose between pairs of hypothetical jobs.\
+- Measures preference for challenging, growth-oriented work versus
+  comfort, security, or other job features.\
+- I have the original article, but not the items themselves for the job
+  choice measure– these two scales seem to first be described here:
+  \<https://werkwelzijnenmotivatie.wordpress.
+  com/wp-content/uploads/2020/05/hackman-oldham-1975.pdf\>
 
-1. ‘stimulating and challenging work’,  
-2. ‘creative and imaginative work’,  
-3. ‘a chance to exercise independent thought and action’,  
-4. ‘opportunities to learn new things’,  
-5. ‘opportunities for achievement’, and  
-6. ‘opportunities for personal growth and development’.  
+2.  “Would-Like” GNS Scale\
 
-Higher-Order Need Strength (HONS) Measures, @hackman1971employee
-This appears to be prior to GNS: higher-order need strength, reflecting desires for:  
+- Respondents indicate how much challenge, responsibility, learning,
+  autonomy, and growth they would like in a job, rated from 1 (not at
+  all) to 5 (very much). I think these are the items themselves,
+  although these (1975?) differ from the original in the 1974 tech
+  report. I will attach the tech report– see the scoring key for which
+  items in the appendix are to be summed for the GNS measure there.
 
-+ Achievement  
-+ Challenge  
-+ Responsibility  
-+ Personal accomplishment 
+“Considering all the things that are personally important to you in your
+work, how important is it to you to have…”
+
+1.  ‘stimulating and challenging work’,\
+2.  ‘creative and imaginative work’,\
+3.  ‘a chance to exercise independent thought and action’,\
+4.  ‘opportunities to learn new things’,\
+5.  ‘opportunities for achievement’, and\
+6.  ‘opportunities for personal growth and development’.
+
+Higher-Order Need Strength (HONS) Measures, @hackman1971employee This
+appears to be prior to GNS: higher-order need strength, reflecting
+desires for:
+
+- Achievement\
+- Challenge\
+- Responsibility\
+- Personal accomplishment
 
 # Another Appendix {#apx-b}
