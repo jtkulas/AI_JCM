@@ -1,0 +1,1476 @@
+Mplus VERSION 9
+MUTHEN & MUTHEN
+09/20/2026   8:40 PM
+
+INPUT INSTRUCTIONS
+
+  Data:
+  FILE IS AIAdoptionPartialDataforMPlus.csv;
+
+  VARIABLE:
+  NAMES ARE ResponseId	
+  chat_ES_1 chat_ES_2	
+  chat_ES_3 chat_ES_4	
+  chat_ES_5 chat_ES_6	
+  chat_ES_7 chat_ES_8	
+  chat_PI_1 chat_PI_2	
+  chat_PI_3 chat_PI_4	
+  chat_PI_5 chat_PI_6	
+  chat_PI_7 chat_PI_8	
+  chat_CO_1 chat_CO_2	
+  chat_CO_3 chat_CO_4	
+  chat_CO_5 chat_CO_6	
+  chat_CO_7 chat_CO_8	
+  SME_ES_1 SME_ES_2	
+  SME_ES_3 SME_ES_4	
+  SME_ES_5 SME_ES_6	
+  SME_ES_7 SME_PI_1	
+  SME_PI_2 SME_PI_3	
+  SME_PI_4 SME_PI_5	
+  SME_PI_6 SME_PI_7	
+  SME_CO_1 SME_CO_2	
+  SME_CO_3 SME_CO_4	
+  SME_CO_5 SME_CO_6	
+  SME_CO_7 GENIE_EF_1	
+  GENIE_EF_2 GENIE_EF_3	
+  GENIE_EF_4 GENIE_EF_5	
+  GENIE_EF_6 GENIE_EF_7	
+  GENIE_PI_1 GENIE_PI_2	
+  GENIE_PI_3 GENIE_PI_4	
+  GENIE_PI_5 GENIE_PI_6	
+  GENIE_PI_7 GENIE_CO_1	
+  GENIE_CO_2 GENIE_CO_3	
+  GENIE_CO_4 GENIE_CO_5	
+  GENIE_CO_6 GENIE_CO_7 Age;
+
+
+  USEVARIABLES ARE
+  chat_ES_1 chat_ES_2	
+  chat_ES_3 chat_ES_4	
+  chat_ES_5 chat_ES_6	
+  chat_ES_7 chat_ES_8	
+  chat_PI_1 chat_PI_2	
+  chat_PI_3 chat_PI_4	
+  chat_PI_5 chat_PI_6	
+  chat_PI_7 chat_PI_8	
+  chat_CO_1 chat_CO_2	
+  chat_CO_3 chat_CO_4	
+  chat_CO_5 chat_CO_6	
+  chat_CO_7 chat_CO_8;
+
+
+  MISSING ARE ALL (-9);
+
+     ANALYSIS:
+      TYPE = EFA 1 3;
+      ESTIMATOR = ML;
+      ROTATION=QUARTIMIN;
+      PARALLEL = 100;
+      ITERATIONS = 5000;
+
+      !Model:
+
+
+
+      OUTPUT:
+      SAMPSTAT;
+
+      PLOT:
+      type = plot2;
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+*** WARNING in PLOT command
+  Note that only the first 8 characters of variable names are used in plots.
+  If variable names are not unique within the first 8 characters, problems
+  may occur.
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                          96
+
+Number of dependent variables                                   24
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   CHAT_ES_1   CHAT_ES_2   CHAT_ES_3   CHAT_ES_4   CHAT_ES_5   CHAT_ES_6
+   CHAT_ES_7   CHAT_ES_8   CHAT_PI_1   CHAT_PI_2   CHAT_PI_3   CHAT_PI_4
+   CHAT_PI_5   CHAT_PI_6   CHAT_PI_7   CHAT_PI_8   CHAT_CO_1   CHAT_CO_2
+   CHAT_CO_3   CHAT_CO_4   CHAT_CO_5   CHAT_CO_6   CHAT_CO_7   CHAT_CO_8
+
+
+Estimator                                                       ML
+Rotation                                                 QUARTIMIN
+Row standardization                                    CORRELATION
+Type of rotation                                           OBLIQUE
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  5000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization Specifications for the Exploratory Factor Analysis
+Rotation Algorithm
+  Number of random starts                                       30
+  Maximum number of iterations                               10000
+  Derivative convergence criterion                       0.100D-04
+
+Input data file(s)
+  AIAdoptionPartialDataforMPlus.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             8
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+ CHAT_ES_       0.990
+ CHAT_ES_       0.969         0.979
+ CHAT_ES_       0.979         0.979         0.990
+ CHAT_ES_       0.979         0.979         0.990         0.990
+ CHAT_ES_       0.979         0.979         0.990         0.990         0.990
+ CHAT_ES_       0.979         0.979         0.990         0.990         0.990
+ CHAT_ES_       0.979         0.979         0.990         0.990         0.990
+ CHAT_ES_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.958         0.958         0.969         0.969         0.969
+ CHAT_PI_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.979         0.979         0.979
+ CHAT_PI_       0.958         0.958         0.969         0.969         0.969
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+ CHAT_CO_       0.958         0.958         0.969         0.969         0.969
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+ CHAT_CO_       0.969         0.969         0.979         0.979         0.979
+
+
+           Covariance Coverage
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+ CHAT_ES_       0.990
+ CHAT_ES_       0.990         0.990
+ CHAT_ES_       0.979         0.979         0.979
+ CHAT_PI_       0.979         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.969         0.969         0.969
+ CHAT_PI_       0.979         0.979         0.979         0.979         0.969
+ CHAT_PI_       0.979         0.979         0.979         0.979         0.969
+ CHAT_PI_       0.979         0.979         0.979         0.979         0.969
+ CHAT_PI_       0.979         0.979         0.979         0.979         0.969
+ CHAT_PI_       0.979         0.979         0.979         0.979         0.969
+ CHAT_PI_       0.969         0.969         0.969         0.969         0.958
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.969         0.969         0.969         0.969         0.958
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.969
+
+
+           Covariance Coverage
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+ CHAT_PI_       0.979
+ CHAT_PI_       0.979         0.979
+ CHAT_PI_       0.979         0.979         0.979
+ CHAT_PI_       0.979         0.979         0.979         0.979
+ CHAT_PI_       0.979         0.979         0.979         0.979         0.979
+ CHAT_PI_       0.969         0.969         0.969         0.969         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+ CHAT_CO_       0.969         0.969         0.969         0.969         0.969
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979         0.979         0.979
+
+
+           Covariance Coverage
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+ CHAT_PI_       0.969
+ CHAT_CO_       0.969         0.979
+ CHAT_CO_       0.969         0.979         0.979
+ CHAT_CO_       0.969         0.979         0.979         0.979
+ CHAT_CO_       0.958         0.969         0.969         0.969         0.969
+ CHAT_CO_       0.969         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.969         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.969         0.979         0.979         0.979         0.969
+ CHAT_CO_       0.969         0.979         0.979         0.979         0.969
+
+
+           Covariance Coverage
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+ CHAT_CO_       0.979
+ CHAT_CO_       0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979
+ CHAT_CO_       0.979         0.979         0.979         0.979
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                2.918         3.259         3.382         4.579         4.676
+
+
+           Means
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                3.486         3.284         3.735         3.641         3.773
+
+
+           Means
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                3.354         3.365         3.771         3.873         3.434
+
+
+           Means
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                3.917         3.308         3.409         2.545         3.248
+
+
+           Means
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                3.705         3.264         3.126         2.778
+
+
+           Covariances
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+ CHAT_ES_       1.921
+ CHAT_ES_       0.821         1.646
+ CHAT_ES_       0.671         0.473         1.714
+ CHAT_ES_       0.015         0.187         0.164         0.496
+ CHAT_ES_      -0.256        -0.003         0.021         0.220         0.452
+ CHAT_ES_       0.862         0.671         0.831         0.093        -0.008
+ CHAT_ES_       0.016         0.407         0.321        -0.080        -0.055
+ CHAT_ES_       0.278         0.433         0.629         0.153         0.167
+ CHAT_PI_       0.729         0.435         0.465         0.052        -0.084
+ CHAT_PI_       0.664         0.587         0.470         0.132        -0.030
+ CHAT_PI_       0.791         0.165         0.630        -0.068        -0.209
+ CHAT_PI_       0.677         0.512         0.373         0.009        -0.132
+ CHAT_PI_       0.627         0.245         0.562         0.138         0.063
+ CHAT_PI_       0.869         0.465         0.523        -0.018        -0.145
+ CHAT_PI_       0.919         0.455         0.451        -0.045        -0.235
+ CHAT_PI_       0.667         0.293         0.383         0.186         0.016
+ CHAT_CO_       0.870         0.470         0.427         0.091        -0.066
+ CHAT_CO_       0.583         0.298         0.272        -0.036        -0.034
+ CHAT_CO_       0.708         0.398         0.282        -0.052        -0.200
+ CHAT_CO_       0.979         0.427         0.338        -0.045        -0.187
+ CHAT_CO_       0.233         0.245         0.125        -0.039        -0.170
+ CHAT_CO_       0.470         0.192        -0.040        -0.002        -0.050
+ CHAT_CO_       0.813         0.356         0.351        -0.059        -0.189
+ CHAT_CO_       0.729         0.363         0.360        -0.111        -0.123
+
+
+           Covariances
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+ CHAT_ES_       1.433
+ CHAT_ES_       0.238         1.151
+ CHAT_ES_       0.550         0.359         0.978
+ CHAT_PI_       0.573         0.289         0.471         1.680
+ CHAT_PI_       0.509         0.105         0.310         0.832         1.462
+ CHAT_PI_       0.636         0.108         0.196         0.763         0.676
+ CHAT_PI_       0.486         0.231         0.455         0.960         0.708
+ CHAT_PI_       0.705         0.084         0.460         0.478         0.666
+ CHAT_PI_       0.561         0.213         0.362         1.017         0.892
+ CHAT_PI_       0.623         0.190         0.263         0.945         0.846
+ CHAT_PI_       0.436         0.159         0.321         0.618         0.518
+ CHAT_CO_       0.667         0.110         0.379         1.188         0.765
+ CHAT_CO_       0.505         0.177         0.295         0.846         0.550
+ CHAT_CO_       0.488         0.254         0.151         0.787         0.562
+ CHAT_CO_       0.643         0.207         0.227         1.106         0.798
+ CHAT_CO_       0.163        -0.001         0.303         0.418         0.197
+ CHAT_CO_       0.235        -0.013         0.288         0.846         0.420
+ CHAT_CO_       0.700         0.257         0.227         0.819         0.740
+ CHAT_CO_       0.495         0.187         0.221         0.953         0.608
+
+
+           Covariances
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+ CHAT_PI_       1.368
+ CHAT_PI_       0.484         1.609
+ CHAT_PI_       0.491         0.676         1.493
+ CHAT_PI_       0.762         0.818         0.721         1.256
+ CHAT_PI_       0.596         0.881         0.737         0.807         1.520
+ CHAT_PI_       0.506         0.469         0.563         0.540         0.585
+ CHAT_CO_       0.591         1.089         0.644         0.942         0.844
+ CHAT_CO_       0.383         0.720         0.716         0.695         0.765
+ CHAT_CO_       0.491         0.838         0.630         0.646         0.915
+ CHAT_CO_       0.787         1.066         0.666         0.927         1.038
+ CHAT_CO_       0.229         0.637         0.253         0.337         0.287
+ CHAT_CO_       0.266         0.689         0.470         0.612         0.638
+ CHAT_CO_       0.722         0.830         0.735         0.850         0.981
+ CHAT_CO_       0.553         1.089         0.712         0.746         0.958
+
+
+           Covariances
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+ CHAT_PI_       0.984
+ CHAT_CO_       0.710         1.662
+ CHAT_CO_       0.606         0.915         1.318
+ CHAT_CO_       0.503         0.881         0.707         1.640
+ CHAT_CO_       0.630         1.072         0.873         0.963         1.667
+ CHAT_CO_       0.128         0.527         0.458         0.263         0.373
+ CHAT_CO_       0.409         0.917         0.687         0.628         0.739
+ CHAT_CO_       0.485         0.883         0.716         0.803         1.059
+ CHAT_CO_       0.431         0.996         0.714         1.190         1.088
+
+
+           Covariances
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+ CHAT_CO_       1.228
+ CHAT_CO_       0.562         1.375
+ CHAT_CO_       0.199         0.692         1.549
+ CHAT_CO_       0.384         0.787         1.035         1.684
+
+
+           Correlations
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+ CHAT_ES_       1.000
+ CHAT_ES_       0.461         1.000
+ CHAT_ES_       0.370         0.281         1.000
+ CHAT_ES_       0.015         0.206         0.178         1.000
+ CHAT_ES_      -0.275        -0.003         0.024         0.466         1.000
+ CHAT_ES_       0.519         0.437         0.531         0.110        -0.010
+ CHAT_ES_       0.011         0.296         0.229        -0.106        -0.076
+ CHAT_ES_       0.203         0.341         0.486         0.219         0.251
+ CHAT_PI_       0.406         0.262         0.274         0.057        -0.096
+ CHAT_PI_       0.396         0.378         0.297         0.155        -0.037
+ CHAT_PI_       0.488         0.110         0.411        -0.083        -0.266
+ CHAT_PI_       0.385         0.315         0.225         0.010        -0.155
+ CHAT_PI_       0.370         0.156         0.352         0.160         0.077
+ CHAT_PI_       0.559         0.324         0.356        -0.023        -0.192
+ CHAT_PI_       0.538         0.287         0.280        -0.051        -0.284
+ CHAT_PI_       0.485         0.230         0.295         0.266         0.024
+ CHAT_CO_       0.487         0.284         0.253         0.101        -0.076
+ CHAT_CO_       0.366         0.202         0.181        -0.044        -0.044
+ CHAT_CO_       0.399         0.242         0.168        -0.057        -0.232
+ CHAT_CO_       0.547         0.258         0.200        -0.050        -0.215
+ CHAT_CO_       0.152         0.172         0.086        -0.050        -0.228
+ CHAT_CO_       0.289         0.128        -0.026        -0.003        -0.063
+ CHAT_CO_       0.471         0.223         0.215        -0.068        -0.226
+ CHAT_CO_       0.405         0.218         0.212        -0.121        -0.141
+
+
+           Correlations
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+ CHAT_ES_       1.000
+ CHAT_ES_       0.186         1.000
+ CHAT_ES_       0.465         0.338         1.000
+ CHAT_PI_       0.369         0.208         0.368         1.000
+ CHAT_PI_       0.352         0.081         0.259         0.531         1.000
+ CHAT_PI_       0.454         0.086         0.170         0.503         0.478
+ CHAT_PI_       0.320         0.170         0.363         0.584         0.461
+ CHAT_PI_       0.482         0.064         0.381         0.302         0.451
+ CHAT_PI_       0.418         0.177         0.327         0.700         0.659
+ CHAT_PI_       0.422         0.143         0.216         0.591         0.568
+ CHAT_PI_       0.367         0.149         0.327         0.481         0.432
+ CHAT_CO_       0.432         0.080         0.297         0.711         0.491
+ CHAT_CO_       0.367         0.144         0.260         0.569         0.396
+ CHAT_CO_       0.319         0.185         0.119         0.474         0.363
+ CHAT_CO_       0.416         0.150         0.178         0.661         0.511
+ CHAT_CO_       0.123        -0.001         0.276         0.291         0.147
+ CHAT_CO_       0.168        -0.011         0.249         0.557         0.296
+ CHAT_CO_       0.470         0.192         0.185         0.508         0.492
+ CHAT_CO_       0.319         0.134         0.172         0.566         0.387
+
+
+           Correlations
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+ CHAT_PI_       1.000
+ CHAT_PI_       0.326         1.000
+ CHAT_PI_       0.343         0.436         1.000
+ CHAT_PI_       0.581         0.576         0.527         1.000
+ CHAT_PI_       0.414         0.563         0.489         0.584         1.000
+ CHAT_PI_       0.436         0.372         0.464         0.486         0.478
+ CHAT_CO_       0.392         0.666         0.409         0.652         0.531
+ CHAT_CO_       0.285         0.495         0.511         0.540         0.541
+ CHAT_CO_       0.328         0.516         0.403         0.450         0.580
+ CHAT_CO_       0.521         0.651         0.422         0.641         0.652
+ CHAT_CO_       0.177         0.453         0.187         0.271         0.210
+ CHAT_CO_       0.194         0.463         0.328         0.466         0.441
+ CHAT_CO_       0.496         0.526         0.483         0.609         0.639
+ CHAT_CO_       0.365         0.662         0.449         0.513         0.599
+
+
+           Correlations
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+ CHAT_PI_       1.000
+ CHAT_CO_       0.555         1.000
+ CHAT_CO_       0.532         0.618         1.000
+ CHAT_CO_       0.396         0.534         0.481         1.000
+ CHAT_CO_       0.492         0.644         0.589         0.583         1.000
+ CHAT_CO_       0.117         0.369         0.360         0.186         0.261
+ CHAT_CO_       0.352         0.607         0.511         0.418         0.488
+ CHAT_CO_       0.393         0.550         0.501         0.504         0.659
+ CHAT_CO_       0.335         0.595         0.479         0.716         0.649
+
+
+           Correlations
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+ CHAT_CO_       1.000
+ CHAT_CO_       0.433         1.000
+ CHAT_CO_       0.144         0.474         1.000
+ CHAT_CO_       0.267         0.517         0.641         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -2796.564
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     CHAT_ES_1             2.905      -0.187       1.000   25.26%       1.000      2.000      3.000
+              95.000       1.917      -1.421       5.000    9.47%       4.000      4.000
+     CHAT_ES_2             3.255      -0.302       1.000   11.70%       2.000      3.000      3.500
+              94.000       1.637      -1.030       5.000   18.09%       4.000      4.000
+     CHAT_ES_3             3.389      -0.492       1.000   11.58%       2.000      3.000      4.000
+              95.000       1.711      -0.981       5.000   21.05%       4.000      5.000
+     CHAT_ES_4             4.579      -1.726       2.000    2.11%       4.000      5.000      5.000
+              95.000       0.496       2.565       5.000   68.42%       5.000      5.000
+     CHAT_ES_5             4.674      -2.836       1.000    1.05%       4.000      5.000      5.000
+              95.000       0.451      10.114       5.000   74.74%       5.000      5.000
+     CHAT_ES_6             3.495      -0.838       1.000   11.58%       3.000      4.000      4.000
+              95.000       1.429      -0.180       5.000   16.84%       4.000      4.000
+     CHAT_ES_7             3.284      -0.276       1.000    6.32%       2.000      3.000      3.000
+              95.000       1.151      -0.487       5.000   12.63%       4.000      4.000
+     CHAT_ES_8             3.745      -0.859       1.000    4.26%       3.000      4.000      4.000
+              94.000       0.977       0.674       5.000   21.28%       4.000      5.000
+     CHAT_PI_1             3.660      -0.974       1.000   12.77%       2.000      4.000      4.000
+              94.000       1.671      -0.197       5.000   26.60%       4.000      5.000
+     CHAT_PI_2             3.817      -0.972       1.000    7.53%       3.000      4.000      4.000
+              93.000       1.397       0.163       5.000   33.33%       4.000      5.000
+     CHAT_PI_3             3.372      -0.715       1.000   10.64%       2.000      3.000      4.000
+              94.000       1.361      -0.452       5.000   11.70%       4.000      4.000
+     CHAT_PI_4             3.383      -0.431       1.000   10.64%       2.000      3.000      4.000
+              94.000       1.598      -0.854       5.000   21.28%       4.000      5.000
+     CHAT_PI_5             3.787      -0.997       1.000    9.57%       3.000      4.000      4.000
+              94.000       1.487       0.164       5.000   32.98%       4.000      5.000
+     CHAT_PI_6             3.894      -1.170       1.000    6.38%       3.000      4.000      4.000
+              94.000       1.244       0.775       5.000   31.91%       4.000      5.000
+     CHAT_PI_7             3.457      -0.611       1.000   10.64%       2.000      3.000      4.000
+              94.000       1.504      -0.547       5.000   20.21%       4.000      4.000
+     CHAT_PI_8             3.935      -1.124       1.000    3.23%       3.000      4.000      4.000
+              93.000       0.985       1.026       5.000   29.03%       4.000      5.000
+     CHAT_CO_1             3.330      -0.541       1.000   12.77%       2.000      3.000      4.000
+              94.000       1.647      -0.925       5.000   15.96%       4.000      4.000
+     CHAT_CO_2             3.426      -0.542       1.000    7.45%       2.000      3.000      4.000
+              94.000       1.308      -0.532       5.000   15.96%       4.000      4.000
+     CHAT_CO_3             2.564       0.303       1.000   26.60%       1.000      2.000      2.000
+              94.000       1.629      -1.075       5.000    7.45%       3.000      4.000
+     CHAT_CO_4             3.269      -0.540       1.000   15.05%       2.000      3.000      4.000
+              93.000       1.659      -0.918       5.000   13.98%       4.000      4.000
+     CHAT_CO_5             3.713      -0.874       1.000    6.38%       3.000      4.000      4.000
+              94.000       1.226       0.208       5.000   24.47%       4.000      5.000
+     CHAT_CO_6             3.277      -0.629       1.000   11.70%       2.000      3.000      4.000
+              94.000       1.370      -0.613       5.000    9.57%       4.000      4.000
+     CHAT_CO_7             3.149      -0.352       1.000   13.83%       2.000      3.000      3.000
+              94.000       1.531      -0.948       5.000   11.70%       4.000      4.000
+     CHAT_CO_8             2.798      -0.064       1.000   22.34%       1.000      2.000      3.000
+              94.000       1.672      -1.341       5.000    6.38%       3.000      4.000
+
+
+SUMMARY OF MODEL FIT INFORMATION
+
+
+                   Number of                   Degrees of
+     Model        Parameters      Chi-Square    Freedom     P-Value
+
+     1-factor          72            536.388       252       0.0000
+     2-factor          95            427.708       229       0.0000
+     3-factor         117            347.089       207       0.0000
+
+                                               Degrees of
+     Models Compared              Chi-Square    Freedom     P-Value
+
+     1-factor against 2-factor       108.680        23       0.0000
+     2-factor against 3-factor        80.619        22       0.0000
+
+
+
+RESULTS FOR EXPLORATORY FACTOR ANALYSIS
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                9.529         2.258         1.623         1.326         1.076
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                0.984         0.881         0.746         0.680         0.639
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                 11            12            13            14            15
+              ________      ________      ________      ________      ________
+                0.508         0.484         0.440         0.439         0.388
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                 16            17            18            19            20
+              ________      ________      ________      ________      ________
+                0.351         0.315         0.247         0.244         0.218
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                 21            22            23            24
+              ________      ________      ________      ________
+                0.185         0.179         0.149         0.113
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                2.068         1.878         1.732         1.609         1.504
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                1.414         1.334         1.250         1.170         1.093
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                 11            12            13            14            15
+              ________      ________      ________      ________      ________
+                1.026         0.953         0.881         0.826         0.769
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                 16            17            18            19            20
+              ________      ________      ________      ________      ________
+                0.713         0.657         0.608         0.552         0.499
+
+
+           AVERAGE EIGENVALUES FROM PARALLEL ANALYSIS
+                 21            22            23            24
+              ________      ________      ________      ________
+                0.444         0.394         0.342         0.285
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                2.238         2.000         1.822         1.701         1.587
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+                1.491         1.406         1.319         1.238         1.152
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                 11            12            13            14            15
+              ________      ________      ________      ________      ________
+                1.082         1.007         0.932         0.875         0.824
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                 16            17            18            19            20
+              ________      ________      ________      ________      ________
+                0.774         0.704         0.658         0.607         0.543
+
+
+           95 PERCENTILE EIGENVALUES FROM PARALLEL ANALYSIS
+                 21            22            23            24
+              ________      ________      ________      ________
+                0.491         0.443         0.396         0.341
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 1 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       72
+
+Loglikelihood
+
+          H0 Value                       -3064.758
+          H1 Value                       -2796.564
+
+Information Criteria
+
+          Akaike (AIC)                    6273.516
+          Bayesian (BIC)                  6458.149
+          Sample-Size Adjusted BIC        6230.814
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            536.388
+          Degrees of Freedom                   252
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.108
+          90 Percent C.I.                    0.096  0.121
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.753
+          TLI                                0.730
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1429.189
+          Degrees of Freedom                   276
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.091
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.00000
+
+
+
+           QUARTIMIN ROTATED LOADINGS (* significant at 5% level)
+                  1
+              ________
+ CHAT_ES_       0.632*
+ CHAT_ES_       0.383*
+ CHAT_ES_       0.370*
+ CHAT_ES_       0.016
+ CHAT_ES_      -0.190
+ CHAT_ES_       0.557*
+ CHAT_ES_       0.201*
+ CHAT_ES_       0.379*
+ CHAT_PI_       0.788*
+ CHAT_PI_       0.648*
+ CHAT_PI_       0.587*
+ CHAT_PI_       0.749*
+ CHAT_PI_       0.596*
+ CHAT_PI_       0.810*
+ CHAT_PI_       0.772*
+ CHAT_PI_       0.620*
+ CHAT_CO_       0.806*
+ CHAT_CO_       0.699*
+ CHAT_CO_       0.671*
+ CHAT_CO_       0.824*
+ CHAT_CO_       0.361*
+ CHAT_CO_       0.609*
+ CHAT_CO_       0.748*
+ CHAT_CO_       0.745*
+
+
+           QUARTIMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1
+              ________
+      1         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                0.600         0.853         0.863         1.000         0.964
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.690         0.960         0.857         0.379         0.581
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.655         0.439         0.644         0.344         0.405
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                0.615         0.350         0.511         0.550         0.321
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                0.869         0.629         0.441         0.446
+
+
+           S.E. QUARTIMIN ROTATED LOADINGS
+                  1
+              ________
+ CHAT_ES_       0.065
+ CHAT_ES_       0.091
+ CHAT_ES_       0.092
+ CHAT_ES_       0.106
+ CHAT_ES_       0.102
+ CHAT_ES_       0.074
+ CHAT_ES_       0.101
+ CHAT_ES_       0.093
+ CHAT_PI_       0.043
+ CHAT_PI_       0.065
+ CHAT_PI_       0.071
+ CHAT_PI_       0.049
+ CHAT_PI_       0.070
+ CHAT_PI_       0.039
+ CHAT_PI_       0.045
+ CHAT_PI_       0.067
+ CHAT_CO_       0.040
+ CHAT_CO_       0.056
+ CHAT_CO_       0.060
+ CHAT_CO_       0.037
+ CHAT_CO_       0.094
+ CHAT_CO_       0.069
+ CHAT_CO_       0.049
+ CHAT_CO_       0.050
+
+
+           S.E. QUARTIMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                0.082         0.070         0.068         0.003         0.039
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.083         0.041         0.070         0.067         0.084
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.084         0.073         0.084         0.063         0.070
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                0.083         0.064         0.079         0.081         0.060
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                0.068         0.084         0.073         0.074
+
+
+           Est./S.E. QUARTIMIN ROTATED LOADINGS
+                  1
+              ________
+ CHAT_ES_       9.743
+ CHAT_ES_       4.220
+ CHAT_ES_       4.025
+ CHAT_ES_       0.155
+ CHAT_ES_      -1.859
+ CHAT_ES_       7.486
+ CHAT_ES_       1.984
+ CHAT_ES_       4.091
+ CHAT_PI_      18.516
+ CHAT_PI_       9.989
+ CHAT_PI_       8.221
+ CHAT_PI_      15.365
+ CHAT_PI_       8.489
+ CHAT_PI_      20.753
+ CHAT_PI_      17.066
+ CHAT_PI_       9.234
+ CHAT_CO_      20.294
+ CHAT_CO_      12.448
+ CHAT_CO_      11.117
+ CHAT_CO_      22.481
+ CHAT_CO_       3.853
+ CHAT_CO_       8.877
+ CHAT_CO_      15.278
+ CHAT_CO_      14.984
+
+
+           Est./S.E. QUARTIMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                7.316        12.238        12.727       288.664        24.925
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                8.342        23.534        12.215         5.640         6.913
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                7.812         6.005         7.694         5.436         5.799
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                7.375         5.472         6.503         6.782         5.315
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+               12.826         7.523         6.017         6.021
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 2 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       95
+
+Loglikelihood
+
+          H0 Value                       -3010.418
+          H1 Value                       -2796.564
+
+Information Criteria
+
+          Akaike (AIC)                    6210.836
+          Bayesian (BIC)                  6454.449
+          Sample-Size Adjusted BIC        6154.492
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            427.708
+          Degrees of Freedom                   229
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.095
+          90 Percent C.I.                    0.081  0.109
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.828
+          TLI                                0.792
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1429.189
+          Degrees of Freedom                   276
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.068
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.10744
+
+
+
+           QUARTIMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2
+              ________      ________
+ CHAT_ES_       0.469*        0.301*
+ CHAT_ES_       0.149         0.424*
+ CHAT_ES_      -0.025         0.715*
+ CHAT_ES_      -0.230*        0.428*
+ CHAT_ES_      -0.371*        0.313*
+ CHAT_ES_       0.227         0.606*
+ CHAT_ES_       0.077         0.226
+ CHAT_ES_       0.030         0.632*
+ CHAT_PI_       0.735*        0.102
+ CHAT_PI_       0.500*        0.268*
+ CHAT_PI_       0.447*        0.258
+ CHAT_PI_       0.753*        0.009
+ CHAT_PI_       0.410*        0.347*
+ CHAT_PI_       0.688*        0.221*
+ CHAT_PI_       0.748*        0.057
+ CHAT_PI_       0.445*        0.316*
+ CHAT_CO_       0.765*        0.083
+ CHAT_CO_       0.681*        0.043
+ CHAT_CO_       0.749*       -0.113
+ CHAT_CO_       0.861*       -0.045
+ CHAT_CO_       0.392*       -0.047
+ CHAT_CO_       0.719*       -0.182
+ CHAT_CO_       0.746*        0.022
+ CHAT_CO_       0.842*       -0.144
+
+
+           QUARTIMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2
+              ________      ________
+      1         1.000
+      2         0.437*        1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                0.567         0.743         0.503         0.850         0.866
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.460         0.927         0.582         0.384         0.561
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.633         0.426         0.588         0.344         0.400
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                0.579         0.352         0.509         0.500         0.290
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                0.860         0.565         0.428         0.376
+
+
+           S.E. QUARTIMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ CHAT_ES_       0.113         0.128
+ CHAT_ES_       0.120         0.117
+ CHAT_ES_       0.100         0.100
+ CHAT_ES_       0.108         0.128
+ CHAT_ES_       0.112         0.145
+ CHAT_ES_       0.125         0.113
+ CHAT_ES_       0.122         0.130
+ CHAT_ES_       0.096         0.104
+ CHAT_PI_       0.065         0.088
+ CHAT_PI_       0.100         0.114
+ CHAT_PI_       0.116         0.136
+ CHAT_PI_       0.064         0.086
+ CHAT_PI_       0.108         0.111
+ CHAT_PI_       0.077         0.096
+ CHAT_PI_       0.068         0.094
+ CHAT_PI_       0.105         0.115
+ CHAT_CO_       0.061         0.085
+ CHAT_CO_       0.075         0.098
+ CHAT_CO_       0.069         0.093
+ CHAT_CO_       0.049         0.077
+ CHAT_CO_       0.113         0.132
+ CHAT_CO_       0.085         0.111
+ CHAT_CO_       0.069         0.097
+ CHAT_CO_       0.055         0.077
+
+
+           S.E. QUARTIMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         0.094         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                0.083         0.088         0.110         0.095         0.090
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.092         0.057         0.115         0.068         0.085
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.086         0.072         0.085         0.063         0.069
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                0.085         0.064         0.079         0.081         0.058
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                0.071         0.091         0.073         0.072
+
+
+           Est./S.E. QUARTIMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ CHAT_ES_       4.141         2.352
+ CHAT_ES_       1.243         3.614
+ CHAT_ES_      -0.254         7.186
+ CHAT_ES_      -2.116         3.340
+ CHAT_ES_      -3.318         2.162
+ CHAT_ES_       1.823         5.390
+ CHAT_ES_       0.632         1.742
+ CHAT_ES_       0.317         6.056
+ CHAT_PI_      11.249         1.161
+ CHAT_PI_       4.993         2.358
+ CHAT_PI_       3.866         1.897
+ CHAT_PI_      11.838         0.109
+ CHAT_PI_       3.807         3.117
+ CHAT_PI_       8.930         2.310
+ CHAT_PI_      11.036         0.609
+ CHAT_PI_       4.227         2.757
+ CHAT_CO_      12.473         0.980
+ CHAT_CO_       9.049         0.434
+ CHAT_CO_      10.932        -1.223
+ CHAT_CO_      17.513        -0.591
+ CHAT_CO_       3.481        -0.358
+ CHAT_CO_       8.447        -1.642
+ CHAT_CO_      10.831         0.225
+ CHAT_CO_      15.357        -1.874
+
+
+           Est./S.E. QUARTIMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         4.655         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                6.792         8.424         4.588         8.988         9.592
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                5.011        16.314         5.058         5.688         6.622
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                7.353         5.884         6.903         5.455         5.757
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                6.828         5.473         6.475         6.166         4.987
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+               12.158         6.224         5.894         5.256
+
+
+           FACTOR STRUCTURE
+                  1             2
+              ________      ________
+ CHAT_ES_       0.600         0.506
+ CHAT_ES_       0.334         0.489
+ CHAT_ES_       0.288         0.704
+ CHAT_ES_      -0.043         0.327
+ CHAT_ES_      -0.234         0.151
+ CHAT_ES_       0.492         0.706
+ CHAT_ES_       0.176         0.260
+ CHAT_ES_       0.307         0.646
+ CHAT_PI_       0.779         0.423
+ CHAT_PI_       0.617         0.487
+ CHAT_PI_       0.560         0.453
+ CHAT_PI_       0.757         0.339
+ CHAT_PI_       0.561         0.526
+ CHAT_PI_       0.785         0.522
+ CHAT_PI_       0.773         0.384
+ CHAT_PI_       0.583         0.511
+ CHAT_CO_       0.801         0.417
+ CHAT_CO_       0.700         0.340
+ CHAT_CO_       0.699         0.214
+ CHAT_CO_       0.842         0.331
+ CHAT_CO_       0.372         0.124
+ CHAT_CO_       0.639         0.132
+ CHAT_CO_       0.756         0.348
+ CHAT_CO_       0.779         0.224
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 3 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                      117
+
+Loglikelihood
+
+          H0 Value                       -2970.108
+          H1 Value                       -2796.564
+
+Information Criteria
+
+          Akaike (AIC)                    6174.217
+          Bayesian (BIC)                  6474.246
+          Sample-Size Adjusted BIC        6104.826
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            347.089
+          Degrees of Freedom                   207
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.084
+          90 Percent C.I.                    0.068  0.099
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.879
+          TLI                                0.838
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1429.189
+          Degrees of Freedom                   276
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.053
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.26598
+
+
+
+           QUARTIMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+ CHAT_ES_       0.472*        0.293*       -0.215
+ CHAT_ES_       0.399*        0.153         0.138
+ CHAT_ES_       0.769*       -0.106         0.110
+ CHAT_ES_       0.203        -0.017         0.520*
+ CHAT_ES_       0.016        -0.079         0.650*
+ CHAT_ES_       0.680*        0.133         0.045
+ CHAT_ES_       0.248         0.044         0.025
+ CHAT_ES_       0.453*        0.192*        0.490*
+ CHAT_PI_       0.103         0.751*        0.055
+ CHAT_PI_       0.334*        0.432*       -0.019
+ CHAT_PI_       0.495*        0.215        -0.303*
+ CHAT_PI_       0.015         0.765*        0.034
+ CHAT_PI_       0.349*        0.401*        0.117
+ CHAT_PI_       0.314*        0.600*       -0.089
+ CHAT_PI_       0.215         0.601*       -0.222*
+ CHAT_PI_       0.296*        0.464*        0.133
+ CHAT_CO_       0.031         0.837*        0.124
+ CHAT_CO_       0.008         0.728*        0.082
+ CHAT_CO_       0.011         0.645*       -0.182
+ CHAT_CO_       0.102         0.736*       -0.205*
+ CHAT_CO_      -0.136         0.490*        0.108
+ CHAT_CO_      -0.301*        0.864*        0.139
+ CHAT_CO_       0.193         0.592*       -0.241*
+ CHAT_CO_      -0.035         0.761*       -0.145
+
+
+           QUARTIMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2             3
+              ________      ________      ________
+      1         1.000
+      2         0.477*        1.000
+      3        -0.029        -0.146         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                0.489         0.750         0.465         0.695         0.557
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.435         0.926         0.475         0.361         0.561
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.488         0.409         0.586         0.338         0.378
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                0.569         0.289         0.475         0.509         0.288
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                0.808         0.425         0.402         0.392
+
+
+           S.E. QUARTIMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ CHAT_ES_       0.133         0.140         0.120
+ CHAT_ES_       0.133         0.128         0.131
+ CHAT_ES_       0.076         0.068         0.118
+ CHAT_ES_       0.150         0.107         0.138
+ CHAT_ES_       0.137         0.100         0.124
+ CHAT_ES_       0.099         0.121         0.116
+ CHAT_ES_       0.133         0.130         0.141
+ CHAT_ES_       0.176         0.094         0.146
+ CHAT_PI_       0.093         0.072         0.080
+ CHAT_PI_       0.126         0.124         0.121
+ CHAT_PI_       0.143         0.136         0.125
+ CHAT_PI_       0.091         0.071         0.087
+ CHAT_PI_       0.126         0.118         0.122
+ CHAT_PI_       0.111         0.107         0.096
+ CHAT_PI_       0.114         0.112         0.099
+ CHAT_PI_       0.126         0.113         0.119
+ CHAT_CO_       0.082         0.057         0.066
+ CHAT_CO_       0.100         0.076         0.085
+ CHAT_CO_       0.106         0.095         0.098
+ CHAT_CO_       0.102         0.088         0.084
+ CHAT_CO_       0.128         0.115         0.145
+ CHAT_CO_       0.085         0.064         0.095
+ CHAT_CO_       0.119         0.114         0.102
+ CHAT_CO_       0.090         0.077         0.089
+
+
+           S.E. QUARTIMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         0.089         0.000
+      3         0.114         0.141         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                0.084         0.086         0.099         0.132         0.153
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.086         0.057         0.128         0.066         0.085
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                0.093         0.073         0.085         0.063         0.068
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                0.085         0.060         0.078         0.080         0.058
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                0.087         0.088         0.072         0.071
+
+
+           Est./S.E. QUARTIMIN ROTATED LOADINGS
+                  1             2             3
+              ________      ________      ________
+ CHAT_ES_       3.558         2.092        -1.787
+ CHAT_ES_       3.011         1.197         1.055
+ CHAT_ES_      10.060        -1.554         0.932
+ CHAT_ES_       1.354        -0.155         3.780
+ CHAT_ES_       0.117        -0.794         5.228
+ CHAT_ES_       6.869         1.098         0.390
+ CHAT_ES_       1.869         0.339         0.174
+ CHAT_ES_       2.572         2.045         3.347
+ CHAT_PI_       1.103        10.457         0.686
+ CHAT_PI_       2.645         3.498        -0.160
+ CHAT_PI_       3.458         1.582        -2.423
+ CHAT_PI_       0.169        10.765         0.387
+ CHAT_PI_       2.778         3.397         0.959
+ CHAT_PI_       2.824         5.579        -0.930
+ CHAT_PI_       1.882         5.364        -2.238
+ CHAT_PI_       2.343         4.105         1.116
+ CHAT_CO_       0.377        14.588         1.860
+ CHAT_CO_       0.083         9.518         0.956
+ CHAT_CO_       0.107         6.814        -1.855
+ CHAT_CO_       1.001         8.348        -2.442
+ CHAT_CO_      -1.065         4.261         0.744
+ CHAT_CO_      -3.545        13.594         1.461
+ CHAT_CO_       1.612         5.170        -2.364
+ CHAT_CO_      -0.382         9.854        -1.640
+
+
+           Est./S.E. QUARTIMIN FACTOR CORRELATIONS
+                  1             2             3
+              ________      ________      ________
+      1         0.000
+      2         5.371         0.000
+      3        -0.258        -1.034         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_ES_
+              ________      ________      ________      ________      ________
+                5.795         8.693         4.692         5.263         3.639
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_ES_      CHAT_ES_      CHAT_ES_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                5.067        16.116         3.723         5.472         6.641
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_      CHAT_PI_
+              ________      ________      ________      ________      ________
+                5.243         5.640         6.911         5.398         5.520
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_PI_      CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________      ________
+                6.702         4.804         6.081         6.333         5.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              CHAT_CO_      CHAT_CO_      CHAT_CO_      CHAT_CO_
+              ________      ________      ________      ________
+                9.335         4.844         5.588         5.506
+
+
+           FACTOR STRUCTURE
+                  1             2             3
+              ________      ________      ________
+ CHAT_ES_       0.618         0.550        -0.272
+ CHAT_ES_       0.468         0.323         0.104
+ CHAT_ES_       0.715         0.245         0.103
+ CHAT_ES_       0.179         0.004         0.517
+ CHAT_ES_      -0.041        -0.166         0.661
+ CHAT_ES_       0.742         0.451         0.006
+ CHAT_ES_       0.268         0.159         0.011
+ CHAT_ES_       0.530         0.337         0.448
+ CHAT_PI_       0.459         0.792        -0.058
+ CHAT_PI_       0.540         0.594        -0.092
+ CHAT_PI_       0.606         0.495        -0.348
+ CHAT_PI_       0.379         0.768        -0.078
+ CHAT_PI_       0.537         0.551         0.048
+ CHAT_PI_       0.602         0.762        -0.186
+ CHAT_PI_       0.509         0.736        -0.316
+ CHAT_PI_       0.513         0.586         0.057
+ CHAT_CO_       0.426         0.833         0.001
+ CHAT_CO_       0.353         0.720        -0.025
+ CHAT_CO_       0.324         0.677        -0.277
+ CHAT_CO_       0.459         0.815        -0.315
+ CHAT_CO_       0.094         0.410         0.041
+ CHAT_CO_       0.106         0.700         0.022
+ CHAT_CO_       0.482         0.719        -0.333
+ CHAT_CO_       0.332         0.765        -0.255
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Eigenvalues for exploratory factor analysis
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for EFA.
+  No diagram output was produced.
+
+
+     Beginning Time:  20:40:55
+        Ending Time:  20:40:56
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2025 Muthen & Muthen
