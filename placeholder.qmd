@@ -153,6 +153,164 @@ largest <- major %>%
 
 Individual scale alphas are presented in @tbl-alphas
 
+```{r efa-network}
+library(tidygraph)
+library(ggraph)
+
+## EFA loading network: items link to factors with |loading| >= cutoff;
+## edge width/opacity = |loading|, dashed = negative, node colour = intended subscale
+efa_network <- function(items, nfactors = 3, cutoff = .30, title = NULL, seed = 2026,
+                        factor_prefix = NULL) {
+  efa <- psych::fa(items, nfactors = nfactors, fm = "ml", rotate = "oblimin")  # oblimin (gamma = 0) = Mplus quartimin
+  L <- unclass(efa$loadings)
+  if (!is.null(factor_prefix)) colnames(L) <- paste0(factor_prefix, seq_len(ncol(L)))
+  factors <- colnames(L)
+
+  edges <- as.data.frame(as.table(L), stringsAsFactors = FALSE) |>
+    setNames(c("from", "to", "loading")) |>
+    dplyr::filter(abs(loading) >= cutoff) |>
+    dplyr::mutate(strength = abs(loading),
+                  sign = ifelse(loading < 0, "Negative", "Positive"))
+
+  subscale <- dplyr::case_when(
+    grepl("_(ES|EF)_", rownames(L)) ~ "Efficiency Seeking",
+    grepl("_PI_", rownames(L))      ~ "Pragmatic Integrator",
+    grepl("_CO_", rownames(L))      ~ "Collaborative Optimiser"
+  )
+  nodes <- rbind(
+    data.frame(name = factors, type = "factor", Subscale = NA),
+    data.frame(name = rownames(L), type = "item", Subscale = subscale)
+  )
+  nodes$Subscale <- factor(nodes$Subscale,
+                           levels = c("Efficiency Seeking", "Pragmatic Integrator", "Collaborative Optimiser"))
+
+  g <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
+
+  set.seed(seed)
+  lay <- if (nfactors == 1) create_layout(g, layout = "star", center = 1) else create_layout(g, layout = "stress")  # star keeps 1-factor spokes from overlapping
+  ggraph(lay) +
+    geom_edge_link(aes(edge_width = strength, edge_alpha = strength, edge_linetype = sign),
+                   colour = "grey55") +
+    geom_node_point(data = \(d) dplyr::filter(d, type == "factor"),
+                    colour = "grey80", size = 7) +
+    geom_node_point(data = \(d) dplyr::filter(d, type == "item"),
+                    aes(colour = Subscale), size = 5) +
+    geom_node_text(aes(label = name), size = 3, repel = TRUE) +
+    scale_edge_width(range = c(0.3, 2.5), limits = c(cutoff, 1), name = "|Loading|") +
+    scale_edge_alpha(range = c(0.3, 1), limits = c(cutoff, 1), guide = "none") +
+    scale_edge_linetype_manual(values = c(Positive = "solid", Negative = "dashed"),
+                               name = "Direction") +
+    scale_colour_brewer(palette = "Set2", drop = FALSE) +
+    labs(title = title, colour = "Subscale") +
+    theme_graph(base_family = "sans") +
+    theme(legend.position = "bottom", legend.box = "vertical",
+          plot.title = element_text(size = 14, face = "plain"))
+}
+```
+
+```{r}
+#| label: fig-net-gpt
+#| fig-cap: EFA loading network, ChatGPT-generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[20:43], title = "ChatGPT Items")
+```
+
+```{r}
+#| label: fig-net-sme
+#| fig-cap: EFA loading network, expert-generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[44:64], title = "Expert-Generated Items")
+```
+
+```{r}
+#| label: fig-net-genie
+#| fig-cap: EFA loading network, AI-GENIE-generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[65:85], title = "AI-GENIE Items")
+```
+
+```{r}
+#| label: fig-net2-gpt
+#| fig-cap: EFA loading network, ChatGPT-generated items (2 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[20:43], nfactors = 2, factor_prefix = "factor", title = "ChatGPT Items (2 factors)")
+```
+
+```{r}
+#| label: fig-net2-sme
+#| fig-cap: EFA loading network, expert-generated items (2 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[44:64], nfactors = 2, factor_prefix = "factor", title = "Expert-Generated Items (2 factors)")
+```
+
+```{r}
+#| label: fig-net2-genie
+#| fig-cap: EFA loading network, AI-GENIE-generated items (2 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[65:85], nfactors = 2, factor_prefix = "factor", title = "AI-GENIE Items (2 factors)")
+```
+
+```{r}
+#| label: fig-net1-gpt
+#| fig-cap: EFA loading network, ChatGPT-generated items (1 factor, ML; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[20:43], nfactors = 1, factor_prefix = "factor", title = "ChatGPT Items (1 factor)")
+```
+
+```{r}
+#| label: fig-net1-sme
+#| fig-cap: EFA loading network, expert-generated items (1 factor, ML; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[44:64], nfactors = 1, factor_prefix = "factor", title = "Expert-Generated Items (1 factor)")
+```
+
+```{r}
+#| label: fig-net1-genie
+#| fig-cap: EFA loading network, AI-GENIE-generated items (1 factor, ML; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[65:85], nfactors = 1, factor_prefix = "factor", title = "AI-GENIE Items (1 factor)")
+```
+
+```{r}
+#| label: fig-ega
+#| fig-cap: Exploratory Graph Analysis (EBICglasso network, Walktrap community detection)
+#| fig-subcap:
+#|   - ChatGPT-generated items
+#|   - Expert-generated items
+#|   - AI-GENIE-generated items
+#| fig-width: 8
+#| fig-height: 8
+
+if (!requireNamespace("EGAnet", quietly = TRUE)) install.packages("EGAnet")
+library(EGAnet)
+
+ega_gpt   <- EGA(data[20:43], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+ega_sme   <- EGA(data[44:64], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+ega_genie <- EGA(data[65:85], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+
+plot(ega_gpt)   + ggplot2::labs(title = "ChatGPT Items")
+plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
+plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
+```
+
 Appendix A
 Expert-generated Items
 Efficiency Seeking Items
