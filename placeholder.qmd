@@ -158,7 +158,7 @@ library(tidygraph)
 library(ggraph)
 
 ## EFA loading network: items link to factors with |loading| >= cutoff;
-## edge width/opacity = |loading|, dashed = negative, node colour = intended subscale
+## edge width/opacity = |loading|, red = negative, node colour = intended subscale
 efa_network <- function(items, nfactors = 3, cutoff = .30, title = NULL, seed = 2026,
                         factor_prefix = NULL) {
   efa <- psych::fa(items, nfactors = nfactors, fm = "ml", rotate = "oblimin")  # oblimin (gamma = 0) = Mplus quartimin
@@ -189,8 +189,7 @@ efa_network <- function(items, nfactors = 3, cutoff = .30, title = NULL, seed = 
   set.seed(seed)
   lay <- if (nfactors == 1) create_layout(g, layout = "star", center = 1) else create_layout(g, layout = "stress")  # star keeps 1-factor spokes from overlapping
   ggraph(lay) +
-    geom_edge_link(aes(edge_width = strength, edge_alpha = strength, edge_linetype = sign),
-                   colour = "grey55") +
+    geom_edge_link(aes(edge_width = strength, edge_alpha = strength, edge_colour = sign)) +
     geom_node_point(data = \(d) dplyr::filter(d, type == "factor"),
                     colour = "grey80", size = 7) +
     geom_node_point(data = \(d) dplyr::filter(d, type == "item"),
@@ -198,8 +197,8 @@ efa_network <- function(items, nfactors = 3, cutoff = .30, title = NULL, seed = 
     geom_node_text(aes(label = name), size = 3, repel = TRUE) +
     scale_edge_width(range = c(0.3, 2.5), limits = c(cutoff, 1), name = "|Loading|") +
     scale_edge_alpha(range = c(0.3, 1), limits = c(cutoff, 1), guide = "none") +
-    scale_edge_linetype_manual(values = c(Positive = "solid", Negative = "dashed"),
-                               name = "Direction") +
+    scale_edge_colour_manual(values = c(Positive = "grey55", Negative = "red"),
+                             name = "Direction") +
     scale_colour_brewer(palette = "Set2", drop = FALSE) +
     labs(title = title, colour = "Subscale") +
     theme_graph(base_family = "sans") +
@@ -310,6 +309,10 @@ plot(ega_gpt)   + ggplot2::labs(title = "ChatGPT Items")
 plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
 plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
 ```
+
+Each figure shows the results of an exploratory factor analysis as a network: maximum likelihood estimation with an oblimin rotation for the 2- and 3-factor solutions (the 1-factor solution has nothing to rotate). The large grey nodes are the extracted factors. The smaller coloured nodes are the survey items, and their colour shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. Items with no strong loading are shown unconnected. If the items worked as intended, each factor would be surrounded by a cluster of items of a single colour, and each item would connect to only one factor. Factors that collect items of mixed colours, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up. Comparing the 3-, 2- and 1-factor versions shows whether a simpler structure describes the item pool better.
+
+On the other hand, the EGAs do not specify factors in advance. Instead they estimates a network directly among the items. Each line is a regularized partial correlation (EBICglasso), meaning the relationship between two items after controlling for all the other items. Thicker lines are stronger associations, and the line colour shows whether the association is positive or negative. Weak relationships are shrunk to zero and dropped. The Walktrap algorithm then detects communities: groups of items that are more tightly connected to each other than to the rest of the network. Unlike in the EFA plots, the node colours here mark these empirically detected communities, not the intended subscales. The number of communities is the EGA estimate of the dimensionality of each item set. 
 
 Appendix A
 Expert-generated Items
