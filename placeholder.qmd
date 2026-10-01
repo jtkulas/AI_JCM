@@ -311,6 +311,10 @@ plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
 plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
 ```
 
+Each figure shows the results of an exploratory factor analysis as a network: maximum likelihood estimation with an oblimin rotation for the 2- and 3-factor solutions (the 1-factor solution has nothing to rotate). The large grey nodes are the extracted factors. The smaller coloured nodes are the survey items, and their colour shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. Items with no strong loading are shown unconnected. If the items worked as intended, each factor would be surrounded by a cluster of items of a single colour, and each item would connect to only one factor. Factors that collect items of mixed colours, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up. Comparing the 3-, 2- and 1-factor versions shows whether a simpler structure describes the item pool better.
+
+On the other hand, the EGAs do not specify factors in advance. Instead they estimates a network directly among the items. Each line is a regularized partial correlation (EBICglasso), meaning the relationship between two items after controlling for all the other items. Thicker lines are stronger associations, and the line colour shows whether the association is positive or negative. Weak relationships are shrunk to zero and dropped. The Walktrap algorithm then detects communities: groups of items that are more tightly connected to each other than to the rest of the network. Unlike in the EFA plots, the node colours here mark these empirically detected communities, not the intended subscales. The number of communities is the EGA estimate of the dimensionality of each item set. 
+
 Appendix A
 Expert-generated Items
 Efficiency Seeking Items
@@ -542,4 +546,106 @@ Collaborative Optimizer Items
 20.	I rely on AI to maintain reliable exchanges, much like a seasoned confidant in complex discussions.
 21.	AI excels in dissecting multifaceted problems, enhancing our collaborative depth.
 
+# Cut
+
+Cut from SIOP paper but to be incorporated into broader JCM paper:
+
+# Notes from Alicia (7/23/26) {#apx-a}
+
+Growth Need Strength (GNS)
+
+“As noted earlier, there is now substantial evidence that differences
+among people moderate how they react to their work, and individual need
+strength appears to be a useful way to conceptualize and measure such
+differences. The basic prediction is that people who have high need for
+personal growth and development will respond more positively to a job
+high in motivating potential than people with low growth need strength.”
+[@hackman1976motivation, p. 258]
+
+Options for measurement:
+
+Job Diagnostic Survey (JDS) Growth Need Strength Scales,
+@hackman1975development
+
+1.  “Job Choice” GNS Scale\
+
+-   Respondents choose between pairs of hypothetical jobs.\
+-   Measures preference for challenging, growth-oriented work versus
+    comfort, security, or other job features.\
+-   I have the original article, but not the items themselves for the
+    job choice measure– these two scales seem to first be described
+    here: \<https://werkwelzijnenmotivatie.wordpress.
+    com/wp-content/uploads/2020/05/hackman-oldham-1975.pdf\>
+
+2.  “Would-Like” GNS Scale\
+
+-   Respondents indicate how much challenge, responsibility, learning,
+    autonomy, and growth they would like in a job, rated from 1 (not at
+    all) to 5 (very much). I think these are the items themselves,
+    although these (1975?) differ from the original in the 1974 tech
+    report. I will attach the tech report– see the scoring key for which
+    items in the appendix are to be summed for the GNS measure there.
+
+“Considering all the things that are personally important to you in your
+work, how important is it to you to have…”
+
+1.  ‘stimulating and challenging work’,\
+2.  ‘creative and imaginative work’,\
+3.  ‘a chance to exercise independent thought and action’,\
+4.  ‘opportunities to learn new things’,\
+5.  ‘opportunities for achievement’, and\
+6.  ‘opportunities for personal growth and development’.
+
+Higher-Order Need Strength (HONS) Measures, @hackman1971employee This
+appears to be prior to GNS: higher-order need strength, reflecting
+desires for:
+
+-   Achievement\
+-   Challenge\
+-   Responsibility\
+-   Personal accomplishment
+
+# Another Appendix {#apx-b}
+
+```{mermaid}
+%%| eval: false
+%%| label: fig-aijcm
+%%| fig-cap: "Working Draft Model: Revisiting JCM in the age of AI"
+flowchart LR
+  %% Define nodes with multi-line text
+  CJD["Core Job Dimensions<br/>• Skill Variety<br/>• Task Identity<br/>• Task significance<br/>• Autonomy<br/>• Feedback"]
+  CPS["Critical Psychological States<br/>• Meaningfulness<br/>• Experienced responsibility of work outcomes<br/>• Knowledge of results?"]
+  Out["Internal Motivation<br/>Work Performance<br/>Job Satisfaction<br/>Low Turnover<br/>Satisfaction"]
+  JC["Job Crafting"]
+  GNS["Growth Needs Strength<br/>Type of AI Adopter<br/>• Efficiency-seeking<br/>• Pragmatic Integrator<br/>• Collaborative Optimizer"]
+
+  CJD --> CPS --> Out
+  GNS -.-> CPS
+  GNS -.-> Out
+  JC --> Out
+
+  %% etc. – adjust links and direction as needed
+```
+
+## Plan
+
+Current plan:
+
+-   Develop AI adopter scale for SIOP (ChatGPT vs AI Genie vs hoomans)\
+
+-   include "best" scale in larger model testing submission for Academy
+    of Management (December--ish deadline)
+
+-   Problem Statement/Attention Grabbing Paragraph + Purpose\
+
+-   History of JCM
+
+-   How AI May Reshape Employee Experience
+
+    -   Present overview of current research on this topic as it
+        applies\
+    -   Job Crafting as an Outcome
+        -   H1:\
+    -   New Moderator in JCM Model: Type of AI Adopter
+        -   H2:
 
