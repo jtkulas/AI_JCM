@@ -193,17 +193,15 @@ names(major)[3] <- "Percent"
 
 major$`Total (n)` <- as.integer(major$`Total (n)`)
 
-major|>
-  flextable() |>
-  theme_apa() |>
-  width(width = c(4, 2, 2)) |>
-  align(align="left", part="all")
+#major|>                            ## Nice table (hidden from SIOP render)
+#  flextable() |>
+#  theme_apa() |>
+#  width(width = c(4, 2, 2)) |>
+#  align(align="left", part="all")
 
-largest <- major %>%
-  arrange(`Total (n)`)
+#largest <- major %>%
+#  arrange(`Total (n)`)
 
-#most <- largest[nrow(largest),1]
-#freq <- largest[nrow(largest),3]
   
 ```
 
@@ -273,7 +271,7 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
 
 ## Participants
 
-`r nrow(data)` undergraduate students responded (Mean age = `r round(mean(data$Q55, na.rm=TRUE),2)`, SD = `r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the choice of 50 different majors to choose from, with the greatest representation being `r largest[nrow(largest),1]` at `r round(largest[nrow(largest),3],2)`% (see @tbl-majors). When asked, "Which context did you have in mind as you responded to the statements in this survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school", `r round((referent[4]/nrow(data))*100,2)`% indicated "work", and `r round((referent[2]/nrow(data))*100,2)`% stated "other". 
+`r nrow(data)` undergraduate students responded (Mean age = `r round(mean(data$Q55, na.rm=TRUE),2)`, SD = `r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the choice of 50 different majors to choose from, with the greatest representation being `r largest[nrow(largest),1]` at `r round(largest[nrow(largest),3],2)`%, with a second largest group of `r largest[(nrow(largest)-1),1]` at `r round(largest[(nrow(largest)-1),3],2)`%. When asked, "Which context did you have in mind as you responded to the statements in this survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school", `r round((referent[4]/nrow(data))*100,2)`% indicated "work", and `r round((referent[2]/nrow(data))*100,2)`% stated "other". 
 
 ## Materials
 
