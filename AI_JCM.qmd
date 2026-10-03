@@ -114,7 +114,7 @@ data <- data[data$missing < 25,]
 ################### ALPHAs
 ## Chat GPT
 
-es_gpt_alpha <- psych::alpha(data[20:27])    ## ES
+es_gpt_alpha <- psych::alpha(data[20:27], warnings=FALSE)    ## ES
 pi_gpt_alpha <- psych::alpha(data[28:35])    ## PI
 co_gpt_alpha <- psych::alpha(data[36:43])    ## CO
 
@@ -260,7 +260,7 @@ r <- corx::corx(corr_vars,
 
 papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
                   landscape = TRUE,      ## doesn't work
-#                  note="* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  note="* p < 0.05; ** p < 0.01; *** p < 0.001",
                   escape = FALSE,
                   font_size = 'scriptsize')             ## this may not work if knit to Word
 
@@ -293,11 +293,11 @@ After consent, students were asked to think of the context where they use AI the
 
 # Results
 
-## Traditional Investigation
+## Traditional Lens
 
-Inter--scale correlations as well as scale means and standard deviations are presented in @tbl-corrs (note that the sequence of scale orderings is informed by @campbell1959convergent). Here, the Efficiency Seeking scales exhibit the least intra--dimension agreement (correlations across development methodologies ranging from $r_{GPT-SME}$ = .14, ns to $r_{GPT-Genie}$ = .51, *p* < .001). Pragmatic Integrator and Collaborative Optimiser scales exhibited consistently higher associations (ranging from a low of $r_{Genie(CO)-SME(CO)}$ = .76, *p* < .001 to a high of $r_{Genie(PI)-SME(PI)}$ = .84, *p* < .001). Discrimination across scale dimensions was highest for the Efficiency Seeking scales, particularly so for the ChatGPT developed scale (and to a lesser degree, the SME--derived scale). 
+Inter--scale correlations as well as scale means and standard deviations are presented in @tbl-corrs [note that the sequence of scale orderings is informed by @campbell1959convergent]. Here, the Efficiency Seeking scales exhibit the least intra--dimension agreement (correlations across development methodologies ranging from $r_{GPT-SME}$ = .14, ns to $r_{GPT-Genie}$ = .51, *p* < .001). Pragmatic Integrator and Collaborative Optimiser scales exhibited consistently higher intra--dimension associations (ranging from a low of $r_{Genie(CO)-SME(CO)}$ = .76, *p* < .001 to a high of $r_{Genie(PI)-SME(PI)}$ = .84, *p* < .001). *Lack* of association with "other" scale dimensions was most prominent with the Efficiency Seeking scales, particularly so for the ChatGPT developed scale (and to a lesser degree, the SME--derived scale; e.g., the average magnitude of correlation was *smallest*). 
 
-Individual scale alphas were predominantly within the .8 to .9 range, although two scales exhibited suppressed values (the ChatGPT Efficiency Seeking scale $\alpha$ = .69 the SME Efficiency Seeking scale $\alpha$ = .59). Note that: 1) these are the two scales that also exhibited the lowest average inter--scale associations (see @tbl-corrs), and 2) the numbers of items differed across scales (*k*'s = 6, 7, and 8). All $\alpha$'s are presented in @tbl-alphas
+Individual scale alphas were predominantly within the .8 to .9 range, although two scales exhibited suppressed values (the ChatGPT Efficiency Seeking scale $\alpha$ = .69 and the SME Efficiency Seeking scale $\alpha$ = .59). Note that: 1) these are the two scales that also exhibited the lowest average inter--scale associations (see @tbl-corrs), and 2) the numbers of items differed across scales (*k~ChatGPT~* = 6, *k~SME~* = 7, and *k~AI--Genie~* = 8). All scale $\alpha$'s are presented in @tbl-alphas
 
 ```{r efa-network}
 library(tidygraph)
@@ -381,21 +381,20 @@ efa_network(data[44:64], title = "Expert--Generated Items")
 efa_network(data[65:85], title = "AI--GENIE Items")
 ```
 
-Exploratory factor analyses (EFAs) were also conducted separately for each of the three item sets. One--, two--, and three--factor solutions were estimated for each item set using maximum likelihood estimation and an oblique Quartimin rotation. Following @hu1999cutoff's guidelines, model fit was evaluated using multiple indicators. 
+Exploratory factor analyses (EFAs) were also conducted. One--, two--, and three--factor solutions were estimated for each item set using maximum likelihood estimation and an oblique Quartimin rotation. Following @hu1999cutoff's guidelines, model fit was evaluated using multiple indicators. The results presented here focus only on the three--factor models.
 
-The three-factor solution for the AI-GENIE-generated items demonstrated substantially better fit compared to the one- and two-factor models, χ²(150) = 207.64, *p* = .001, RMSEA = .064, 90% CI \[.041, .084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial evidence of a three-factor structure, albeit with several non--hypothesized associations and substantive cross--loadings (see @fig-net-genie for a visual representation)^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their color shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single color, and each item would connect to only one factor. Factors that collect items of mixed colors, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]. Factors 1 and 2 exhibited a significant correlation (r = .76, *p* \< .05), whereas the correlations of Factor 3 with Factors 1 (*r* = .30) and 2 (*r* = .29) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.
+The three-factor model for the ChatGPT-Generated items returned the weakest structural evidence (χ²(207) = 347.09, *p* \< .001, RMSEA = .084, 90% CI \[.068, .099\], CFI = .879, TLI = .838, and SRMR = .053). Factors 1 and 2 were significantly correlated (r** = .48, *p* \< .05), while Factor 3 was did not have a significant correlation with Factor 1 (*r* = -.03) or Factor 2 (*r* = -.15). Visual representation of loadings is presented in @fig-net-gpt. 
 
 The three-factor solution for the SME-generated items demonstrated the
 strongest overall model fit of the three item-generation approaches,
 χ²(150) = 183.17, *p* = .034, RMSEA = .048, 90% CI \[.015, .071\], CFI =
 .962, TLI = .947, and SRMR = .050. All three factors were significantly correlated at the 5% level threshold (*p* \< .05) . Factor 1 correlated .44 with Factor 2 and .64 with Factor 3, while Factors 2 and 3 correlated .46. Overall, the three-factor model provided strong fit, although the like the AI--GENIE items, loadings did not create three distinct item groupings (see @fig-net-sme).
 
-The three-factor model for the ChatGPT-Generated items returned the weakest structural evidence (χ²(207) = 347.09, *p* \< .001, RMSEA = .084, 90% CI \[.068, .099\], CFI = .879, TLI = .838, and SRMR = .053). Factors 1 and 2 were significantly correlated (r** = .48, *p* \< .05), while Factor 3 was did not have a significant correlation with Factor 1 (*r* = -.03) or Factor 2 (*r* = -.15). Visual representation of loadings is presented in @fig-net-gpt. 
+The AI-GENIE-generated items demonstrated fair fit to the three--factor solution, χ²(150) = 207.64, *p* = .001, RMSEA = .064, 90% CI \[.041, .084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial support, with several non--hypothesized associations and substantive cross--loadings (see @fig-net-genie for a visual representation)^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their color shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single color, and each item would connect to only one factor. Factors that collect items of mixed colors, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]. Factors 1 and 2 exhibited a significant correlation (r = .76, *p* \< .05), whereas the correlations of Factor 3 with Factors 1 (*r* = .30) and 2 (*r* = .29) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.
 
-Taken together, these results suggest that the ChatGPT-generated items exhibited meaningful multidimensionality, but the observed structure did not cleanly produce loadings indicating three distinct factors. Additionally, the
-ChatGPT-generated items demonstrated worse model fit than the corresponding SME and AI--GENIE item sets.
+Taken together, these results point toward the ChatGPT--generated items as exhibiting the weakest traditional (empirical) evidence, with the observed structure largely not conforming to the theoretical associations. Additionally, the ChatGPT-generated items demonstrated worse model fit than the corresponding SME and AI--GENIE item sets.
 
-## Semantic Investigation
+## Contemporary Lens
 
 ```{r}
 #| label: fig-ega-gpt
@@ -445,13 +444,19 @@ ega_genie <- EGA(data[65:85], model = "glasso", algorithm = "walktrap", plot.EGA
 plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
 ```
 
-Exploratory Graph Analyses do not specify factors in advance. Instead they estimates a network directly among the items, and the results of these are presented in @fig-ega-gpt, @fig-ega-sme, and @fig-ega-genie. Each line is a regularized partial correlation (EBICglasso), meaning the relationship between two items after controlling for all the other items. Thicker lines are stronger associations, and the line colour shows whether the association is positive or negative. Weak relationships are shrunk to zero and dropped. The Walktrap algorithm then detects communities: groups of items that are more tightly connected to each other than to the rest of the network. Unlike in the EFA plots, the node colours here mark these empirically detected communities, not the intended subscales. The number of communities is the EGA estimate of the dimensionality of each item set. 
+Network Psychometrics has provided not merely a newer philosophical lens on psychological measurement, but it has also introduced novel empirical procedures [@epskamp2018network; @borsboom2022possible; @borsboom2013network]. 
+
+Exploratory graph analysis (EGA) is a procedure that, similar to traditional factor analysis, is aimed at discovering how items on a psychological measure group together. Each item is treated as a node, and the strength of the unique association between items (after accounting for all other items) is shown as an edge; items that remain strongly linked tend to form clusters. A community-detection algorithm then identifies those clusters, which are interpreted as the dimensions or factors of the construct. An EGA plot therefore shows both the estimated structure and the item membership of each dimension in one figure.
+
+Exploratory Graph Analyses do not specify factors in advance. Instead they estimates a network directly among items via semantic association, and the results of these are presented in @fig-ega-gpt, @fig-ega-sme, and @fig-ega-genie. Each line is a regularized partial correlation (EBICglasso), meaning the relationship between two items after controlling for all the other items. Thicker lines are stronger associations, and the line colour shows whether the association is positive or negative. Weak relationships are shrunk to zero and dropped. The Walktrap algorithm then detects communities: groups of items that are more tightly connected to each other than to the rest of the network. Unlike in the EFA plots, the node colours here mark these empirically detected communities, not the intended subscales. The number of communities is the EGA estimate of the dimensionality of each item set. 
 
 # Discussion
 
 The purpose of this stuy was twofold: 1) to create a measure of type of AI adopter, 2) to compare three approaches to developing items, comparing traditionally-derived subject matter expert ratings, with LLM-derivded procedures using ChatGPT and AI-GENIE. The primary question of interest was whether the AI-driven item-generation procedures (i.e., ChatGPT or AI-GENIE) as good as, or even superior to, traditionally generated SME items. 
 
 First, all three procedures did result in a measure of AI adopter type. The results of the traditional analyses suggest the the SME-generated items demonstrated the best fit, followed by AI-GENIE and then ChatGPT. However, items did not load cleanly as expected within dimensions. The semantic exploratory graph analyses...
+
+>DISCUSSION CENTER: Resolving the EFA visuals with the EGA visuals -- also discussing the possibility that there are not "three dimensions" but rather three different levels of AI comfort: introductory, intermediate, and expert... it's a matter of degree not type, and therefore the measurement results from three different methodologies may reasonably be expected to not differentiate greatly (@tbl-corrs), or to result in muddled structures when imposed on the data (EFAs). Implications are that this construct may benefit from further THEORETICAL specification
 
 ## Implications
 
