@@ -30,7 +30,7 @@ Artificial intelligence (AI) has the potential to alter the fundamental
 design and experience of work. The Job Characteristics Model [@hackman1976motivation; @hackman1975development] proposes that core job characteristics shape critical psychological states and, ultimately, important employee outcomes, and emerging research suggests that digitization may substantially alter these characteristics. For example, digital technologies may automate repetitive tasks, but they may also fragment work, limit skill use, or diminish employees’ sense of ownership over their work. @arora2025meaningful's review of meaningful work in the digital age
 identifies autonomy, skill variety, feedback, task significance, and
 task identity as job characteristics affected by workplace digitization.
-As such, as AI’s role in the design and performance of work grows it is important to understand how employees engage with the technology. The present makes two key contributions to our understanding of AI in the workplace: Our first aim is to create a meausure of type of AI adopter. Second, we accomplish to goal of scale creation via a novel comparison of three approaches to developing items, comparing traditionally-derived subject matter expert ratings, with LLM-derivded procedures including prompting via ChatGPT and through a dedicated R package (AI-GENIE).
+As such, as AI’s role in the design and performance of work grows it is important to understand how employees engage with the technology. The present makes two key contributions to our understanding of AI in the workplace: Our first aim is to create a measure of type of AI adopter. Second, we accomplish to goal of scale creation via a novel comparison of three approaches to developing items, comparing traditionally-derived subject matter expert ratings, with LLM-derived procedures including prompting via ChatGPT and through a dedicated R package (AI-GENIE).
 
 ## Conceptualizing AI Use in the Workplace
 
@@ -387,9 +387,7 @@ efa_network(data[65:85], title = "AI--GENIE Items")
 
 Exploratory factor analyses (EFAs) were also conducted separately for each of the three item sets. One--, two--, and three--factor solutions were estimated for each item set using maximum likelihood estimation and an oblique Quartimin rotation. Following @hu1999cutoff's guidelines, model fit was evaluated using multiple indicators. 
 
-Parallel analysis suggested different levels of dimensionality across the item sets, with a one-factor solution for the AI Genie and SME item sets and a two-factor solution for the ChatGPT item set. Because the item pools were constructed to represent three conceptual domains, the three-factor solutions are discussed here to evaluate the pattern of item loadings and correspondence between the intended and emergent factor structures. 
-
-The three-factor solution for the AI Genie-generated items demonstrated substantially better fit compared to the one- and two-factor models, χ²(150) = 207.64, p = .001, RMSEA = .064, 90% CI \[.041, .084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial evidence of a three-factor structure, albeit with several non--hypothesized associations and substantive cross--loadings (see @fig-net-genie for a visual representation)^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller coloured nodes are the survey items, and their colour shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single colour, and each item would connect to only one factor. Factors that collect items of mixed colours, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]. Factors 1 and 2 exhibited a significant correlation (r = .762, p \< .05), whereas the correlations of Factor 3 with Factors 1 (r = .295) and 2 (r = .289) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.
+The three-factor solution for the AI-GENIE-generated items demonstrated substantially better fit compared to the one- and two-factor models, χ²(150) = 207.64, p = .001, RMSEA = .064, 90% CI \[.041, .084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial evidence of a three-factor structure, albeit with several non--hypothesized associations and substantive cross--loadings (see @fig-net-genie for a visual representation)^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their colour shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single colour, and each item would connect to only one factor. Factors that collect items of mixed colours, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]. Factors 1 and 2 exhibited a significant correlation (r = .762, p \< .05), whereas the correlations of Factor 3 with Factors 1 (r = .295) and 2 (r = .289) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.
 
 The three-factor solution for the SME-generated items demonstrated the
 strongest overall model fit of the three item-generation approaches,
@@ -455,14 +453,19 @@ Exploratory Graph Analyses do not specify factors in advance. Instead they estim
 
 # Discussion
 
-1. methodological contribution -- EGAs plus EFAs, empirical vs semantic
-  + cross--loading clearing up
-2. theoretical contribution (AI adopter type)
-  + distinct types vs different gradients of expertise (degree of AI collaboration)
-  
-## Limitations
+The purpose of this stuy was twofold: 1) to create a measure of type of AI adopter, 2) to compare three approaches to developing items, comparing traditionally-derived subject matter expert ratings, with LLM-derivded procedures using ChatGPT and AI-GENIE. The primary question of interest was whether the AI-driven item-generation procedures (i.e., ChatGPT or AI-GENIE) as good as, or even superior to, traditionally generated SME items. 
 
-Sample size as well as well as sample characteristics (degree of AI integration within workplace)
+First, all three procedures did result in a measure of AI adopter type. The results of the traditional analyses suggest the the SME-generated items demonstrated the best fit, followed by AI-GENIE and then ChatGPT. However, items did not load cleanly as expected within dimensions. The semantic exploratory graph analyses...
+
+## Implications
+
+One of the theoretical contributions we make is to explore the ways AI is being used at present. @callari2025meaningful presented three ideal types of AI users that we based our quantitative scale creation on. The somewhat mixed results suggest that there may not be distinct types of AI users, but rather, we can conceptualize AI use on an continuum of expertise, whereby greater levels of expertise are evidenced by a higher degree of AI collaboration. 
+  
+## Limitations & Future Directions
+
+We note a number of limitations that future study/comparisons would benefit from. First, for this SIOP submission, we present a modest sample size. An additional study comparing these three procedures with a larger sample size is warranted. In addition, this first pilot sample was obtained from university students were were asked to keep one context in mind as they responded to the survey. The majority of respondents indicated they had school in mind, whereas a smaller percentage had work in mind. Future research should incorporate full time employees across industries, and account for degree of AI integration within their workplaces. 
+
+## Conclusion
 
 # References
 
