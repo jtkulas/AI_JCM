@@ -1,5 +1,5 @@
 ---
-title: "AI--Adopters: Three scale construction procedures" 
+title: "Measuring AI-Adopter Types: Comparison of Traditional vs. AI-Facilitated Procedures"
 shorttitle: "AI--Adopters"
 author:
   - name: Jane Doe
@@ -19,8 +19,6 @@ execute:
   echo: false
   message: false
 ---
-
-An Alternative Title: "Measuring AI-Adopter Types: Comparison of Traditional vs. AI-Facilitated Procedures"
 
 Abstract
 
@@ -76,7 +74,7 @@ generative AI can properly measure constructs.
 
 The present study is an exploratory comparison of three approaches to developing items intended
 to assess employees’ orientations toward workplace AI use. Specifically,
-we compare items generated through (a) ChatGPT based on @callari2025meaningful’s (2025) ideal AI user types, (b) AI Genie, and (c)
+we compare items generated through (a) ChatGPT based on @callari2025meaningful’s (2025) ideal AI user types, (b) AI-GENIE, and (c)
 industrial-organizational psychology subject-matter experts. We evaluate
 the internal consistency and underlying factor structure of each item
 set. In doing so, this study has two primary objectives: first, to
@@ -88,11 +86,11 @@ establishing how employees differ in their use of AI represents an
 important step toward understanding how AI may reshape established
 features of job design and the psychological experience of work.
 
->*Research Question*: Does one instrument development procedure (ChatGPT, AI-GENIE, or SMEs) emerge as superior to the others?
-
-OR
+>*Research Question 1*: Is one instrument development procedure (ChatGPT, AI-GENIE, or SMEs) yet a more coherent structure through a traditional lens?
  
->*Research Question*:Research Question: Are AI-driven item-generation procedures (i.e., ChatGPT or AI-GENIE) as good as, or even superior to, traditionally generated SME items? 
+>*Research Question 2*: Is one instrument development procedure (ChatGPT, AI-GENIE, or SMEs) yet a more coherent structure through a contemporary lens?
+
+>*Research Question 3*: Does the combination of traditional and contemporary analyses provide a richer understanding of the structure than either alone?
 
 
 ```{r}
@@ -154,7 +152,7 @@ library(flextable)
 library(tidyverse)
 
 tibble(
-  Scale = c("Chat GPT", "", "", "Human", "", "", "AI Genie", "", ""),
+  Scale = c("Chat GPT", "", "", "SME", "", "", "AI-GENIE", "", ""),
   Subscale = c("Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser", "Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser", "Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser"),
   Alpha = c(es_gpt_alpha$total$raw_alpha, 
             pi_gpt_alpha$total$raw_alpha, 
@@ -199,8 +197,8 @@ major$`Total (n)` <- as.integer(major$`Total (n)`)
 #  width(width = c(4, 2, 2)) |>
 #  align(align="left", part="all")
 
-#largest <- major %>%
-#  arrange(`Total (n)`)
+largest <- major %>%
+  arrange(`Total (n)`)
 
   
 ```
@@ -245,13 +243,13 @@ corr_vars <- data[, c(
 names(corr_vars) <- c(
   "GPT (ES)",
   "SME (ES)",
-  "Genie (ES)",
+  "AI-GENIE (ES)",
   "GPT (PI)",
   "SME (PI)",
-  "Genie (PI)",
+  "AI-GENIE (PI)",
   "GPT (CO)",
   "SME (CO)",
-  "Genie (CO)"
+  "AI-GENIE (CO)"
 )
 
 
@@ -297,9 +295,9 @@ After consent, students were asked to think of the context where they use AI the
 
 ## Traditional Investigation
 
-Inter--scale correlations as well as scale means and standard deviations are presented in @tbl-corrs (note that the sequence of scale orderings is informed by @campbell1959convergent). Here, the Efficiency Seeking scales exhibit the least intra--dimension agreement (correlations across development methodologies ranging from $r_{GPT-SME}$ = .14, ns to $r_{GPT-Genie}$ = .51, *p* < .001). Pragmatic Integrator and Collaborative Optimiser scales exhibited consistently higher associations (ranging from a low of $r_{Genie(CO)-SME(CO)}$ = .76, *p* < .001 to a high of $r_{Genie(PI)-SME(PI)}$ = .84, *p* < .001). Discrimination across scale dimensions was highest for the Efficiency Seeking scales, particularly so for the Chat--GPT developed scale (and to a lesser degree, the SME--derived scale). 
+Inter--scale correlations as well as scale means and standard deviations are presented in @tbl-corrs (note that the sequence of scale orderings is informed by @campbell1959convergent). Here, the Efficiency Seeking scales exhibit the least intra--dimension agreement (correlations across development methodologies ranging from $r_{GPT-SME}$ = .14, ns to $r_{GPT-Genie}$ = .51, *p* < .001). Pragmatic Integrator and Collaborative Optimiser scales exhibited consistently higher associations (ranging from a low of $r_{Genie(CO)-SME(CO)}$ = .76, *p* < .001 to a high of $r_{Genie(PI)-SME(PI)}$ = .84, *p* < .001). Discrimination across scale dimensions was highest for the Efficiency Seeking scales, particularly so for the ChatGPT developed scale (and to a lesser degree, the SME--derived scale). 
 
-Individual scale alphas were predominantly within the .8 to .9 range, although two scales exhibited suppressed values (the Chat--GPT Efficiency Seeking scale $\alpha$ = .69 the SME Efficiency Seeking scale $\alpha$ = .59). Note that: 1) these are the two scales that also exhibited the lowest average inter--scale associations (see @tbl-corrs), and 2) the numbers of items differed across scales (*k*'s = 6, 7, and 8). All $\alpha$'s are presented in @tbl-alphas
+Individual scale alphas were predominantly within the .8 to .9 range, although two scales exhibited suppressed values (the ChatGPT Efficiency Seeking scale $\alpha$ = .69 the SME Efficiency Seeking scale $\alpha$ = .59). Note that: 1) these are the two scales that also exhibited the lowest average inter--scale associations (see @tbl-corrs), and 2) the numbers of items differed across scales (*k*'s = 6, 7, and 8). All $\alpha$'s are presented in @tbl-alphas
 
 ```{r efa-network}
 library(tidygraph)
@@ -358,11 +356,11 @@ efa_network <- function(items, nfactors = 3, cutoff = .30, title = NULL, seed = 
 
 ```{r}
 #| label: fig-net-gpt
-#| fig-cap: EFA loading network, Chat GPT--generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-cap: EFA loading network, ChatGPT--generated items (3 factors, ML, oblimin; |loading| ≥ .30)
 #| fig-width: 8
 #| fig-height: 8
 
-efa_network(data[20:43], title = "Chat GPT Items")
+efa_network(data[20:43], title = "ChatGPT Items")
 ```
 
 ```{r}
@@ -385,23 +383,23 @@ efa_network(data[65:85], title = "AI--GENIE Items")
 
 Exploratory factor analyses (EFAs) were also conducted separately for each of the three item sets. One--, two--, and three--factor solutions were estimated for each item set using maximum likelihood estimation and an oblique Quartimin rotation. Following @hu1999cutoff's guidelines, model fit was evaluated using multiple indicators. 
 
-The three-factor solution for the AI-GENIE-generated items demonstrated substantially better fit compared to the one- and two-factor models, χ²(150) = 207.64, p = .001, RMSEA = .064, 90% CI \[.041, .084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial evidence of a three-factor structure, albeit with several non--hypothesized associations and substantive cross--loadings (see @fig-net-genie for a visual representation)^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their colour shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single colour, and each item would connect to only one factor. Factors that collect items of mixed colours, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]. Factors 1 and 2 exhibited a significant correlation (r = .762, p \< .05), whereas the correlations of Factor 3 with Factors 1 (r = .295) and 2 (r = .289) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.
+The three-factor solution for the AI-GENIE-generated items demonstrated substantially better fit compared to the one- and two-factor models, χ²(150) = 207.64, *p* = .001, RMSEA = .064, 90% CI \[.041, .084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial evidence of a three-factor structure, albeit with several non--hypothesized associations and substantive cross--loadings (see @fig-net-genie for a visual representation)^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their color shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at |.30| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single color, and each item would connect to only one factor. Factors that collect items of mixed colors, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]. Factors 1 and 2 exhibited a significant correlation (r = .76, *p* \< .05), whereas the correlations of Factor 3 with Factors 1 (*r* = .30) and 2 (*r* = .29) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.
 
 The three-factor solution for the SME-generated items demonstrated the
 strongest overall model fit of the three item-generation approaches,
-χ²(150) = 183.17, p = .034, RMSEA = .048, 90% CI \[.015, .071\], CFI =
-.962, TLI = .947, and SRMR = .050. All three factors were significantly correlated at the 5% level threshold (p \< .05) . Factor 1 correlated .441 with Factor 2 and .635 with Factor 3, while Factors 2 and 3 correlated .458. Overall, the three-factor model provided strong fit, although the like the AI_Genie items, loadings did not create three distinct item groupings (see @fig-net-sme).
+χ²(150) = 183.17, *p* = .034, RMSEA = .048, 90% CI \[.015, .071\], CFI =
+.962, TLI = .947, and SRMR = .050. All three factors were significantly correlated at the 5% level threshold (*p* \< .05) . Factor 1 correlated .44 with Factor 2 and .64 with Factor 3, while Factors 2 and 3 correlated .46. Overall, the three-factor model provided strong fit, although the like the AI--GENIE items, loadings did not create three distinct item groupings (see @fig-net-sme).
 
-The three-factor model for the ChatGPT-Generated items returned the weakest structural evidence (χ²(207) = 347.09, p \< .001, RMSEA = .084, 90% CI \[.068, .099\], CFI = .879, TLI = .838, and SRMR = .053). Factors 1 and 2 were significantly correlated (r = .477, p \< .05), while Factor 3 was did not have a significant correlation with Factor 1 (r = -.029) or Factor 2 (r = -.146). Visual representation of loadings is presented in @fig-net-gpt. 
+The three-factor model for the ChatGPT-Generated items returned the weakest structural evidence (χ²(207) = 347.09, *p* \< .001, RMSEA = .084, 90% CI \[.068, .099\], CFI = .879, TLI = .838, and SRMR = .053). Factors 1 and 2 were significantly correlated (r** = .48, *p* \< .05), while Factor 3 was did not have a significant correlation with Factor 1 (*r* = -.03) or Factor 2 (*r* = -.15). Visual representation of loadings is presented in @fig-net-gpt. 
 
 Taken together, these results suggest that the ChatGPT-generated items exhibited meaningful multidimensionality, but the observed structure did not cleanly produce loadings indicating three distinct factors. Additionally, the
-ChatGPT-generated items demonstrated worse model fit than the corresponding SME and AI Genie item sets.
+ChatGPT-generated items demonstrated worse model fit than the corresponding SME and AI--GENIE item sets.
 
 ## Semantic Investigation
 
 ```{r}
 #| label: fig-ega-gpt
-#| fig-cap: Exploratory Graph Analysis (Chat GPT)
+#| fig-cap: Exploratory Graph Analysis (ChatGPT)
 
 if (!requireNamespace("EGAnet", quietly = TRUE)) install.packages("EGAnet")
 library(EGAnet)
@@ -433,7 +431,7 @@ plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
 
 ```{r}
 #| label: fig-ega-genie
-#| fig-cap: Exploratory Graph Analysis (AI--Genie)
+#| fig-cap: Exploratory Graph Analysis (AI-GENIE)
 
 if (!requireNamespace("EGAnet", quietly = TRUE)) install.packages("EGAnet")
 library(EGAnet)
