@@ -172,8 +172,6 @@ tibble(
 ```
 
 ```{r}
-#| label: tbl-majors
-#| tbl-cap: Indicated major (current study respondents)
 
 library(expss)
 
@@ -467,6 +465,8 @@ One of the theoretical contributions we make is to explore the ways AI is being 
 We note a number of limitations that future study/comparisons would benefit from. First, for this SIOP submission, we present a modest sample size. An additional study comparing these three procedures with a larger sample size is warranted. In addition, this first pilot sample was obtained from university students were were asked to keep one context in mind as they responded to the survey. The majority of respondents indicated they had school in mind, whereas a smaller percentage had work in mind. Future research should incorporate full time employees across industries, and account for degree of AI integration within their workplaces. 
 
 ## Conclusion
+
+Please add after viewing 
 
 # References
 
