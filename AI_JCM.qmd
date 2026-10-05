@@ -47,13 +47,10 @@ workplace digitization. As such, as AI’s role in the design and
 performance of work grows it is important to understand how employees
 engage with the technology. The present research makes two key
 contributions to our understanding of AI in the workplace: Our first aim
-is to create a measure of type of AI adopter. Second, we accomplish the
-goal of scale creation via a novel comparison of three approaches to
-developing items, (1) comparing traditionally-derived subject matter
-expert ratings, (2) with LLM-derived procedures including prompting via
-ChatGPT and (3) through a dedicated R package (AI-GENIE).
+is to create a measure of AI adopter "type" as recently defined by @callari2025meaningful. Second, we approach scale development via a novel "competition" of three approaches, (1) comparing traditionally-derived subject matter expert ratings, (2) with LLM-derived procedures including prompting via
+ChatGPT and (3) through a dedicated R package (AI-GENIE). The contributions are both practical (a measure of AI adopter type) and methodological (combining semantic as well as quantitative indicators of measure quality).
 
-## Conceptualizing AI Use in the Workplace
+## AI Use in the Workplace
 
 Conceptualizing and measuring employee AI use is challenging. Existing
 research operationalizes AI use in terms of the extent or intensity it
@@ -68,60 +65,31 @@ One employee may primarily use AI to automate routine administrative
 work, another may use it to generate and refine ideas, and still another
 may engage with AI iteratively as a source of expertise or cognitive
 challenge. Accordingly, understanding AI-enabled work may require
-measures that capture how they incorporate AI into their work.
+measures that capture *how* they incorporate AI into their work.
 
-@callari2025meaningful provide one framework for distinguish forms of AI
-use. Drawing on qualitative data from employees using Microsoft 365
-Copilot, they identified three ideal types of AI users
-Efficiency-Seeking, Pragmatic Integrators, and Collaborative Optimizers.
-These ideal types imply qualitatively different relationships between AI
-and features of work including autonomy, skill utilization, cognitive
-effort, and decision-making. The @callari2025meaningful framework
-suggests that AI use is not a uniform behavior but rather is best
-considered multidimensional.Yet, translating qualitative ideal types
-into quantitative measures presents a challenge. Ideal types represent
-recurring patterns of behavior and experience, but they do not
-necessarily correspond to distinct psychological constructs. Additional
+@callari2025meaningful provide such a framework for distinguish forms of AI
+use. Drawing on qualitative data from employees who use Microsoft 365
+Copilot at their jobs, they identified three ideal types of AI users and labeled these types as: Efficiency-Seeking, Pragmatic Integrators, and Collaborative Optimisers. These categories imply qualitatively different relationships between AI and features of work including autonomy, skill utilization, cognitive effort, and decision-making. The @callari2025meaningful framework suggests that AI use is not a uniform behavior but rather is best
+considered multidimensional. Yet, translating qualitative ideal types
+into quantitative measures presents a challenge. 
+
+Ideal types represent recurring patterns of behavior and experience, but they do not necessarily correspond to distinct psychological constructs. Additional
 work is needed to determine whether AI user types such as those
 presented by @callari2025meaningful can be measured with survey items.
-Interestingly, the measurement of AI use is potentially enriched by
-recent technological developments. For a long time, the scale
-development process has relied on the efforts of researchers and
-subject-matter experts to turn construct definitions to survey items
-measuring the construct. Now, generative AI provides tools for producing
-surveys that measure constructs from idea generation to item testing.
-However, the question of whether survey items produced by generative AI
-can properly measure constructs remains.
+Interestingly, the measurement of AI use is potentially enriched by recent technological developments. For a long time, the scale development process has relied on the efforts of researchers and subject-matter experts to turn construct definitions to survey items measuring the construct. Now, generative AI provides tools for producing surveys that measure constructs from idea generation to item testing. However, the question of whether survey items produced by generative AI can properly measure constructs remains.
 
 ## The Current Study
 
 The present study is an exploratory comparison of three approaches to
 developing items intended to assess employees’ orientations toward
-workplace AI use. Specifically, we compare items generated through (a)
-ChatGPT based on @callari2025meaningful’s (2025) ideal AI user types,
-(b) AI-GENIE, and (c) industrial-organizational psychology
-subject-matter experts. We evaluate the internal consistency and
-underlying factor structure of each item set. In doing so, this study
-has two primary objectives: first, to provide evidence regarding whether
-qualitatively derived forms of human–AI interaction can be
-operationalized as quantitative constructs, and second, to examine
-whether different approaches to item generation yield comparable
-representations of those constructs. More broadly, establishing how
-employees differ in their use of AI represents an important step toward
-understanding how AI may reshape established features of job design and
-the psychological experience of work.
+workplace AI use. Specifically, we develop items based on @callari2025meaningful’s ideal AI user types via (a) ChatGPT, (b) AI--GENIE, and (c) industrial-organizational psychology subject-matter experts (SMEs). We evaluate the internal consistency, underlying factor structure, and implied semantic groupings of each item set. In doing so, this study has two primary objectives: first, to provide evidence regarding whether qualitatively derived forms of human–AI interaction can be operationalized as quantitative constructs, and second, to examine whether different approaches to item generation yield comparable representations of those constructs. More broadly, establishing how employees differ in their use of AI represents an important step toward understanding how AI may reshape established features of job design and the psychological experience of work.
 
-> *Research Question 1*: Is one instrument development procedure
-> (ChatGPT, AI-GENIE, or SMEs) yet a more coherent structure through a
-> traditional lens?
+> *Research Question 1*: Does one instrument development procedure
+> (ChatGPT, AI-GENIE, or SMEs) yeild a more coherent structure than others?
 
-> *Research Question 2*: Is one instrument development procedure
-> (ChatGPT, AI-GENIE, or SMEs) yet a more coherent structure through a
-> contemporary lens?
-
-> *Research Question 3*: Does the combination of traditional and
-> contemporary analyses provide a richer understanding of the structure
-> than either alone?
+> *Research Question 2*: Can a combination of traditional and
+> contemporary analyses provide a richer understanding of scale structure
+> than either approach alone?
 
 ```{r}
 names <- read.csv("data/AI+Adoption_partialdata.csv")[1,]
@@ -296,6 +264,10 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
 
 # Method
 
+## Procedure
+
+After reading a brief description of the online survey purpose and providing consent, students were asked to think of the context where they use AI the most frequently (for example, as a student or as an employee) and to keep that role in mind for the entire survey. Respondents were presented items in fixed ordering (grouped sequentially within item development procedure), followed by a few demographic questions. Responses to all AI--Adopter items were provided along a shared 5-point Likert-type scale ranging from 1 (*Strongly Agree*) to 5 (*Strongly Disagree*). Following the survey, respondents were debriefed and offered course credit for their time.
+
 ## Participants
 
 `r nrow(data)` undergraduate students responded (Mean age =
@@ -303,9 +275,8 @@ papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
 `r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the
 choice of 50 different majors to choose from, with the greatest
 representation being `r largest[nrow(largest),1]` at
-`r round(largest[nrow(largest),3],2)`%, with a second largest group of
-`r largest[(nrow(largest)-1),1]` at
-`r round(largest[(nrow(largest)-1),3],2)`%. When asked, "Which context
+`r round(largest[nrow(largest),3],2)`%, with a second largest group being
+`r largest[(nrow(largest)-1),1]` majors (`r round(largest[(nrow(largest)-1),3],2)`%). When asked, "Which context
 did you have in mind as you responded to the statements in this
 survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school",
 `r round((referent[4]/nrow(data))*100,2)`% indicated "work", and
@@ -315,13 +286,7 @@ survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school",
 
 Items were generated based on the three themes uncovered by
 @callari2025meaningful in their qualitative study on the way employees
-perceive meaningful work in tasks co-generated by Microsoft 365 Copilot
-specifically. They identified three ideal types, including an
-Efficiency-Seeking Type (perceives the AI tool as a straightforward
-task-assistance tool), a Pragmatic Integrator Type (perceives AI tool as
-a smarter assistant), and a Collaborative Optimiser Type (perceives AI
-tool an expert-like teammate). Three different methods of item
-generation were used (and compared) here.
+perceive meaningful work in tasks co-generated by Microsoft 365 Copilot. They identified three ideal types, including an Efficiency-Seeking Type (perceives the AI tool as a straightforward task-assistance tool), a Pragmatic Integrator Type (perceives AI tool as a smarter assistant), and a Collaborative Optimiser Type (perceives AI tool an expert-like teammate). Three different methods of item generation were used (and compared) here.
 
 ### Expert--Generated Items.
 
@@ -338,8 +303,7 @@ attached paper for the third time. I am interested in the three AI user
 ideal types and the survey items that could be generated to measure an
 employee's propensity toward one type or another.” Eight items were
 generated per dimension, along with rationale for those item choices
-(total *k*=24). See Appendix B for the full ChatGPT prompt and output,
-and Appendix C for a full list of items.
+(total *k*=24). 
 
 ### AI-GENIE-Generated Items.
 
@@ -354,32 +318,21 @@ on the overarching definition of AI Adopter Type as articulated in
 task-assistance tool, Ideal Type (2) – the Pragmatic Integrator Type –
 views AI as a smarter assistant, and Ideal Type (3) – the Collaborative
 Optimiser Type – considers AI an expert-like teammate." Definitions of
-all three of the above dimensions, as well as example descriptors are
+all three of the above dimensions, as well as example descriptors were
 provided as part of the prompt. Thirty items were initially generated.
 Combined lists of items were discussed by the researchers by dimension,
 and the most unique and clearly-written items were retained for the
-survey (total *k*=21). See the Appendix for all study items.
-
-## Procedure
-
-After consent, students were asked to think of the context where they
-use AI the most frequently (for example, as a student or as an employee)
-and to keep that role in mind for the entire survey. Respondents were
-shown items within generative grouping, followed by a few demographic
-questions. They responded to all AI--Adopter items on a 5-point
-Likert-type scale ranging from 1 (*strongly agree*) to 5 (*strongly
-disagree*). Following the survey, respondents were debriefed and offered
-course credit for their time.
+survey (total *k*=21). All study items, prompts, and materials are available on a publicly accessible repository [hidden for blind review].
 
 # Results
 
-## Traditional Lens
+## Traditional Analyses
 
 Inter--scale correlations as well as scale means and standard deviations
 are presented in [@tbl-corrs; note that the sequence of scale orderings
 is informed by @campbell1959convergent]. Here, the Efficiency Seeking
 scales exhibit the least intra--dimension agreement (correlations across
-development methodologies ranging from $r_{GPT-SME}$ = .14, ns to
+item--generation methodologies ranging from $r_{GPT-SME}$ = .14, ns to
 $r_{GPT-Genie}$ = .51, *p* \< .001). Pragmatic Integrator and
 Collaborative Optimiser scales exhibited consistently higher
 intra--dimension associations (ranging from a low of
@@ -481,7 +434,7 @@ efa_network(data[44:64], title = "Expert--Generated Items")
 efa_network(data[65:85], title = "AI--GENIE Items")
 ```
 
-Exploratory factor analyses (EFAs) were also conducted. One--, two--,
+Exploratory factor analyses (EFAs) were also conducted within item sets. One--, two--,
 and three--factor solutions were estimated for each item set using
 maximum likelihood estimation and an oblique Quartimin rotation.
 Following @hu1999cutoff's guidelines, model fit was evaluated using
@@ -494,10 +447,10 @@ weakest structural evidence (χ²(207) = 347.09, *p* \< .001, RMSEA =
 Factors 1 and 2 were significantly correlated (r\*\* = .48, *p* \< .05),
 while Factor 3 was did not have a significant correlation with Factor 1
 (*r* = -.03) or Factor 2 (*r* = -.15). Visual representation of loadings
-is presented in @fig-net-gpt.
+is presented in @fig-net-gpt.[^Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their color shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at \|.30\| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single color, and each item would connect to only one factor. Factors that collect items of mixed colors, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]
 
 The three-factor solution for the SME-generated items demonstrated the
-strongest overall model fit of the three item-generation approaches,
+strongest overall model fit of the three item--generation approaches,
 χ²(150) = 183.17, *p* = .034, RMSEA = .048, 90% CI \[.015, .071\], CFI =
 .962, TLI = .947, and SRMR = .050. All three factors were significantly
 correlated at the 5% level threshold (*p* \< .05) . Factor 1 correlated
@@ -518,27 +471,13 @@ significance. Overall, the three-factor model demonstrated relatively
 good fit, the loading pattern suggests two somewhat clear factors with
 item cross loadings and an ambiguous third factor.
 
-[^1]: Each figure shows the results of an exploratory factor analysis as
-    a network. The large grey nodes are the extracted factors. The
-    smaller colored nodes are the survey items, and their color shows
-    which subscale the item was written for: Efficiency Seeking,
-    Pragmatic Integrator or Collaborative Optimiser. A line between an
-    item and a factor means the item loads on that factor at \|.30\| or
-    higher. Thicker, darker lines mean stronger loadings, and red lines
-    mean negative loadings. If the items worked as intended, each factor
-    would be surrounded by a cluster of items of a single color, and
-    each item would connect to only one factor. Factors that collect
-    items of mixed colors, or items that connect to several factors
-    (cross-loadings), suggest the intended three-type structure is not
-    holding up.
-
 Taken together, these results point toward the ChatGPT--generated items
 as exhibiting the weakest traditional (empirical) evidence, with the
 observed structure largely not conforming to the theoretical
 associations. Additionally, the ChatGPT-generated items demonstrated
-worse model fit than the corresponding SME and AI--GENIE item sets.
+worse model fit than the corresponding SME and AI--GENIE item sets, although *none* of the approaches satisfactorily converged on hypothesized associations (e.g., all extracted solutions exhibited a greater--than--desired number of cross--loadings and/or non--hypothesized item--dimension associations).
 
-## Contemporary Lens
+## Network Psychometric Analyses
 
 ```{r}
 #| label: fig-ega-gpt
@@ -588,21 +527,8 @@ ega_genie <- EGA(data[65:85], model = "glasso", algorithm = "walktrap", plot.EGA
 plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
 ```
 
-Network Psychometrics has provided not merely a newer philosophical lens
-on psychological measurement, but it has also introduced novel empirical
-procedures [@epskamp2018network; @borsboom2022possible;
-@borsboom2013network].
-
-Exploratory graph analysis (EGA) is a procedure that, similar to
-traditional factor analysis, is aimed at discovering how items on a
-psychological measure group together. Each item is treated as a node,
-and the strength of the unique association between items (after
-accounting for all other items) is shown as an edge; items that remain
-strongly linked tend to form clusters. A community-detection algorithm
-then identifies those clusters, which are interpreted as the dimensions
-or factors of the construct. An EGA plot therefore shows both the
-estimated structure and the item membership of each dimension in one
-figure.
+Network Psychometrics has provided not merely a newer philosophical lens on psychological measurement, but it has also introduced novel empirical procedures [@epskamp2018network; @borsboom2022possible;
+@borsboom2013network]. Exploratory graph analysis (EGA) is a procedure that, similar to traditional factor analysis, is aimed at discovering how items on a psychological measure group together. Each item is treated as a node, and the strength of the unique association between items (after accounting for all other items) is shown as an edge; items that remain strongly linked tend to form clusters. A community-detection algorithm then identifies those clusters, which are interpreted as the dimensions or factors of the construct. An EGA plot therefore shows both the estimated structure and the item membership of each dimension in one figure.
 
 Exploratory Graph Analyses do not specify factors in advance. Instead
 they estimates a network directly among items via semantic association,
@@ -670,7 +596,8 @@ integration within their workplaces.
 
 ## Conclusion
 
-Please add after viewing
+Ideally discuss: 1) how the conceptualization of AI adopter type may be better structured as differences of AI adopter *degree* (e.g., novice, intermediate, or expert), and 2) mutual consideration of traditional and newer lenses for scale development may provide greater insight than does consideration of either approach in isolation.
+> Note that this is the conclusion only if these points are first made within the discussion!! 
 
 # References
 
