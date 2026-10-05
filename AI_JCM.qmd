@@ -1,128 +1,676 @@
 ---
-title: "The Job Characteristics Model Revisited"
-shorttitle: "Revisiting JCM"
+title: "Measuring AI-Adopter Types: Comparison of Traditional vs. AI-Facilitated Procedures"
+shorttitle: "AI--Adopters"
 author:
   - name: Jane Doe
     corresponding: true
-    orcid: 0000-0000-0000-0001
-    email: janedoe@generic.edu
     affiliations:
       - name: Generic University
         department: Department of Scholarly Studies
-        address: 1234 Capital St.
-        city: New York
-        region: NY
-        country: USA
-        postal-code: 12084-1234
-abstract: "This document is a template."
-keywords: [Keyword 1, Keyword 2, Keyword 3]
+suppress-title-page: true
 bibliography: bibliography.bib
 format:
-  apaquarto-html: default
+  apaquarto-docx: default
 editor: 
   markdown: 
     wrap: 72
+execute:
+  warning: false
+  echo: false
+  message: false
 ---
 
-<!-- The introduction should not have a level-1 heading such as Introduction. -->
+Abstract
 
-Artificial intelligence (AI) has the potential to alter the fundamental design and experience of work. The Job Characteristics Model (JCM; Hackman & Oldham, 1975, 1976) proposes that core job characteristics shape critical psychological states and, ultimately, important employee outcomes. Emerging research suggests that digitization may substantially alter these characteristics. For example, digital technologies may automate repetitive tasks, but they may also fragment work, limit skill use, or diminish employees’ sense of ownership over their work. Arora and Garg’s (2025) review of meaningful work in the digital age identifies autonomy, skill variety, feedback, task significance, and task identity as job characteristics affected by workplace digitization. As AI’s role in the design and performance of work grows it is important to understand how employees engage with the technology.  
-Conceptualizing and measuring employee AI use is challenging. Existing research operationalizes AI use in terms of the extent or intensity it is used to perform work. For example, Zhang et al. (2026) measure AI usage with items assessing the degree to which employees use AI in carrying out their job functions. Increasing AI integration may alter employees’ routines, role boundaries, autonomy, and skills, suggesting that the potential impact of AI use likely goes beyond frequency or intensity. Two employees could report similarly high levels of AI use while interacting with the technology in fundamentally different ways. One employee may primarily use AI to automate routine administrative work, another may use it to generate and refine ideas, and still another may engage with AI iteratively as a source of expertise or cognitive challenge. Accordingly, understanding AI-enabled work may require measures that capture how they incorporate AI into their work.Callari and Puppione (2025) provide one framework for distinguish forms of AI use. Drawing on qualitative data from employees using Microsoft 365 Copilot, they identified three ideal types of AI users Efficiency-Seeking, Pragmatic Integrators, and Collaborative Optimizers. These ideal types imply qualitatively different relationships between AI and features of work including autonomy, skill utilization, cognitive effort, and decision-making. The Callari and Puppione (2025) framework suggests that AI use is not a uniform behavior but rather is best considered multidimensional.Yet, translating qualitative ideal types into quantitative measures presents a challenge. Ideal types represent recurring patterns of behavior and experience, but they do not necessarily correspond to distinct psychological constructs. Additional work is needed to determine whether AI user types such as those presented by Callari and Puppione (2025) can be measured with survey items. Interestingly, the measurement of AI use is potentially enriched by recent technological developments. For a long time, the scale development process has relied on the efforts of researchers and subject-matter experts to turn construct definitions to survey items measuring the construct. Now, generative AI now provides tools for producing surveys that measure constructs from idea generation to item testing. However, the question of whether survey items produced by generative AI can properly measure constructs. The present study is an exploratory comparison of three approaches to developing items intended to assess employees’ orientations toward workplace AI use. Specifically, we compare items generated through (a) ChatGPT based on Callari and Puppione’s (2025) ideal AI user types, (b) AI Genie, and (c) industrial-organizational psychology subject-matter experts. We evaluate the internal consistency and underlying factor structure of each item set. In doing so, this study has two primary objectives: first, to provide evidence regarding whether qualitatively derived forms of human–AI interaction can be operationalized as quantitative constructs, and second, to examine whether different approaches to item generation yield comparable representations of those constructs. More broadly, establishing how employees differ in their use of AI represents an important step toward understanding how AI may reshape established features of job design and the psychological experience of work.
+The present study is an exploratory comparison of three approaches to
+developing items intended to assess employees’ orientations toward
+workplace AI. Items for Callari and Puppione (2025)’s
+qualitatively-derived ideal AI user types were generated through (a)
+ChatGPT, (b) AI-GENIE, and (c) industrial-organizational psychology
+subject-matter experts. Traditional (e.g., EFAs) and semantic (e.g.,
+exploratory graph analyses) results suggest noteworthy differences in
+the factor structure and communities across the three item-generation
+procedures.
 
-Current plan:
+Artificial intelligence (AI) has the potential to alter the fundamental
+design and experience of work. The Job Characteristics Model
+[@hackman1976motivation; @hackman1975development] proposes that core job
+characteristics shape critical psychological states and, ultimately,
+important employee outcomes, and emerging research suggests that
+digitization may substantially alter these characteristics. For example,
+digital technologies may automate repetitive tasks, but they may also
+fragment work, limit skill use, or diminish employees’ sense of
+ownership over their work. @arora2025meaningful's review of meaningful
+work in the digital age identifies autonomy, skill variety, feedback,
+task significance, and task identity as job characteristics affected by
+workplace digitization. As such, as AI’s role in the design and
+performance of work grows it is important to understand how employees
+engage with the technology. The present research makes two key
+contributions to our understanding of AI in the workplace: Our first aim
+is to create a measure of type of AI adopter. Second, we accomplish the
+goal of scale creation via a novel comparison of three approaches to
+developing items, (1) comparing traditionally-derived subject matter
+expert ratings, (2) with LLM-derived procedures including prompting via
+ChatGPT and (3) through a dedicated R package (AI-GENIE).
 
-- Develop AI adopter scale for SIOP (ChatGPT vs AI Genie vs hoomans)\
+## Conceptualizing AI Use in the Workplace
 
-- include "best" scale in larger model testing submission for Academy of
-  Management (December--ish deadline)
+Conceptualizing and measuring employee AI use is challenging. Existing
+research operationalizes AI use in terms of the extent or intensity it
+is used to perform work. For example, @zhang2026artificial measure AI
+usage with items assessing the degree to which employees use AI in
+carrying out their job functions. Increasing AI integration may alter
+employees’ routines, role boundaries, autonomy, and skills, suggesting
+that the potential impact of AI use likely goes beyond frequency or
+intensity. Two employees could report similarly high levels of AI use
+while interacting with the technology in fundamentally different ways.
+One employee may primarily use AI to automate routine administrative
+work, another may use it to generate and refine ideas, and still another
+may engage with AI iteratively as a source of expertise or cognitive
+challenge. Accordingly, understanding AI-enabled work may require
+measures that capture how they incorporate AI into their work.
 
-- Problem Statement/Attention Grabbing Paragraph + Purpose\
+@callari2025meaningful provide one framework for distinguish forms of AI
+use. Drawing on qualitative data from employees using Microsoft 365
+Copilot, they identified three ideal types of AI users
+Efficiency-Seeking, Pragmatic Integrators, and Collaborative Optimizers.
+These ideal types imply qualitatively different relationships between AI
+and features of work including autonomy, skill utilization, cognitive
+effort, and decision-making. The @callari2025meaningful framework
+suggests that AI use is not a uniform behavior but rather is best
+considered multidimensional.Yet, translating qualitative ideal types
+into quantitative measures presents a challenge. Ideal types represent
+recurring patterns of behavior and experience, but they do not
+necessarily correspond to distinct psychological constructs. Additional
+work is needed to determine whether AI user types such as those
+presented by @callari2025meaningful can be measured with survey items.
+Interestingly, the measurement of AI use is potentially enriched by
+recent technological developments. For a long time, the scale
+development process has relied on the efforts of researchers and
+subject-matter experts to turn construct definitions to survey items
+measuring the construct. Now, generative AI provides tools for producing
+surveys that measure constructs from idea generation to item testing.
+However, the question of whether survey items produced by generative AI
+can properly measure constructs remains.
 
-- History of JCM
+## The Current Study
 
-- How AI May Reshape Employee Experience
+The present study is an exploratory comparison of three approaches to
+developing items intended to assess employees’ orientations toward
+workplace AI use. Specifically, we compare items generated through (a)
+ChatGPT based on @callari2025meaningful’s (2025) ideal AI user types,
+(b) AI-GENIE, and (c) industrial-organizational psychology
+subject-matter experts. We evaluate the internal consistency and
+underlying factor structure of each item set. In doing so, this study
+has two primary objectives: first, to provide evidence regarding whether
+qualitatively derived forms of human–AI interaction can be
+operationalized as quantitative constructs, and second, to examine
+whether different approaches to item generation yield comparable
+representations of those constructs. More broadly, establishing how
+employees differ in their use of AI represents an important step toward
+understanding how AI may reshape established features of job design and
+the psychological experience of work.
 
-  - Present overview of current research on this topic as it applies\
-  - Job Crafting as an Outcome
-    - H1:\
-  - New Moderator in JCM Model: Type of AI Adopter
-    - H2:
+> *Research Question 1*: Is one instrument development procedure
+> (ChatGPT, AI-GENIE, or SMEs) yet a more coherent structure through a
+> traditional lens?
 
-![Working Draft Model: Revisiting JCM in the age of
-AI](/img/model.JPG){#fig-aijcm}
+> *Research Question 2*: Is one instrument development procedure
+> (ChatGPT, AI-GENIE, or SMEs) yet a more coherent structure through a
+> contemporary lens?
 
-```{mermaid}
-%%| eval: false
-%%| label: fig-aijcm
-%%| fig-cap: "Working Draft Model: Revisiting JCM in the age of AI"
-flowchart LR
-  %% Define nodes with multi-line text
-  CJD["Core Job Dimensions<br/>• Skill Variety<br/>• Task Identity<br/>• Task significance<br/>• Autonomy<br/>• Feedback"]
-  CPS["Critical Psychological States<br/>• Meaningfulness<br/>• Experienced responsibility of work outcomes<br/>• Knowledge of results?"]
-  Out["Internal Motivation<br/>Work Performance<br/>Job Satisfaction<br/>Low Turnover<br/>Satisfaction"]
-  JC["Job Crafting"]
-  GNS["Growth Needs Strength<br/>Type of AI Adopter<br/>• Efficiency-seeking<br/>• Pragmatic Integrator<br/>• Collaborative Optimizer"]
+> *Research Question 3*: Does the combination of traditional and
+> contemporary analyses provide a richer understanding of the structure
+> than either alone?
 
-  CJD --> CPS --> Out
-  GNS -.-> CPS
-  GNS -.-> Out
-  JC --> Out
+```{r}
+names <- read.csv("data/AI+Adoption_partialdata.csv")[1,]
+data <- read.csv("data/AI+Adoption_partialdata.csv")[-c(1:4),]  ## subset rows when get responses
 
-  %% etc. – adjust links and direction as needed
+recode_map <- c(
+  "Strongly disagree"          = 1,
+  "Somewhat disagree"          = 2,
+  "Neither agree nor disagree" = 3,
+  "Somewhat agree"             = 4,
+  "Strongly agree"             = 5
+)
+
+data[20:85] <- lapply(data[20:85], function(x) unname(recode_map[x]))
+
+#Remove incomplete data rows
+data$missing <- rowSums(is.na(data))
+data <- data[data$missing < 25,]
+
+################### ALPHAs
+## Chat GPT
+
+es_gpt_alpha <- psych::alpha(data[20:27], warnings=FALSE)    ## ES
+pi_gpt_alpha <- psych::alpha(data[28:35])    ## PI
+co_gpt_alpha <- psych::alpha(data[36:43])    ## CO
+
+## Humans
+
+#reflecting human-generated items 3-7
+data$SME_ES_3 <- 6-data$SME_ES_3
+data$SME_ES_4 <- 6-data$SME_ES_4
+data$SME_ES_5 <- 6-data$SME_ES_5
+data$SME_ES_6 <- 6-data$SME_ES_6 #empirical decision
+data$SME_ES_7 <- 6-data$SME_ES_7
+
+es_hum_alpha <- psych::alpha(data[44:50])    ## ES
+pi_hum_alpha <- psych::alpha(data[51:57])    ## PI
+co_hum_alpha <- psych::alpha(data[58:64])    ## CO
+
+## AI Genie
+
+es_genie_alpha <- psych::alpha(data[65:71])    ## ES
+pi_genie_alpha <- psych::alpha(data[72:78])    ## PI
+co_genie_alpha <- psych::alpha(data[79:85])    ## CO
+
+##################### Demographics
+
+referent <- table(data$Q51)  ## work or school?
+
+data$Q55 <- as.numeric(as.character(data$Q55))  ## age
 ```
 
-see @fig-aijcm
+```{r}
+#| label: tbl-alphas
+#| tbl-cap: Alpha estimates all 9 subscales
+
+library(flextable)
+library(tidyverse)
+
+tibble(
+  Scale = c("Chat GPT", "", "", "SME", "", "", "AI-GENIE", "", ""),
+  Subscale = c("Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser", "Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser", "Effeciency Seeking", "Pragmatic Integrator", "Collaborative Optimiser"),
+  Alpha = c(es_gpt_alpha$total$raw_alpha, 
+            pi_gpt_alpha$total$raw_alpha, 
+            co_gpt_alpha$total$raw_alpha, 
+            es_hum_alpha$total$raw_alpha, 
+            pi_hum_alpha$total$raw_alpha,
+            co_hum_alpha$total$raw_alpha,
+            es_genie_alpha$total$raw_alpha,
+            pi_genie_alpha$total$raw_alpha,
+            co_genie_alpha$total$raw_alpha)          
+) |>
+  flextable() |>
+  theme_apa() |>
+  width(width = c(2.5, 2, 2)) |>
+  align(align="left", part="all")
+
+```
+
+```{r}
+
+library(expss)
+
+majors <- data %>%
+  tab_cells(mrset_f(X5_)) %>%
+  tab_stat_cases(label = "n") %>%
+  tab_stat_cpct(label = "%") %>%
+  tab_pivot(stat_position = "inside_columns") %>%
+  where(!grepl("#", row_labels))
+
+major <- as_tibble(majors[-1])
+names(major)[1] <- "Major"
+names(major)[2] <- "Total (n)"
+names(major)[3] <- "Percent"
+
+major$`Total (n)` <- as.integer(major$`Total (n)`)
+
+#major|>                            ## Nice table (hidden from SIOP render)
+#  flextable() |>
+#  theme_apa() |>
+#  width(width = c(4, 2, 2)) |>
+#  align(align="left", part="all")
+
+largest <- major %>%
+  arrange(`Total (n)`)
+
+  
+```
+
+```{r}
+#| tbl-cap: Means, standard deviations, and correlations
+#| label: tbl-corrs
+
+## Chat GPT
+
+data$es_gpt <- rowMeans(data[20:27],na.rm=TRUE)    ## ES
+data$pi_gpt <- rowMeans(data[28:35],na.rm=TRUE)    ## PI
+data$co_gpt <- rowMeans(data[36:43],na.rm=TRUE)    ## CO
+
+## Humans
+
+data$es_hum <- rowMeans(data[44:50],na.rm=TRUE)    ## ES
+data$pi_hum <- rowMeans(data[51:57],na.rm=TRUE)    ## PI
+data$co_hum <- rowMeans(data[58:64],na.rm=TRUE)    ## CO
+
+## AI Genie
+
+data$es_genie <- rowMeans(data[65:71],na.rm=TRUE)    ## ES
+data$pi_genie <- rowMeans(data[72:78],na.rm=TRUE)    ## PI
+data$co_genie <- rowMeans(data[79:85],na.rm=TRUE)    ## CO
+
+
+# Select variables
+corr_vars <- data[, c(
+  "es_gpt",
+  "es_hum",
+  "es_genie",
+  "pi_gpt",
+  "pi_hum",
+  "pi_genie",
+  "co_gpt",
+  "co_hum",
+  "co_genie"
+)]
+
+# Apply manuscript-friendly labels
+names(corr_vars) <- c(
+  "GPT (ES)",
+  "SME (ES)",
+  "AI-GENIE (ES)",
+  "GPT (PI)",
+  "SME (PI)",
+  "AI-GENIE (PI)",
+  "GPT (CO)",
+  "SME (CO)",
+  "AI-GENIE (CO)"
+)
+
+
+r <- corx::corx(corr_vars,                    
+                triangle = "lower",
+##                stars = c(0.05, 0.01, 0.001),
+                describe = c(`$M$` = mean, `$SD$` = sd))
+
+papaja::apa_table(r$apa, # apa contains the data.frame needed for apa_table
+                  landscape = TRUE,      ## doesn't work
+                  note="* p < 0.05; ** p < 0.01; *** p < 0.001",
+                  escape = FALSE,
+                  font_size = 'scriptsize')             ## this may not work if knit to Word
+
+```
 
 # Method
 
 ## Participants
 
-UW-Stout students who are employed
+`r nrow(data)` undergraduate students responded (Mean age =
+`r round(mean(data$Q55, na.rm=TRUE),2)`, SD =
+`r round(sd(data$Q55, na.rm=TRUE),2)`). The students were given the
+choice of 50 different majors to choose from, with the greatest
+representation being `r largest[nrow(largest),1]` at
+`r round(largest[nrow(largest),3],2)`%, with a second largest group of
+`r largest[(nrow(largest)-1),1]` at
+`r round(largest[(nrow(largest)-1),3],2)`%. When asked, "Which context
+did you have in mind as you responded to the statements in this
+survey?", `r round((referent[3]/nrow(data))*100,2)`% indicated "school",
+`r round((referent[4]/nrow(data))*100,2)`% indicated "work", and
+`r round((referent[2]/nrow(data))*100,2)`% stated "other".
 
-## Measures
+## Materials
 
-JCM original measure: Hackman, J. R., & Oldham, G. R. (1975).
-Development of the Job Diagnostic Survey. Journal of Applied Psychology,
-60, 159-170. Job Crafting: Slemp & Vella-Brodrick (2013) Job Crafting
-Questionnaire (JCQ) 15 items Internal Motivation: Tremblay, M. A.,
-Blanchard, C. M., Taylor, S., Pelletier, L. G., & Villeneuve, M. (2009).
-Work Extrinsic and Intrinsic Motivation Scale: Its value for
-organizational psychology research. Canadian Journal of Behavioural
-Science, 41(4), 213-226. (3 items) Task Performance: Koopmans, L.,
-Bernaards, C. M., Hildebrandt, V. H., van Buuren, S., van der Beek, A.
-J., & de Vet, H. C. W. (2013). Development of an Individual Work
-Performance Questionnaire. International Journal of Productivity and
-Performance Management, 62(1), 6-28. DOI: 10.1108/17410401311285273. (13
-items) Job Satisfaction – ideas? Turnover Intent: Here are a list of
-options – all short measures: Bothma, C. F., & Roodt, G. (2013). The
-validation of the turnover intention scale.SA journal of human resource
-management,11(1), 1-12. Type of AI adopter: we don’t have a measure of
-this, but could give them the descriptions from this paper and ask them
-to self-assign: Callari, T. C., & Puppione, L. (2025).
+Items were generated based on the three themes uncovered by
+@callari2025meaningful in their qualitative study on the way employees
+perceive meaningful work in tasks co-generated by Microsoft 365 Copilot
+specifically. They identified three ideal types, including an
+Efficiency-Seeking Type (perceives the AI tool as a straightforward
+task-assistance tool), a Pragmatic Integrator Type (perceives AI tool as
+a smarter assistant), and a Collaborative Optimiser Type (perceives AI
+tool an expert-like teammate). Three different methods of item
+generation were used (and compared) here.
+
+### Expert--Generated Items.
+
+Three of the researchers independently generated 6-8 items per
+dimension. Combined lists of items were discussed by dimension, and the
+initial list of 57 candidate items was reduced to *k*=18 through
+consensus evaluation of item clarity and content domain coverage.
+
+### ChatGPT-Generated Items.
+
+The following prompt was input into ChatGPT version: “I need your help
+with generating a tentative list of survey items. I am reading the
+attached paper for the third time. I am interested in the three AI user
+ideal types and the survey items that could be generated to measure an
+employee's propensity toward one type or another.” Eight items were
+generated per dimension, along with rationale for those item choices
+(total *k*=24). See Appendix B for the full ChatGPT prompt and output,
+and Appendix C for a full list of items.
+
+### AI-GENIE-Generated Items.
+
+AI-GENIE is a tool for automated item development and validation using
+large language models and network psychometrics
+[@russell2026generative]. The following initial prompt was input, "You
+are an expert scale developer and methodologist who writes high quality
+and succinct (although with a use a 7th grade reading level) items based
+on the overarching definition of AI Adopter Type as articulated in
+@callari2025meaningful: “Three Ideal Types were identified: Ideal Type
+(1) – the Efficiency-Seeking Type – perceives AI as a straightforward
+task-assistance tool, Ideal Type (2) – the Pragmatic Integrator Type –
+views AI as a smarter assistant, and Ideal Type (3) – the Collaborative
+Optimiser Type – considers AI an expert-like teammate." Definitions of
+all three of the above dimensions, as well as example descriptors are
+provided as part of the prompt. Thirty items were initially generated.
+Combined lists of items were discussed by the researchers by dimension,
+and the most unique and clearly-written items were retained for the
+survey (total *k*=21). See the Appendix for all study items.
 
 ## Procedure
 
-WLuse's ChatGPT Prompt: "I need your help with generating a tentative list of survey items. I am reading the attached paper for the third time [the Callari and Puppione 2025 paper]. I am interested in the three AI user ideal types and the survey items that could be generated to measure an employee's propensity toward one type or another." 
+After consent, students were asked to think of the context where they
+use AI the most frequently (for example, as a student or as an employee)
+and to keep that role in mind for the entire survey. Respondents were
+shown items within generative grouping, followed by a few demographic
+questions. They responded to all AI--Adopter items on a 5-point
+Likert-type scale ranging from 1 (*strongly agree*) to 5 (*strongly
+disagree*). Following the survey, respondents were debriefed and offered
+course credit for their time.
 
 # Results
-Exploratory factor analyses (EFAs) were conducted separately for each of the three item sets: ChatGPT-generated, subject-matter expert (SME)-generated, and AI Genie-generated. One, two, and three-factor solutions were estimated for each item set using maximum likelihood estimation and an oblique Quartimin rotation. Following Hu and Bentler’s (1999) guidelines, model fit was evaluated using multiple indicators including the chi-square test of model fit, root mean square error of approximation (RMSEA), comparative fit index (CFI), Tucker-Lewis index (TLI), and standardized root mean square residual (SRMR). 
-Across all three item sets, model fit improved significantly as additional factors were extracted. Parallel analysis, however, suggested different levels of dimensionality across the item sets, with a one-factor solution for the AI Genie and SME item sets and a two-factor solution for the ChatGPT item set. Because the item pools were constructed to represent three conceptual domains, the three-factor solutions are discussed here to evaluate the pattern of item loadings and correspondence between the intended and emergent factor structures.
-The three-factor solution for the AI Genie-generated items demonstrated substantially better fit compared to the one- and two-factor models, χ²(150) = 207.64, p = .001, RMSEA = .064, 90% CI [.041, .084], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns provided partial evidence of a clear three-factor structure. Factor 1 was defined by four EF items and two PI items: GENIE_EF_2 (.643), GENIE_EF_3 (.853), GENIE_EF_5 (.769), GENIE_EF_7 (.760), GENIE_PI_1 (.702), and GENIE_PI_4 (.744). The second factor included items from all groups of items with significant loadings occurring for GENIE_PI_2 (.804), GENIE_PI_3 (.868), GENIE_PI_6 (.670), GENIE_PI_7 (.658), GENIE_CO_3 (.728), GENIE_CO_4 (.625), and GENIE_CO_5 (.693). Additionally, items GENIE_EF_1, GENIE_EF_6, and GENIE_PI_5, had significant cross loadings on Factors 1 and 2.
-Compared to Factors 1 and 2, Factor 3 was weakly defined. GENIE_CO_6 demonstrated the clearest loading on this factor (.562), whereas GENIE_CO_1 had a smaller loading of (.388). GENIE-EF_4 which significantly loaded onto Factor 2  had a significant negative loading on Factor 3 (-.310). Factor 1 and Factor 2 had a significant correlation (r = .762, p < .05), whereas the correlations of Factor 3 with Factors 1 (r = .295) and 2 (r = .289) did not approach statistical significance. Overall, the three-factor model demonstrated relatively good fit, the loading pattern suggests two somewhat clear factors with item cross loadings and an ambiguous third factor.  
-The three-factor solution for the SME-generated items demonstrated the strongest overall model fit of the three item-generation approaches, χ²(150) = 183.17, p = .034, RMSEA = .048, 90% CI [.015, .071], CFI = .962, TLI = .947, and SRMR = .050. Factor 1 was defined by PI items, including SME_PI_1 (.521) and SME_PI_2 (.597), SME_PI_4 (.656), SME_PI_6 (.595), and SME_PI_7 (.564), as well as SME_CO_1 (.629) and SME_CO_5 (.407). Additionally, four items including SME_ES_3 (-.559), SME_ES_5 (-.574), and SME_ES_7 (-.630) loaded negatively onto this factor.
-Items SME_ES_1 (.740) and SME_PI_3 (.724) loaded mostly strongly on Factor 2, with SME_ES_6 exhibiting a more modest loading (.351). Factor 3 was primarily defined by SME_PI_5 (.790) and several CO items, including SME_CO_2 (.402), SME_CO_3 (.553), SME_CO_4 (.411), SME_CO_6 (.672), and SME_CO_7 (.584). SME_ES_4 exhibited loadings on both Factor 1 (-.320) and Factor 3 (.388), while SME_ES_2 did not load strongly on any single factor. All three factors were significantly correlated at the 5% level threshold (p < .05) . Factor 1 correlated .441 with Factor 2 and .635 with Factor 3, while Factors 2 and 3 correlated .458. Overall, the three-factor model provided strong fit, although the like the AI_Genie items, loadings did not create three distinct item groupings.  
-Like the other two item sets, model fit improved as additional factors were extracted for the ChatGPT-generated items. The three-factor model provided the best fit of the models examined for the ChatGPT-Generated items, χ²(207) = 347.09, p < .001, RMSEA = .084, 90% CI [.068, .099], CFI = .879, TLI = .838, and SRMR = .053. Despite this improvement, the additional indicators of model fit (RMSEA, CFI, and TLI) indicated relatively worse fit than the three-factor solutions for the SME and AI_Genie models.  
-Nonetheless, the three-factor solution revealed several interpretable item loadings. Factor 1 was primarily defined by ES items, including chat_ES_1 (.472), chat_ES_3 (.769), chat_ES_6 (.680), and chat_ES_8 (.453), and chat_PI_3 (.495) which also had a significant negative cross-loading with Factor 3 (-.303). Factor 2 was defined by the PI and CO items. PI item loadings on Factor 2 included chat_PI_1 (.751), chat_PI_4 (.765), chat_PI_6 (.600), chat_PI_7 (.601), and chat_PI_8 (.464). All eight CO items loaded most strongly on Factor 2, with loadings ranging from .490 to .864. Finally, Factor 3 was defined by a handful of ES items, including chat_ES_4 (.520), chat_ES_5 (.650), and chat_ES_8 (.490). Notably, chat_ES_8 cross-loaded on Factors 1 (.453) and 3 (.490), while chat_ES_7 did not load strongly on any factor.
-Factors 1 and 2 were significantly correlated (r = .477, p < .05), while Factor 3 was did not have a significant correlation with Factor 1 (r = -.029) or Factor 2 (r = -.146). Taken together, these results suggest that the ChatGPT-generated items exhibited meaningful multidimensionality, but the observed structure did not cleanly produce loadings indicating three distinct factors. Additionally, the ChatGPT-generated items demonstrated worse model fit than the corresponding SME and AI Genie item sets.
 
+## Traditional Lens
+
+Inter--scale correlations as well as scale means and standard deviations
+are presented in [@tbl-corrs; note that the sequence of scale orderings
+is informed by @campbell1959convergent]. Here, the Efficiency Seeking
+scales exhibit the least intra--dimension agreement (correlations across
+development methodologies ranging from $r_{GPT-SME}$ = .14, ns to
+$r_{GPT-Genie}$ = .51, *p* \< .001). Pragmatic Integrator and
+Collaborative Optimiser scales exhibited consistently higher
+intra--dimension associations (ranging from a low of
+$r_{Genie(CO)-SME(CO)}$ = .76, *p* \< .001 to a high of
+$r_{Genie(PI)-SME(PI)}$ = .84, *p* \< .001). *Lack* of association with
+"other" scale dimensions was most prominent with the Efficiency Seeking
+scales, particularly so for the ChatGPT developed scale (and to a lesser
+degree, the SME--derived scale; e.g., the average magnitude of
+correlation was *smallest*).
+
+Individual scale alphas were predominantly within the .8 to .9 range,
+although two scales exhibited suppressed values (the ChatGPT Efficiency
+Seeking scale $\alpha$ = .69 and the SME Efficiency Seeking scale
+$\alpha$ = .59). Note that: 1) these are the two scales that also
+exhibited the lowest average inter--scale associations (see @tbl-corrs),
+and 2) the numbers of items differed across scales (*k~ChatGPT~* = 6,
+*k~SME~* = 7, and *k~AI--Genie~* = 8). All scale $\alpha$'s are
+presented in @tbl-alphas
+
+```{r efa-network}
+library(tidygraph)
+library(ggraph)
+
+## EFA loading network: items link to factors with |loading| >= cutoff;
+## edge width/opacity = |loading|, dashed = negative, node colour = intended subscale
+efa_network <- function(items, nfactors = 3, cutoff = .30, title = NULL, seed = 2026,
+                        factor_prefix = NULL) {
+  efa <- psych::fa(items, nfactors = nfactors, fm = "ml", rotate = "oblimin")  # oblimin (gamma = 0) = Mplus quartimin
+  L <- unclass(efa$loadings)
+  if (!is.null(factor_prefix)) colnames(L) <- paste0(factor_prefix, seq_len(ncol(L)))
+  factors <- colnames(L)
+
+  edges <- as.data.frame(as.table(L), stringsAsFactors = FALSE) |>
+    setNames(c("from", "to", "loading")) |>
+    dplyr::filter(abs(loading) >= cutoff) |>
+    dplyr::mutate(strength = abs(loading),
+                  sign = ifelse(loading < 0, "Negative", "Positive"))
+
+  subscale <- dplyr::case_when(
+    grepl("_(ES|EF)_", rownames(L)) ~ "Efficiency Seeking",
+    grepl("_PI_", rownames(L))      ~ "Pragmatic Integrator",
+    grepl("_CO_", rownames(L))      ~ "Collaborative Optimiser"
+  )
+  nodes <- rbind(
+    data.frame(name = factors, type = "factor", Subscale = NA),
+    data.frame(name = rownames(L), type = "item", Subscale = subscale)
+  )
+  nodes$Subscale <- factor(nodes$Subscale,
+                           levels = c("Efficiency Seeking", "Pragmatic Integrator", "Collaborative Optimiser"))
+
+  g <- tbl_graph(nodes = nodes, edges = edges, directed = FALSE)
+
+  set.seed(seed)
+  lay <- if (nfactors == 1) create_layout(g, layout = "star", center = 1) else create_layout(g, layout = "stress")  # star keeps 1-factor spokes from overlapping
+  ggraph(lay) +
+    geom_edge_link(aes(edge_width = strength, edge_alpha = strength, edge_linetype = sign),
+                   colour = "grey55") +
+    geom_node_point(data = \(d) dplyr::filter(d, type == "factor"),
+                    colour = "grey80", size = 7) +
+    geom_node_point(data = \(d) dplyr::filter(d, type == "item"),
+                    aes(colour = Subscale), size = 5) +
+    geom_node_text(aes(label = name), size = 3, repel = TRUE) +
+    scale_edge_width(range = c(0.3, 2.5), limits = c(cutoff, 1), name = "|Loading|") +
+    scale_edge_alpha(range = c(0.3, 1), limits = c(cutoff, 1), guide = "none") +
+    scale_edge_linetype_manual(values = c(Positive = "solid", Negative = "dashed"),
+                               name = "Direction") +
+    scale_colour_brewer(palette = "Set2", drop = FALSE) +
+    labs(title = title, colour = "Subscale") +
+    theme_graph(base_family = "sans") +
+    theme(legend.position = "bottom", legend.box = "vertical",
+          plot.title = element_text(size = 14, face = "plain"))
+}
+```
+
+```{r}
+#| label: fig-net-gpt
+#| fig-cap: EFA loading network, ChatGPT--generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[20:43], title = "ChatGPT Items")
+```
+
+```{r}
+#| label: fig-net-sme
+#| fig-cap: EFA loading network, expert--generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[44:64], title = "Expert--Generated Items")
+```
+
+```{r}
+#| label: fig-net-genie
+#| fig-cap: EFA loading network, AI-GENIE-generated items (3 factors, ML, oblimin; |loading| ≥ .30)
+#| fig-width: 8
+#| fig-height: 8
+
+efa_network(data[65:85], title = "AI--GENIE Items")
+```
+
+Exploratory factor analyses (EFAs) were also conducted. One--, two--,
+and three--factor solutions were estimated for each item set using
+maximum likelihood estimation and an oblique Quartimin rotation.
+Following @hu1999cutoff's guidelines, model fit was evaluated using
+multiple indicators. The results presented here focus only on the
+three--factor models.
+
+The three-factor model for the ChatGPT-Generated items returned the
+weakest structural evidence (χ²(207) = 347.09, *p* \< .001, RMSEA =
+.084, 90% CI \[.068, .099\], CFI = .879, TLI = .838, and SRMR = .053).
+Factors 1 and 2 were significantly correlated (r\*\* = .48, *p* \< .05),
+while Factor 3 was did not have a significant correlation with Factor 1
+(*r* = -.03) or Factor 2 (*r* = -.15). Visual representation of loadings
+is presented in @fig-net-gpt.
+
+The three-factor solution for the SME-generated items demonstrated the
+strongest overall model fit of the three item-generation approaches,
+χ²(150) = 183.17, *p* = .034, RMSEA = .048, 90% CI \[.015, .071\], CFI =
+.962, TLI = .947, and SRMR = .050. All three factors were significantly
+correlated at the 5% level threshold (*p* \< .05) . Factor 1 correlated
+.44 with Factor 2 and .64 with Factor 3, while Factors 2 and 3
+correlated .46. Overall, the three-factor model provided strong fit,
+although the like the AI--GENIE items, loadings did not create three
+distinct item groupings (see @fig-net-sme).
+
+The AI-GENIE-generated items demonstrated fair fit to the three--factor
+solution, χ²(150) = 207.64, *p* = .001, RMSEA = .064, 90% CI \[.041,
+.084\], CFI = .960, TLI = .944, and SRMR = .036. Item loading patterns
+provided partial support, with several non--hypothesized associations
+and substantive cross--loadings (see @fig-net-genie for a visual
+representation)[^1]. Factors 1 and 2 exhibited a significant correlation
+(r = .76, *p* \< .05), whereas the correlations of Factor 3 with Factors
+1 (*r* = .30) and 2 (*r* = .29) did not approach statistical
+significance. Overall, the three-factor model demonstrated relatively
+good fit, the loading pattern suggests two somewhat clear factors with
+item cross loadings and an ambiguous third factor.
+
+[^1]: Each figure shows the results of an exploratory factor analysis as
+    a network. The large grey nodes are the extracted factors. The
+    smaller colored nodes are the survey items, and their color shows
+    which subscale the item was written for: Efficiency Seeking,
+    Pragmatic Integrator or Collaborative Optimiser. A line between an
+    item and a factor means the item loads on that factor at \|.30\| or
+    higher. Thicker, darker lines mean stronger loadings, and red lines
+    mean negative loadings. If the items worked as intended, each factor
+    would be surrounded by a cluster of items of a single color, and
+    each item would connect to only one factor. Factors that collect
+    items of mixed colors, or items that connect to several factors
+    (cross-loadings), suggest the intended three-type structure is not
+    holding up.
+
+Taken together, these results point toward the ChatGPT--generated items
+as exhibiting the weakest traditional (empirical) evidence, with the
+observed structure largely not conforming to the theoretical
+associations. Additionally, the ChatGPT-generated items demonstrated
+worse model fit than the corresponding SME and AI--GENIE item sets.
+
+## Contemporary Lens
+
+```{r}
+#| label: fig-ega-gpt
+#| fig-cap: Exploratory Graph Analysis (ChatGPT)
+
+if (!requireNamespace("EGAnet", quietly = TRUE)) install.packages("EGAnet")
+library(EGAnet)
+
+ega_gpt   <- EGA(data[20:43], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+#ega_sme   <- EGA(data[44:64], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+#ega_genie <- EGA(data[65:85], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+
+plot(ega_gpt)   + ggplot2::labs(title = "ChatGPT Items")
+#plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
+#plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
+```
+
+```{r}
+#| label: fig-ega-sme
+#| fig-cap: Exploratory Graph Analysis (SME)
+
+if (!requireNamespace("EGAnet", quietly = TRUE)) install.packages("EGAnet")
+library(EGAnet)
+
+#ega_gpt   <- EGA(data[20:43], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+ega_sme   <- EGA(data[44:64], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+#ega_genie <- EGA(data[65:85], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+
+#plot(ega_gpt)   + ggplot2::labs(title = "ChatGPT Items")
+plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
+#plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
+```
+
+```{r}
+#| label: fig-ega-genie
+#| fig-cap: Exploratory Graph Analysis (AI-GENIE)
+
+if (!requireNamespace("EGAnet", quietly = TRUE)) install.packages("EGAnet")
+library(EGAnet)
+
+#ega_gpt   <- EGA(data[20:43], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+#ega_sme   <- EGA(data[44:64], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+ega_genie <- EGA(data[65:85], model = "glasso", algorithm = "walktrap", plot.EGA = FALSE)
+
+#plot(ega_gpt)   + ggplot2::labs(title = "ChatGPT Items")
+#plot(ega_sme)   + ggplot2::labs(title = "Expert-Generated Items")
+plot(ega_genie) + ggplot2::labs(title = "AI-GENIE Items")
+```
+
+Network Psychometrics has provided not merely a newer philosophical lens
+on psychological measurement, but it has also introduced novel empirical
+procedures [@epskamp2018network; @borsboom2022possible;
+@borsboom2013network].
+
+Exploratory graph analysis (EGA) is a procedure that, similar to
+traditional factor analysis, is aimed at discovering how items on a
+psychological measure group together. Each item is treated as a node,
+and the strength of the unique association between items (after
+accounting for all other items) is shown as an edge; items that remain
+strongly linked tend to form clusters. A community-detection algorithm
+then identifies those clusters, which are interpreted as the dimensions
+or factors of the construct. An EGA plot therefore shows both the
+estimated structure and the item membership of each dimension in one
+figure.
+
+Exploratory Graph Analyses do not specify factors in advance. Instead
+they estimates a network directly among items via semantic association,
+and the results of these are presented in @fig-ega-gpt, @fig-ega-sme,
+and @fig-ega-genie. Each line is a regularized partial correlation
+(EBICglasso), meaning the relationship between two items after
+controlling for all the other items. Thicker lines are stronger
+associations, and the line colour shows whether the association is
+positive or negative. Weak relationships are shrunk to zero and dropped.
+The Walktrap algorithm then detects communities: groups of items that
+are more tightly connected to each other than to the rest of the
+network. Unlike in the EFA plots, the node colours here mark these
+empirically detected communities, not the intended subscales. The number
+of communities is the EGA estimate of the dimensionality of each item
+set.
 
 # Discussion
 
-## Limitations and Future Directions
+The purpose of this stuy was twofold: 1) to create a measure of type of
+AI adopter, 2) to compare three approaches to developing items,
+comparing traditionally-derived subject matter expert ratings, with
+LLM-derivded procedures using ChatGPT and AI-GENIE. The primary question
+of interest was whether the AI-driven item-generation procedures (i.e.,
+ChatGPT or AI-GENIE) as good as, or even superior to, traditionally
+generated SME items.
 
-[@abeza2015]
+First, all three procedures did result in a measure of AI adopter type.
+The results of the traditional analyses suggest the the SME-generated
+items demonstrated the best fit, followed by AI-GENIE and then ChatGPT.
+However, items did not load cleanly as expected within dimensions. The
+semantic exploratory graph analyses...
+
+> DISCUSSION CENTER: Resolving the EFA visuals with the EGA visuals --
+> also discussing the possibility that there are not "three dimensions"
+> but rather three different levels of AI comfort: introductory,
+> intermediate, and expert... it's a matter of degree not type, and
+> therefore the measurement results from three different methodologies
+> may reasonably be expected to not differentiate greatly (@tbl-corrs),
+> or to result in muddled structures when imposed on the data (EFAs).
+> Implications are that this construct may benefit from further
+> THEORETICAL specification
+
+## Implications
+
+One of the theoretical contributions we make is to explore the ways AI
+is being used at present. @callari2025meaningful presented three ideal
+types of AI users that we based our quantitative scale creation on. The
+somewhat mixed results suggest that there may not be distinct types of
+AI users, but rather, we can conceptualize AI use on an continuum of
+expertise, whereby greater levels of expertise are evidenced by a higher
+degree of AI collaboration.
+
+## Limitations & Future Directions
+
+We note a number of limitations that future study/comparisons would
+benefit from. First, for this SIOP submission, we present a modest
+sample size. An additional study comparing these three procedures with a
+larger sample size is warranted. In addition, this first pilot sample
+was obtained from university students were were asked to keep one
+context in mind as they responded to the survey. The majority of
+respondents indicated they had school in mind, whereas a smaller
+percentage had work in mind. Future research should incorporate full
+time employees across industries, and account for degree of AI
+integration within their workplaces.
 
 ## Conclusion
+
+Please add after viewing
 
 # References
 
@@ -130,60 +678,3 @@ Factors 1 and 2 were significantly correlated (r = .477, p < .05), while Factor 
 
 ::: {#refs}
 :::
-
-# Notes from Alicia (7/23/26) {#apx-a}
-
-Growth Need Strength (GNS)
-
-“As noted earlier, there is now substantial evidence that differences
-among people moderate how they react to their work, and individual need
-strength appears to be a useful way to conceptualize and measure such
-differences. The basic prediction is that people who have high need for
-personal growth and development will respond more positively to a job
-high in motivating potential than people with low growth need strength.”
-[@hackman1976motivation, p. 258]
-
-Options for measurement:
-
-Job Diagnostic Survey (JDS) Growth Need Strength Scales,
-@hackman1975development
-
-1.  “Job Choice” GNS Scale\
-
-- Respondents choose between pairs of hypothetical jobs.\
-- Measures preference for challenging, growth-oriented work versus
-  comfort, security, or other job features.\
-- I have the original article, but not the items themselves for the job
-  choice measure– these two scales seem to first be described here:
-  \<https://werkwelzijnenmotivatie.wordpress.
-  com/wp-content/uploads/2020/05/hackman-oldham-1975.pdf\>
-
-2.  “Would-Like” GNS Scale\
-
-- Respondents indicate how much challenge, responsibility, learning,
-  autonomy, and growth they would like in a job, rated from 1 (not at
-  all) to 5 (very much). I think these are the items themselves,
-  although these (1975?) differ from the original in the 1974 tech
-  report. I will attach the tech report– see the scoring key for which
-  items in the appendix are to be summed for the GNS measure there.
-
-“Considering all the things that are personally important to you in your
-work, how important is it to you to have…”
-
-1.  ‘stimulating and challenging work’,\
-2.  ‘creative and imaginative work’,\
-3.  ‘a chance to exercise independent thought and action’,\
-4.  ‘opportunities to learn new things’,\
-5.  ‘opportunities for achievement’, and\
-6.  ‘opportunities for personal growth and development’.
-
-Higher-Order Need Strength (HONS) Measures, @hackman1971employee This
-appears to be prior to GNS: higher-order need strength, reflecting
-desires for:
-
-- Achievement\
-- Challenge\
-- Responsibility\
-- Personal accomplishment
-
-# Another Appendix {#apx-b}
