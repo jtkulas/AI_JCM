@@ -447,7 +447,7 @@ weakest structural evidence (χ²(207) = 347.09, *p* \< .001, RMSEA =
 Factors 1 and 2 were significantly correlated (r\*\* = .48, *p* \< .05),
 while Factor 3 was did not have a significant correlation with Factor 1
 (*r* = -.03) or Factor 2 (*r* = -.15). Visual representation of loadings
-is presented in @fig-net-gpt.[^Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their color shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at \|.30\| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single color, and each item would connect to only one factor. Factors that collect items of mixed colors, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is not holding up.]
+is presented in @fig-net-gpt.^[Each figure shows the results of an exploratory factor analysis as a network. The large grey nodes are the extracted factors. The smaller colored nodes are the survey items, and their color shows which subscale the item was written for: Efficiency Seeking, Pragmatic Integrator or Collaborative Optimiser. A line between an item and a factor means the item loads on that factor at \|.30\| or higher. Thicker, darker lines mean stronger loadings, and red lines mean negative loadings. If the items worked as intended, each factor would be surrounded by a cluster of items of a single color, and each item would connect to only one factor. Factors that collect items of mixed colors, or items that connect to several factors (cross-loadings), suggest the intended three-type structure is lacking support. These visuals were constructed to facilitate comparison with visuals constructed from the network psychometric analyses (EGAs -- explained below).]
 
 The three-factor solution for the SME-generated items demonstrated the
 strongest overall model fit of the three item--generation approaches,
@@ -531,73 +531,45 @@ Network Psychometrics has provided not merely a newer philosophical lens on psyc
 @borsboom2013network]. Exploratory graph analysis (EGA) is a procedure that, similar to traditional factor analysis, is aimed at discovering how items on a psychological measure group together. Each item is treated as a node, and the strength of the unique association between items (after accounting for all other items) is shown as an edge; items that remain strongly linked tend to form clusters. A community-detection algorithm then identifies those clusters, which are interpreted as the dimensions or factors of the construct. An EGA plot therefore shows both the estimated structure and the item membership of each dimension in one figure.
 
 Exploratory Graph Analyses do not specify factors in advance. Instead
-they estimates a network directly among items via semantic association,
+they estimate a network directly among items via semantic association,
 and the results of these are presented in @fig-ega-gpt, @fig-ega-sme,
 and @fig-ega-genie. Each line is a regularized partial correlation
-(EBICglasso), meaning the relationship between two items after
-controlling for all the other items. Thicker lines are stronger
-associations, and the line colour shows whether the association is
-positive or negative. Weak relationships are shrunk to zero and dropped.
+(EBICglasso; the relationship between two items after
+controlling for all other items). Thicker lines are stronger
+associations, and the line color reflects whether the association is
+positive or negative. Weak relationships are assigned a value of zero and dropped.
 The Walktrap algorithm then detects communities: groups of items that
 are more tightly connected to each other than to the rest of the
-network. Unlike in the EFA plots, the node colours here mark these
-empirically detected communities, not the intended subscales. The number
+network. Unlike the EFA plots, the node colors here mark these
+semantically detected communities, not the intended subscales. The number
 of communities is the EGA estimate of the dimensionality of each item
 set.
 
 # Discussion
 
-The purpose of this stuy was twofold: 1) to create a measure of type of
-AI adopter, 2) to compare three approaches to developing items,
-comparing traditionally-derived subject matter expert ratings, with
-LLM-derivded procedures using ChatGPT and AI-GENIE. The primary question
-of interest was whether the AI-driven item-generation procedures (i.e.,
-ChatGPT or AI-GENIE) as good as, or even superior to, traditionally
-generated SME items.
+The purpose of this study was twofold: 1) to create a measure of AI adopter *type* consistent with the @callari2025meaningful trichotomy, and 2) to compare approaches to developing items,
+both at the item development stage (3 methods) and also at the structural evaluation stage (traditional and network psychometric analyses). The first research question asked whether one instrument development procedure (ChatGPT, AI--GENIE, or SMEs) yeilds a more coherent structure than others. The second research question asked whether a combination of traditional and contemporary analyses provides a richer understanding of scale structure than does either approach alone.
 
-First, all three procedures did result in a measure of AI adopter type.
-The results of the traditional analyses suggest the the SME-generated
+All three item--generation procedures did produce items that, upon author review, were consistent with the theoretical conceptualizations of AI adopter type.
+The results of the traditional analyses suggest the  SME--generated
 items demonstrated the best fit, followed by AI-GENIE and then ChatGPT.
-However, items did not load cleanly as expected within dimensions. The
-semantic exploratory graph analyses...
+However, none of the item sets loaded cleanly as expected within *a priori* dimensions. The
+semantic exploratory graph analyses quite strongly favor the ChatGPT item set. Here, there was almost perfect recovery of the @callari2025meaningful categories (only two Pragmatic Integrator items strayed from pre--supposed clusterings, see @fig-ega-gpt). The SME--derived item set returned the *least interpretable* semantically--driven associations -- note that this is a complete reversal of the conclusions from the traditional indicators. 
 
-> DISCUSSION CENTER: Resolving the EFA visuals with the EGA visuals --
-> also discussing the possibility that there are not "three dimensions"
-> but rather three different levels of AI comfort: introductory,
-> intermediate, and expert... it's a matter of degree not type, and
-> therefore the measurement results from three different methodologies
-> may reasonably be expected to not differentiate greatly (@tbl-corrs),
-> or to result in muddled structures when imposed on the data (EFAs).
-> Implications are that this construct may benefit from further
-> THEORETICAL specification
+The somewhat unusual EFA representations (e.g., @fig-net-gpt) were specified in an attempt to accommodate both approaches, such that EFA associations could be digested in a similar manner to EGA relationships. Conferring with these visuals, as well as one--factor solutions (not presented in this current paper) led that authors to consider the possibility that the @callari2025meaningful *typology* may not be the best representation of AI adopter variability. It is possible that a difference of saturation is more salient than is a difference of orientation (e.g., "novice, intermediate, and expert user" as opposed to "effeciency seeker, pragmatic integrator, and collaborative optimiser). The greatest substantive implication here, then, is that this construct may benefit from further theoretical attention and specification. The results of integration of traditional and network psychometric indicators, we believe, holds potential for unique insight regarding the structural associations among assessment components. 
 
-## Implications
-
-One of the theoretical contributions we make is to explore the ways AI
-is being used at present. @callari2025meaningful presented three ideal
-types of AI users that we based our quantitative scale creation on. The
-somewhat mixed results suggest that there may not be distinct types of
-AI users, but rather, we can conceptualize AI use on an continuum of
-expertise, whereby greater levels of expertise are evidenced by a higher
-degree of AI collaboration.
+One of the practical contributions we make is to explore the ways AI is being used at present. @callari2025meaningful presented three ideal
+types of AI users that we based our quantitative scale creation on. The somewhat mixed results suggest that there may not be distinct types of AI users, but rather, we can conceptualize AI use on an continuum of expertise, whereby greater levels of expertise are evidenced by a higher degree of AI collaboration.
 
 ## Limitations & Future Directions
 
-We note a number of limitations that future study/comparisons would
-benefit from. First, for this SIOP submission, we present a modest
-sample size. An additional study comparing these three procedures with a
-larger sample size is warranted. In addition, this first pilot sample
-was obtained from university students were were asked to keep one
-context in mind as they responded to the survey. The majority of
-respondents indicated they had school in mind, whereas a smaller
-percentage had work in mind. Future research should incorporate full
-time employees across industries, and account for degree of AI
-integration within their workplaces.
+We note a number of limitations that future study/comparisons would benefit from. First, for this SIOP submission, we present a modest sample size. An additional study comparing these three procedures with a
+larger sample size is warranted. In addition, this first pilot sample was obtained from university students were were asked to keep one context in mind as they responded to the survey. The majority of respondents indicated they had school in mind, whereas a smaller percentage had work in mind. Future research should incorporate full
+time employees across industries, and account for degree of AI integration within their workplaces.
 
 ## Conclusion
 
-Ideally discuss: 1) how the conceptualization of AI adopter type may be better structured as differences of AI adopter *degree* (e.g., novice, intermediate, or expert), and 2) mutual consideration of traditional and newer lenses for scale development may provide greater insight than does consideration of either approach in isolation.
-> Note that this is the conclusion only if these points are first made within the discussion!! 
+The conceptualization of AI adopter type may be better structured as differences of AI adopter *degree* (e.g., novice, intermediate, or expert), and mutual consideration of traditional and newer lenses for scale development may provide greater insight than does consideration of either approach in isolation.
 
 # References
 
