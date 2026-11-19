@@ -1,0 +1,217 @@
+---
+# The YAML header specifies several settings for the survey but is not required.
+# A full list of settings can be found under _survey/settings.yml directory.
+
+# Use this section to customize theme, progress bar, and footers
+theme-settings:
+  theme: default
+  page-layout: full
+  barposition: top
+  footer-left: "Made with [surveydown](https://surveydown.org)"
+  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_default)'
+
+# Use this section to customize survey behavior and appearance
+survey-settings:
+  show-previous: false
+  use-cookies: false
+  auto-scroll: true
+  rate-survey: false
+  system-language: en
+  highlight-unanswered: true
+  highlight-color: blue
+  capture-metadata: true
+  all-questions-required: false
+
+# Use this section to customize system messages
+system-messages:
+  warning: Warning Message
+  previous: Previous Page
+  next: Next Page
+  exit: Finish Survey
+bibliography: bib.bib
+---
+
+```{r}
+library(surveydown)
+```
+
+--- welcome
+
+# Purpose
+
+This survey contains 21 candidate items for an Artificial Intelligence (AI) adopter "type". The items were informed from a qualitative study [@callari2025meaningful]. At the end of the survey you will be provided a personalized report from the 21--item scale, however, the final validated measure will most likely consist of fewer items (your responses will help us refine the 21--items).
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "ES1",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "I primarily use AI tools to complete routine or administrative tasks more efficiently" = "ES_1",
+    "I reserve AI for tasks that demand little mental effort"          = "ES_2",
+    "I prefer to keep final judgment and decision-making clearly in my own hands when using AI" = "ES_3"
+    ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "ES2",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "I am cautious about relying too heavily on AI-generated outputs" = "ES_4",
+    "Using AI tools gives me more time to connect with colleagues" = "ES_5",
+    "I am confident in my ability to construct useful AI prompts" = "ES_6"
+  ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "ESPI",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "AI effectively condenses complex information into actionable summaries for me" = "ES_7",
+    "I use AI tools as a competent assistant that helps me develop ideas or organize my thinking" = "PI_1",
+    "I use AI to help me approach tasks I might not have had enough time or knowledge to complete on my own"          = "PI_2"
+  ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "PI1",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "I see prompting AI as a useful skill that improves with practice" = "PI_3",
+    "AI helps me become more productive by helping me start, structure, or improve my work" = "PI_4",
+    "AI offers valuable guidance on complex or unfamiliar topics" = "PI_5"
+    ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "PICO",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "My decision making is aided by AI" = "PI_6",
+    "AI-generated suggestions broaden the range of options I consider for creative projects" = "PI_7",
+    "I rely on AI to maintain reliable exchanges, much like a seasoned confidant in complex discussions" = "CO_1"
+  ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "CO1",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "In my view, AI functions as a reliable contributor, much like a dependable team member" = "CO_2",
+    "AI helps me deepen my analysis rather than simply complete tasks faster" = "CO_3",
+    "My ability to think strategically is enhanced with AI" = "CO_4"
+  ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "CO2",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "I use AI to test, refine, or strengthen my professional judgment" = "CO_5",
+    "My employer has done a good job with integrating AI tools into our workflows" = "CO_6",
+    "Continuous workplace learning to adapt to changing skill requirements is essential in our evolving AI landscape" = "CO_7"
+  ),
+  option = c(
+    "Strongly Disagree" = "1",
+    "Disagree"          = "2",
+    "Neither Agree nor Disagree"  = "3",
+    "Agree"            = "4",
+    "Strongly Agree"   = "5"
+  ),
+  matrix_question_width = "30%"  # smaller=more space for options
+)
+```
+
+```{r}
+sd_nav(page_next = "page2", label_next = "Demographics")
+```
+
+--- page2
+
+Demographics will help us develop norms (comparative distributions against which future assessment takers' scores can be evaluated).
+
+
+
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "feedback",
+  label = "Any feedback you'd like to provide the assessment developers:"
+)
+```
+
+--- end
+
+## End
+
+This is the last page in the survey.
+
+Here we call `sd_close()` to create a finish button to end the survey. When calling `sd_close()`, the auto-navigation is disabled.
+
+::: {#refs}
+:::
+
+```{r}
+sd_close()
+```
