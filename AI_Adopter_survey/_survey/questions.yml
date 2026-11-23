@@ -4,7 +4,6 @@ ES1:
   index: 1
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I primarily use AI tools to complete routine or administrative tasks more efficiently: ES_1
     I reserve AI for tasks that demand little mental effort: ES_2
@@ -19,7 +18,6 @@ ES1_ES_1:
   index: 2
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -30,7 +28,6 @@ ES1_ES_2:
   index: 3
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -41,7 +38,6 @@ ES1_ES_3:
   index: 4
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -52,7 +48,6 @@ ES2:
   index: 5
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I am cautious about relying too heavily on AI-generated outputs: ES_4
     Using AI tools gives me more time to connect with colleagues: ES_5
@@ -67,7 +62,6 @@ ES2_ES_4:
   index: 6
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -78,7 +72,6 @@ ES2_ES_5:
   index: 7
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -89,7 +82,6 @@ ES2_ES_6:
   index: 8
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -100,7 +92,6 @@ ESPI:
   index: 9
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     AI effectively condenses complex information into actionable summaries for me: ES_7
     I use AI tools as a competent assistant that helps me develop ideas or organize my thinking: PI_1
@@ -115,7 +106,6 @@ ESPI_ES_7:
   index: 10
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -126,7 +116,6 @@ ESPI_PI_1:
   index: 11
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -137,7 +126,6 @@ ESPI_PI_2:
   index: 12
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -148,7 +136,6 @@ PI1:
   index: 13
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I see prompting AI as a useful skill that improves with practice: PI_3
     AI helps me become more productive by helping me start, structure, or improve my work: PI_4
@@ -163,7 +150,6 @@ PI1_PI_3:
   index: 14
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -174,7 +160,6 @@ PI1_PI_4:
   index: 15
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -185,7 +170,6 @@ PI1_PI_5:
   index: 16
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -196,7 +180,6 @@ PICO:
   index: 17
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     My decision making is aided by AI: PI_6
     AI-generated suggestions broaden the range of options I consider for creative projects: PI_7
@@ -211,7 +194,6 @@ PICO_PI_6:
   index: 18
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -222,7 +204,6 @@ PICO_PI_7:
   index: 19
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -233,7 +214,6 @@ PICO_CO_1:
   index: 20
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -244,7 +224,6 @@ CO1:
   index: 21
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     In my view, AI functions as a reliable contributor, much like a dependable team member: CO_2
     AI helps me deepen my analysis rather than simply complete tasks faster: CO_3
@@ -259,7 +238,6 @@ CO1_CO_2:
   index: 22
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -270,7 +248,6 @@ CO1_CO_3:
   index: 23
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -281,7 +258,6 @@ CO1_CO_4:
   index: 24
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -292,7 +268,6 @@ CO2:
   index: 25
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I use AI to test, refine, or strengthen my professional judgment: CO_5
     My employer has done a good job with integrating AI tools into our workflows: CO_6
@@ -307,7 +282,6 @@ CO2_CO_5:
   index: 26
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -318,7 +292,6 @@ CO2_CO_6:
   index: 27
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -329,16 +302,107 @@ CO2_CO_7:
   index: 28
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
     Neither Agree nor Disagree: '3'
     Agree: '4'
     Strongly Agree: '5'
-feedback:
+household1:
   index: 29
+  type: slider_numeric
+  label: Including yourself, how many people permanently live in your household?
+  default: 5.5
+  options:
+    '1': 1.0
+    '2': 2.0
+    '3': 3.0
+    '4': 4.0
+    '5': 5.0
+    '6': 6.0
+    '7': 7.0
+    '8': 8.0
+    '9': 9.0
+    '10': 10.0
+household2:
+  index: 30
+  type: slider_numeric
+  label: How many children under the age of 18 currently live in your household?
+  default: 5.0
+  options:
+    '0': 0.0
+    '1': 1.0
+    '2': 2.0
+    '3': 3.0
+    '4': 4.0
+    '5': 5.0
+    '6': 6.0
+    '7': 7.0
+    '8': 8.0
+    '9': 9.0
+    '10': 10.0
+gender:
+  index: 31
+  type: select
+  label: Which gender do you most closely identify with?
+  options:
+    Male: male
+    Female: female
+    Other: other
+race:
+  index: 32
+  type: select
+  label: Which race/ethnic group do you most closely identify?
+  options:
+    White (German, Irish, English): white
+    Black or African American (Jamaican, Haitian, Nigerian): black
+    American Indian or Alaska Native (Navajo Nation, Mayan, Aztec): amind
+    Asian (Chinese, Filipino, Vietnamese, Korean): asia
+    Native, Hawaiian or Pacific Islander (Native Hawaiian, Samoan, Chamorro): native
+    Middle Eastern or North African (Lebanese, Iranian, Egyptian, Syrian, Moroccan): mideast
+    Prefer not to say: no_response
+latina:
+  index: 33
+  type: mc
+  label: Do you self-identify as Latino/Latina?
+  options:
+    'Yes': 'yes'
+    'No': 'no'
+age:
+  index: 34
+  type: text
+  label: What is your age?
+income:
+  index: 35
+  type: text
+  label: What is your household income?
+employment:
+  index: 36
+  type: mc
+  label: What is your current employment status?
+  options:
+    Full time: full
+    Part time: part
+    Contingent worker: contingent
+    Laid off/furlough: furlough
+    Self-employed/entrepeneur: entre
+education:
+  index: 37
+  type: select
+  label: What is the highest level of school you have completed or the highest degree
+    you have received?
+  options:
+    Did not attend high school: hs_no
+    High school graduate or equivalency: hs_grad
+    Some college but no degree: college_some
+    Associate degree in college (2-year): twoyear
+    Bachelor's degree in college (4-year): bachelor
+    Master's degree: master
+    Doctoral degree: doc
+    Professional degree (JD, MD): prof
+    Prefer not to say: no_response
+feedback:
+  index: 38
   type: text
   label: 'Any feedback you’d like to provide the assessment developers:'
-  label_html: 'Any feedback you’d like to provide the assessment developers:'
 

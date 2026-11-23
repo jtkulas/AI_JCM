@@ -190,8 +190,123 @@ sd_nav(page_next = "page2", label_next = "Demographics")
 
 Demographics will help us develop norms (comparative distributions against which future assessment takers' scores can be evaluated).
 
+```{r}
+sd_question(
+  type = "slider_numeric", 
+  id = 'household1',  
+  label = 'Including yourself, how many people permanently live in your household?', 
+  option = seq(1, 10, 1)
+)
+```
+
+```{r}
+sd_question(
+  type = "slider_numeric", 
+  id = 'household2',  
+  label = 'How many children under the age of 18 currently live in your household?', 
+  option = seq(0, 10, 1)
+)
+```
+
+```{r}
+sd_question(
+  type  = 'select',
+  id    = 'gender',
+  label = "Which gender do you most closely identify with?",
+  option = c(
+    "Male"    = "male",
+    "Female"  = "female",
+    "Other"   = "other"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type  = 'select',
+  id    = 'race',
+  label = "Which race/ethnic group do you most closely identify?",
+  option = c(
+    "White (German, Irish, English)" = "white",
+    "Black or African American (Jamaican, Haitian, Nigerian)"           = "black",
+    "American Indian or Alaska Native (Navajo Nation, Mayan, Aztec)"       = "amind",
+    "Asian (Chinese, Filipino, Vietnamese, Korean)"               = "asia",
+    "Native, Hawaiian or Pacific Islander (Native Hawaiian, Samoan, Chamorro)"      = "native",
+    "Middle Eastern or North African (Lebanese, Iranian, Egyptian, Syrian, Moroccan)"   = "mideast",
+    "Prefer not to say"          = "no_response"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type   = 'mc',
+  id     = 'latina',
+  label  = "Do you self-identify as Latino/Latina?",
+  option = c(
+    "Yes" = "yes",
+    "No"      = "no"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type  = 'numeric',
+  id    = 'age',
+  label = "What is your age?"
+)
+```
+
+```{r}
+sd_question(
+  type  = 'numeric',
+  id    = 'income',
+  label = "What is your household income?"
+)
+```
+
+```{r}
+sd_question(
+  type   = 'mc',
+  id     = 'employment',
+  label  = "What is your current employment status?",
+  option = c(
+    "Full time" = "full",
+    "Part time"      = "part",
+    "Contingent worker" = "contingent",
+    "Laid off/furlough"      = "furlough",    
+    "Self-employed/entrepeneur"      = "entre"
+  )
+)
+
+```
+
+```{r}
+sd_question(
+  type  = 'select',
+  id    = 'education',
+  label = "What is the highest level of school you have completed or the highest degree you have received?",
+  option = c(
+    "Did not attend high school"              = "hs_no",
+    "High school graduate or equivalency"     = "hs_grad",
+    "Some college but no degree"              = "college_some",
+    "Associate degree in college (2-year)"    = "twoyear",
+    "Bachelor's degree in college (4-year)"    = "bachelor",
+    "Master's degree"                        = "master",
+    "Doctoral degree"                       = "doc",
+    "Professional degree (JD, MD)"          = "prof",
+    "Prefer not to say"          = "no_response"
+  )
+)
+```
 
 
+```{r}
+sd_nav(page_next = "page3", label_next = "Feedback")
+```
+
+--- page3
 
 ```{r}
 sd_question(
