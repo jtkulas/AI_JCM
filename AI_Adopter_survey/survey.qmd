@@ -40,7 +40,9 @@ library(surveydown)
 
 # Purpose
 
-This survey contains 21 candidate items for an Artificial Intelligence (AI) adopter "type". The items were informed from a qualitative study [@callari2025meaningful]. At the end of the survey you will be provided a personalized report from the 21--item scale, however, the final validated measure will most likely consist of fewer items (your responses will help us refine the 21--items).
+This survey contains 21 candidate items for a new measure of Artificial Intelligence (AI) adopter "type" as well as some supplementary demographic information.  
+
+The items were informed from a qualitative study [@callari2025meaningful]. At the end of the survey you will be provided a personalized report from the 21--item scale, however, the final validated measure will most likely consist of fewer items (your responses will help us refine the 21--items).
 
 ```{r}
 sd_question(
@@ -189,8 +191,48 @@ sd_nav(page_next = "page2", label_next = "Demographics")
 
 --- page2
 
-Demographics will help us develop norms (comparative distributions against which future assessment takers' scores can be evaluated) and also provide description in the eventual publication of this measure.
+Demographic responses will help us develop norms (comparative distributions against which future assessment takers' scores can be evaluated) and also provide description regarding the initial development and evaluation of this measure.
 
+```{r}
+sd_question(
+  type  = 'select',
+  id    = 'industry',
+  label = "What is the [best descriptor](https://www.census.gov/programs-surveys/economic-census/year/2022/guidance/understanding-naics.html) for your primary work industry?",
+  option = c(
+    "Agriculture, Forestry, Fishing & Hunting" = "11",
+    "Mining, Quarrying, and Oil & Gas Extraction" = "21",
+    "Utilities" = "22",
+    "Construction" = "23",
+    "Manufacturing" = "31",
+    "Wholesale Trade" = "42",
+    "Retail Trade" = "44",
+    "Transportation & Warehousing" = "48",
+    "Information" = "51",
+    "Finance & Insurance" = "52",
+    "Real Estate & Rental & Leasing" = "53",
+    "Professional, Scientific, & Technical Services" = "54",
+    "Management of Companies & Enterprises" = "55",
+    "Administrative & Support & Waste Management & Remediation Services" = "56",
+    "Educational Services" = "61",
+    "Health Care & Social Assistance" = "62",
+    "Arts, Entertainment, & Recreation" = "71",
+    "Accommodation & Food Services" = "72",
+    "Other Services (except Public Administration)" = "81",
+    "Public Administration" = "92",
+    "Prefer not to say" = "no_response"
+  )
+)
+
+## Numbers are NAICS codes
+```
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "jobtitle",
+  label = "What is the title for your primary job:"
+)
+```
 
 ```{r}
 sd_question(
@@ -201,7 +243,7 @@ sd_question(
     "Male"    = "male",
     "Female"  = "female",
     "Other"   = "other",
-    "Prefer not to say" = "prefer not to say"
+    "Prefer not to say" = "no_response"
   )
 )
 
@@ -246,17 +288,17 @@ sd_question(
 
 ```{r}
 sd_question(
-  type  = 'numeric',
+  type  = 'select',
   id    = 'age',
-  label = "What is your age?"
-)
-```
-
-```{r}
-sd_question(
-  type  = 'numeric',
-  id    = 'income',
-  label = "What is your household income?"
+  label = "What is your age?",
+  option = c("18"="18","19"="19","20"="20","21"="21","22"="22","23"="23","24"="24","25"="25","26"="26","27"="27","28"="28","29"="29",
+  "30"="30","31"="31","32"="32","33"="33","34"="34","35"="35","36"="36","37"="37","38"="38","39"="39",
+  "40"="40","41"="41","42"="42","43"="43","44"="44","45"="45","46"="46","47"="47","48"="48","49"="49",
+  "50"="50","51"="51","52"="52","53"="53","54"="54","55"="55","56"="56","57"="57","58"="58","59"="59",
+  "60"="60","61"="61","62"="62","63"="63","64"="64","65"="65","66"="66","67"="67","68"="68","69"="69",
+  "70"="70","71"="71","72"="72","73"="73","74"="74","75"="75","76"="76","77"="77","78"="78","79"="79",
+  "80"="80","81"="81","82"="82","83"="83","84"="84","85"="85","86"="86","87"="87","88"="88","89"="89",
+  "90"="90","91"="91","92"="92","93"="93","94"="94","95"="95","96"="96","97"="97","98"="98","99"="99","100"="100")
 )
 ```
 
@@ -314,6 +356,14 @@ sd_question(
 ```
 
 ```{r}
+sd_question(
+  type  = 'numeric',
+  id    = 'income',
+  label = "What is your household income?"
+)
+```
+
+```{r}
 sd_nav(page_next = "page3", label_next = "Feedback")
 ```
 
@@ -331,9 +381,34 @@ sd_question(
 
 ## End
 
-This is the last page in the survey.
+Thank you very much for your responses! 
 
-Here we call `sd_close()` to create a finish button to end the survey. When calling `sd_close()`, the auto-navigation is disabled.
+If you would like more information about this project, you may contact one of the primary investigators:
+
++ [Alicia Stachowski](stachowskia@uwstout.edu)
++ [William Luse](wluse@laverne.edu)
++ [John Kulas](mailto: jtkulas@ergreports.com)
+
+If you could forward the survey link to a few employed friends, it would help greatly:
+
+<div style="margin: 1rem 0;">
+  <button id="copyLinkBtn" class="btn btn-primary">
+    Copy Link
+  </button>
+</div>
+
+<script>
+document.getElementById("copyLinkBtn").addEventListener("click", function () {
+  const url = "https://www.google.com";   // ← change this to your real URL
+  navigator.clipboard.writeText(url)
+    .then(() => alert("Link copied!"))
+    .catch(() => alert("Could not copy — please copy manually:\n" + url));
+});
+</script>
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2sxZ2ZsaWRqcDdqdjM5NWl0ZTI1OXYzeGgzZWV0bHAzZjdrYmdrMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1QffP8E6nk4gKYZO5S/giphy.gif)
+
+## Source reference
 
 ::: {#refs}
 :::

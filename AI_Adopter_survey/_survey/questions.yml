@@ -4,7 +4,6 @@ ES1:
   index: 1
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I primarily use AI tools to complete routine or administrative tasks more efficiently: ES_1
     I reserve AI for tasks that demand little mental effort: ES_2
@@ -19,7 +18,6 @@ ES1_ES_1:
   index: 2
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -30,7 +28,6 @@ ES1_ES_2:
   index: 3
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -41,7 +38,6 @@ ES1_ES_3:
   index: 4
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -52,7 +48,6 @@ ES2:
   index: 5
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I am cautious about relying too heavily on AI-generated outputs: ES_4
     Using AI tools gives me more time to connect with colleagues: ES_5
@@ -67,7 +62,6 @@ ES2_ES_4:
   index: 6
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -78,7 +72,6 @@ ES2_ES_5:
   index: 7
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -89,7 +82,6 @@ ES2_ES_6:
   index: 8
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -100,7 +92,6 @@ ESPI:
   index: 9
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     AI effectively condenses complex information into actionable summaries for me: ES_7
     I use AI tools as a competent assistant that helps me develop ideas or organize my thinking: PI_1
@@ -115,7 +106,6 @@ ESPI_ES_7:
   index: 10
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -126,7 +116,6 @@ ESPI_PI_1:
   index: 11
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -137,7 +126,6 @@ ESPI_PI_2:
   index: 12
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -148,7 +136,6 @@ PI1:
   index: 13
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I see prompting AI as a useful skill that improves with practice: PI_3
     AI helps me become more productive by helping me start, structure, or improve my work: PI_4
@@ -163,7 +150,6 @@ PI1_PI_3:
   index: 14
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -174,7 +160,6 @@ PI1_PI_4:
   index: 15
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -185,7 +170,6 @@ PI1_PI_5:
   index: 16
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -196,7 +180,6 @@ PICO:
   index: 17
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     My decision making is aided by AI: PI_6
     AI-generated suggestions broaden the range of options I consider for creative projects: PI_7
@@ -211,7 +194,6 @@ PICO_PI_6:
   index: 18
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -222,7 +204,6 @@ PICO_PI_7:
   index: 19
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -233,7 +214,6 @@ PICO_CO_1:
   index: 20
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -244,7 +224,6 @@ CO1:
   index: 21
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     In my view, AI functions as a reliable contributor, much like a dependable team member: CO_2
     AI helps me deepen my analysis rather than simply complete tasks faster: CO_3
@@ -259,7 +238,6 @@ CO1_CO_2:
   index: 22
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -270,7 +248,6 @@ CO1_CO_3:
   index: 23
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -281,7 +258,6 @@ CO1_CO_4:
   index: 24
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -292,7 +268,6 @@ CO2:
   index: 25
   type: matrix
   label: Please indicate your agreement with the following statements.
-  label_html: Please indicate your agreement with the following statements.
   row:
     I use AI to test, refine, or strengthen my professional judgment: CO_5
     My employer has done a good job with integrating AI tools into our workflows: CO_6
@@ -307,7 +282,6 @@ CO2_CO_5:
   index: 26
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -318,7 +292,6 @@ CO2_CO_6:
   index: 27
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
@@ -329,33 +302,59 @@ CO2_CO_7:
   index: 28
   type: mc
   label: []
-  label_html: []
   options:
     Strongly Disagree: '1'
     Disagree: '2'
     Neither Agree nor Disagree: '3'
     Agree: '4'
     Strongly Agree: '5'
-gender:
+industry:
   index: 29
   type: select
+  label: What is the best descriptor for your primary work industry?
+  options:
+    Agriculture, Forestry, Fishing & Hunting: '11'
+    Mining, Quarrying, and Oil & Gas Extraction: '21'
+    Utilities: '22'
+    Construction: '23'
+    Manufacturing: '31'
+    Wholesale Trade: '42'
+    Retail Trade: '44'
+    Transportation & Warehousing: '48'
+    Information: '51'
+    Finance & Insurance: '52'
+    Real Estate & Rental & Leasing: '53'
+    Professional, Scientific, & Technical Services: '54'
+    Management of Companies & Enterprises: '55'
+    Administrative & Support & Waste Management & Remediation Services: '56'
+    Educational Services: '61'
+    Health Care & Social Assistance: '62'
+    Arts, Entertainment, & Recreation: '71'
+    Accommodation & Food Services: '72'
+    Other Services (except Public Administration): '81'
+    Public Administration: '92'
+    Prefer not to say: no_response
+jobtitle:
+  index: 30
+  type: text
+  label: 'What is the title for your primary job:'
+gender:
+  index: 31
+  type: select
   label: Which gender do you most closely identify with?
-  label_html: Which gender do you most closely identify with?
   options:
     Male: male
     Female: female
     Other: other
-    Prefer not to say: prefer not to say
+    Prefer not to say: no_response
 gender_other:
-  index: 30
+  index: 32
   type: text
   label: How do you identify?
-  label_html: How do you identify?
 race:
-  index: 31
+  index: 33
   type: mc_multiple
   label: Which race/ethnic group do you most closely identify?
-  label_html: Which race/ethnic group do you most closely identify?
   options:
     White (e.g.., German, Irish, English): white
     Black or African American (e.g.., Jamaican, Haitian, Nigerian): black
@@ -366,28 +365,104 @@ race:
     Other: other
     Prefer not to say: no_response
 latina:
-  index: 32
+  index: 34
   type: mc
   label: Do you self-identify as Latino/Latina?
-  label_html: Do you self-identify as Latino/Latina?
   options:
     'Yes': 'yes'
     'No': 'no'
 age:
-  index: 33
-  type: text
-  label: What is your age?
-  label_html: What is your age?
-income:
-  index: 34
-  type: text
-  label: What is your household income?
-  label_html: What is your household income?
-employment:
   index: 35
+  type: select
+  label: What is your age?
+  options:
+    '18': '18'
+    '19': '19'
+    '20': '20'
+    '21': '21'
+    '22': '22'
+    '23': '23'
+    '24': '24'
+    '25': '25'
+    '26': '26'
+    '27': '27'
+    '28': '28'
+    '29': '29'
+    '30': '30'
+    '31': '31'
+    '32': '32'
+    '33': '33'
+    '34': '34'
+    '35': '35'
+    '36': '36'
+    '37': '37'
+    '38': '38'
+    '39': '39'
+    '40': '40'
+    '41': '41'
+    '42': '42'
+    '43': '43'
+    '44': '44'
+    '45': '45'
+    '46': '46'
+    '47': '47'
+    '48': '48'
+    '49': '49'
+    '50': '50'
+    '51': '51'
+    '52': '52'
+    '53': '53'
+    '54': '54'
+    '55': '55'
+    '56': '56'
+    '57': '57'
+    '58': '58'
+    '59': '59'
+    '60': '60'
+    '61': '61'
+    '62': '62'
+    '63': '63'
+    '64': '64'
+    '65': '65'
+    '66': '66'
+    '67': '67'
+    '68': '68'
+    '69': '69'
+    '70': '70'
+    '71': '71'
+    '72': '72'
+    '73': '73'
+    '74': '74'
+    '75': '75'
+    '76': '76'
+    '77': '77'
+    '78': '78'
+    '79': '79'
+    '80': '80'
+    '81': '81'
+    '82': '82'
+    '83': '83'
+    '84': '84'
+    '85': '85'
+    '86': '86'
+    '87': '87'
+    '88': '88'
+    '89': '89'
+    '90': '90'
+    '91': '91'
+    '92': '92'
+    '93': '93'
+    '94': '94'
+    '95': '95'
+    '96': '96'
+    '97': '97'
+    '98': '98'
+    '99': '99'
+    '100': '100'
+employment:
+  index: 36
   type: mc
   label: What is your current employment status?
-  label_html: What is your current employment status?
   options:
     Full time: full
     Part time: part
@@ -395,12 +470,10 @@ employment:
     Laid off/furlough: furlough
     Self-employed/entrepeneur: entre
 education:
-  index: 36
+  index: 37
   type: select
   label: What is the highest level of school you have completed or the highest degree
     you have received?
-  label_html: What is the highest level of school you have completed or the highest
-    degree you have received?
   options:
     Did not attend high school: hs_no
     High school graduate or equivalency: hs_grad
@@ -412,10 +485,9 @@ education:
     Professional degree (JD, MD): prof
     Prefer not to say: no_response
 household1:
-  index: 37
+  index: 38
   type: slider_numeric
   label: Including yourself, how many people permanently live in your household?
-  label_html: Including yourself, how many people permanently live in your household?
   default: 5.5
   options:
     '1': 1.0
@@ -429,10 +501,9 @@ household1:
     '9': 9.0
     '10': 10.0
 household2:
-  index: 38
+  index: 39
   type: slider_numeric
   label: How many children under the age of 18 currently live in your household?
-  label_html: How many children under the age of 18 currently live in your household?
   default: 5.0
   options:
     '0': 0.0
@@ -446,9 +517,12 @@ household2:
     '8': 8.0
     '9': 9.0
     '10': 10.0
+income:
+  index: 40
+  type: text
+  label: What is your household income?
 feedback:
-  index: 39
+  index: 41
   type: text
   label: 'Any feedback you’d like to provide the assessment developers:'
-  label_html: 'Any feedback you’d like to provide the assessment developers:'
 

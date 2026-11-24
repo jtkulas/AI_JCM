@@ -40,7 +40,7 @@ server <- function(input, output, session) {
   
   #Limit the number of choices to 2, and if more, provide an error message
   sd_stop_if( length(sd_value("race")) > 2 ~ "Please select no more than 2 options on the race/ethnic group question." )
-  sd_stop_if( sd_value("age") < 18 | ( sd_value("age") > 101) ~ "Please enter a value between 18 and 100 for the age variable." )
+#  sd_stop_if( sd_value("age") < 18 | ( sd_value("age") > 101) ~ "Please enter a value between 18 and 100 for the age variable." )
   # Define any conditional display logic here (show a question if a condition is true)
   
   sd_show_if(
