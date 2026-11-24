@@ -1,0 +1,25 @@
+**No — surveydown does not have a dedicated “phone optimization” or mobile-mode toggle.**
+
+It is a Quarto + Shiny app (Bootstrap-based via Bootswatch themes), so it is *somewhat* responsive by default, but the default UI can still look or behave poorly on phones depending on your question types, layout, fonts, and content density.
+
+### Practical ways to improve mobile UI
+
+1. **Use phone-friendly question types**
+   - Prefer `mc_buttons` and `mc_multiple_buttons` (especially with `direction = "vertical"`). These create large tap targets and are explicitly noted as working well on phones.
+   - Avoid or carefully limit matrix questions and wide layouts, which tend to force horizontal scrolling or tiny controls on small screens.
+
+2. **Preview on mobile**
+   - Use the companion **sdstudio** package. Its Preview tab includes a Mobile view (375px width) alongside Desktop.
+   - Also test on real phones — the preview is useful but not a full substitute.
+
+3. **Customize appearance**
+   - Change the overall theme in the YAML header of `survey.qmd` (Bootswatch themes or a custom `.scss` file).
+   - Add a `custom.scss` and use media queries (e.g. `@media (max-width: 600px)`) to increase font sizes, padding, button height, and spacing on small screens. This is the main route for mobile-specific fixes.
+
+4. **Design choices that help**
+   - Keep pages short (fewer questions per page).
+   - Use concise option labels.
+   - Prefer vertical stacking and large touch targets (roughly 44px+).
+   - Enable auto-scroll if it helps navigation (`auto-scroll: yes` in survey settings).
+
+In short: there is no one-click mobile optimization, but switching to button-style questions + testing in sdstudio + optional custom SCSS will usually fix most phone UI issues. If you share the specific problems you’re seeing (e.g. matrices, font size, buttons too small), I can suggest more targeted CSS or question changes.
