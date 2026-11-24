@@ -5,7 +5,7 @@ account: stachowskiaa
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 18487316
-bundleId: 12844330
+bundleId: 12863615
 url: https://stachowskiaa.shinyapps.io/AI_Adopter_survey/
 version: 1
 asMultiple: FALSE
